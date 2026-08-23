@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="icon" href="uploads/IMG_2214-00de7e7b.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#141210; }
+  * { box-sizing:border-box; }
+  a { color:#C9A24A; text-decoration:none; }
+  a:hover { color:#E0C27C; }
+  select, input, textarea, button { font-family:Barlow, sans-serif; }
+  select option { background:#141210; color:#EFE9DC; }
+  ::placeholder { color:rgba(239,233,220,0.34); }
+  @keyframes clarionStepIn { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background:#141210; color:#EFE9DC; font-family:Barlow, sans-serif;">
+
+  <header style="display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px clamp(20px,4vw,56px); background:rgba(20,18,16,0.94); border-bottom:1px solid rgba(239,233,220,0.10); height:64px;">
+    <a href="Clarion Home.dc.html" style="display:flex; align-items:center; gap:12px;">
+      <img src="uploads/Clarion.png" alt="Clarion Tackle Co." style="height:26px; width:auto; filter:invert(1) brightness(1.6); display:block;">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.34em; text-transform:uppercase; color:rgba(239,233,220,0.55); padding-top:5px;">Tackle Co.</span>
+    </a>
+    <a href="Clarion Home.dc.html" style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,233,220,0.6);" style-hover="color:#C9A24A">← Back to site</a>
+  </header>
+
+  <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+    <main style="max-width:760px; margin:0 auto; padding:clamp(28px,5vw,64px) clamp(20px,5vw,40px) 120px;">
+
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:#C9A24A;">{{ stepCounter }}</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(239,233,220,0.45);">{{ stepKicker }}</span>
+      </div>
+      <div style="height:3px; background:rgba(239,233,220,0.16); margin-bottom:clamp(32px,5vw,52px);">
+        <div style="height:3px; background:#C9A24A; width:{{ progressPct }}; transition:width 420ms cubic-bezier(0.16,1,0.3,1);"></div>
+      </div>
+
+      <h1 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(34px,5.4vw,58px); line-height:1.02; margin:0 0 18px;">{{ stepHeading }}</h1>
+      <sc-if value="{{ stepIntro }}" hint-placeholder-val="{{ false }}">
+        <p style="font-size:17px; line-height:1.65; font-weight:300; color:rgba(239,233,220,0.7); margin:0 0 clamp(30px,4vw,44px); max-width:52ch;">{{ stepIntro }}</p>
+      </sc-if>
+
+      <form onSubmit="{{ onNext }}" style="display:flex; flex-direction:column; gap:clamp(24px,3vw,32px); animation:clarionStepIn 380ms ease both;">
+        <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <label for="{{ f.id }}" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#EFE9DC;">{{ f.label }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(239,233,220,0.38);">{{ f.tag }}</span>
+            </label>
+
+            <sc-if value="{{ f.isSelect }}" hint-placeholder-val="{{ true }}">
+              <select id="{{ f.id }}" name="{{ f.id }}" value="{{ f.value }}" onChange="{{ f.onChange }}" style="appearance:none; width:100%; background:#0A0908; border:1px solid {{ f.border }}; color:#EFE9DC; font-size:16px; padding:16px 18px; cursor:pointer;">
+                <option value="">{{ f.emptyLabel }}</option>
+                <sc-for list="{{ f.options }}" as="o" hint-placeholder-count="4">
+                  <option value="{{ o.v }}">{{ o.v }}</option>
+                </sc-for>
+              </select>
+            </sc-if>
+
+            <sc-if value="{{ f.isRadio }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                <sc-for list="{{ f.radios }}" as="r" hint-placeholder-count="3">
+                  <button type="button" onClick="{{ r.onClick }}" style="background:{{ r.bg }}; color:{{ r.fg }}; border:1px solid {{ r.border }}; font-size:14px; letter-spacing:0.06em; padding:14px 20px; min-height:48px; cursor:pointer;">{{ r.v }}</button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ f.isText }}" hint-placeholder-val="{{ false }}">
+              <input id="{{ f.id }}" name="{{ f.id }}" type="{{ f.inputType }}" autoComplete="{{ f.autoComplete }}" value="{{ f.value }}" onChange="{{ f.onChange }}" placeholder="{{ f.placeholder }}" style="width:100%; background:#0A0908; border:1px solid {{ f.border }}; color:#EFE9DC; font-size:16px; padding:16px 18px;">
+            </sc-if>
+
+            <sc-if value="{{ f.isTextarea }}" hint-placeholder-val="{{ false }}">
+              <textarea id="{{ f.id }}" name="{{ f.id }}" rows="4" value="{{ f.value }}" onChange="{{ f.onChange }}" placeholder="{{ f.placeholder }}" style="width:100%; background:#0A0908; border:1px solid {{ f.border }}; color:#EFE9DC; font-size:16px; line-height:1.6; padding:16px 18px; resize:vertical;"></textarea>
+            </sc-if>
+
+            <sc-if value="{{ f.hint }}" hint-placeholder-val="{{ false }}">
+              <span style="font-size:14px; line-height:1.55; font-weight:300; color:rgba(239,233,220,0.5);">{{ f.hint }}</span>
+            </sc-if>
+            <sc-if value="{{ f.error }}" hint-placeholder-val="{{ false }}">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#E0834A;">{{ f.error }}</span>
+            </sc-if>
+          </div>
+        </sc-for>
+
+        <sc-if value="{{ showGuideExplainer }}" hint-placeholder-val="{{ false }}">
+          <div style="border-top:1px solid rgba(239,233,220,0.16); padding-top:20px;">
+            <button type="button" onClick="{{ toggleExplainer }}" style="background:none; border:none; padding:0; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C9A24A; text-decoration:underline;">What's the difference?</button>
+            <sc-if value="{{ explainerOpen }}" hint-placeholder-val="{{ false }}">
+              <dl style="margin:20px 0 0; display:flex; flex-direction:column; gap:16px;">
+                <div>
+                  <dt style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#EFE9DC; margin-bottom:6px;">Alconite vs. SiC rings</dt>
+                  <dd style="margin:0; font-size:15px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.66);">Alconite is hard, smooth, and honest — it will outlast most anglers. SiC is harder still and sheds heat faster, which matters when a fish is burning line off a locked-down drag.</dd>
+                </div>
+                <div>
+                  <dt style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#EFE9DC; margin-bottom:6px;">Stainless vs. titanium frames</dt>
+                  <dd style="margin:0; font-size:15px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.66);">Stainless holds its shape and shrugs off abuse. Titanium weighs less, flexes instead of bending, and springs back — you feel it in tip recovery and in how the rod sits in your hand all day.</dd>
+                </div>
+                <div>
+                  <dt style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#EFE9DC; margin-bottom:6px;">Single-foot vs. double-foot</dt>
+                  <dd style="margin:0; font-size:15px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.66);">Single-foot guides keep the blank livelier and lighter. Double-foot guides spread load and take more punishment — the right call under heavy drag or where a rod gets thrown in a rod locker.</dd>
+                </div>
+              </dl>
+            </sc-if>
+          </div>
+        </sc-if>
+
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-top:8px;">
+          <button type="submit" style="background:#C9A24A; color:#141210; border:none; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:19px 36px; min-height:52px; cursor:pointer;" style-hover="background:#E0C27C">{{ nextLabel }}</button>
+          <sc-if value="{{ canGoBack }}" hint-placeholder-val="{{ false }}">
+            <button type="button" onClick="{{ onBack }}" style="background:none; border:none; padding:0; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(239,233,220,0.6);" style-hover="color:#C9A24A">← Back</button>
+          </sc-if>
+        </div>
+
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.8; letter-spacing:0.04em; color:rgba(239,233,220,0.38); margin:8px 0 0;">No account, no deposit, no payment on this form. It ends in a conversation.</p>
+      </form>
+    </main>
+  </sc-if>
+
+  <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+    <main style="max-width:760px; margin:0 auto; padding:clamp(40px,7vw,96px) clamp(20px,5vw,40px) 120px;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:22px;">Spec received</div>
+      <h1 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(38px,6vw,68px); line-height:1; margin:0 0 28px;">Got your spec.</h1>
+      <p style="font-size:18px; line-height:1.7; font-weight:300; color:rgba(239,233,220,0.78); margin:0 0 12px; max-width:54ch;">Here's what I've got:</p>
+      <p style="font-size:19px; line-height:1.6; color:#EFE9DC; margin:0 0 32px; max-width:54ch; border-left:2px solid #C9A24A; padding-left:20px;">{{ specRecap }}</p>
+      <p style="font-size:17px; line-height:1.7; font-weight:300; color:rgba(239,233,220,0.72); margin:0 0 32px; max-width:54ch;">Next you'll get a price for this spec and where you'd sit in the queue. Builds start at $600, current lead time is 12 weeks, and shipping is a flat $50.</p>
+      <div style="border-top:1px solid rgba(239,233,220,0.18); padding-top:28px; display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(22px,2.6vw,30px); line-height:1.1; margin:0;">Want to talk it through first?</h2>
+        <p style="font-size:17px; line-height:1.7; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:54ch;">Fifteen minutes, and I'll tell you honestly whether a custom build is even the right call for how you fish.</p>
+        <a href="mailto:hello@clarionrods.com?subject=Build%20question" style="background:#C9A24A; color:#141210; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:17px 30px; min-height:50px; display:inline-flex; align-items:center;" style-hover="background:#E0C27C">Email me a question</a>
+      </div>
+      <sc-if value="{{ endpointMissing }}" hint-placeholder-val="{{ true }}">
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:1.8; letter-spacing:0.06em; color:#E0834A; margin:36px 0 0; border:1px solid rgba(224,131,74,0.4); padding:16px 18px;">Build note — visible only to you: ACCESS_KEY is still empty, so this spec was not emailed anywhere. Get a free key at web3forms.com with the inbox you want requests in, paste it into ACCESS_KEY at the top of this page's logic, and this warning disappears.</p>
+      </sc-if>
+    </main>
+  </sc-if>
+
+  <template id="__bundler_thumbnail" data-bg-color="#0A0908">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0A0908"></rect><text x="200" y="232" font-family="Anton, Impact, sans-serif" font-size="150" fill="#C9A24A" text-anchor="middle">C</text></svg>
+  </template>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+// ─── SET THIS ONE VALUE TO GO LIVE ───────────────────────────────────────────
+// Get a free key at web3forms.com — enter the inbox you want requests sent to,
+// they email you an access key, paste it here. Every submission then lands in
+// that inbox within seconds, and partial leads (name + email, form abandoned)
+// arrive too so nothing is lost.
+const ACCESS_KEY = "623c8342-3bf9-41ef-aed3-26963c076915";
+const ENDPOINT = "https://api.web3forms.com/submit";
+
+const SPECIES = ["Redfish","Snook","Tarpon","Speckled trout","Largemouth bass","Smallmouth bass","Walleye","Musky / pike","Trout (fly)","Panfish","Offshore / pelagic","Surf","Something else"];
+const PICK = "Not sure — you pick";
+
+// species -> [length, power, action, tackle]
+const DEFAULTS = {
+  "Redfish": ["7'–7'6\"", "Medium", "Fast", "Spinning"],
+  "Snook": ["7'–7'6\"", "Medium heavy", "Fast", "Spinning"],
+  "Tarpon": ["7'6\"–8'", "Heavy", "Moderate fast", "Spinning"],
+  "Speckled trout": ["6'6\"–7'", "Medium light", "Fast", "Spinning"],
+  "Largemouth bass": ["7'–7'6\"", "Medium heavy", "Fast", "Casting"],
+  "Smallmouth bass": ["6'6\"–7'", "Medium", "Moderate fast", "Spinning"],
+  "Walleye": ["6'6\"–7'", "Medium light", "Extra fast", "Spinning"],
+  "Musky / pike": ["Over 8'", "Heavy", "Moderate", "Casting"],
+  "Trout (fly)": ["Under 6'6\"", "Ultralight", "Moderate", "Fly"],
+  "Panfish": ["Under 6'6\"", "Ultralight", "Moderate fast", "Spinning"],
+  "Offshore / pelagic": ["Over 8'", "Heavy", "Slow", "Spinning"],
+  "Surf": ["Over 8'", "Medium heavy", "Moderate fast", "Spinning"]
+};
+
+const STEPS = [
+  {
+    kicker: "You",
+    heading: "Who am I building for?",
+    intro: "Name and email first so I can pick this back up with you if you get pulled away — nothing sends until you hit submit at the end.",
+    fields: [
+      { id: "name", type: "text", label: "Your name", required: true, autoComplete: "name", placeholder: "First and last" },
+      { id: "email", type: "text", inputType: "email", label: "Email", required: true, autoComplete: "email", placeholder: "you@example.com" },
+      { id: "phone", type: "text", inputType: "tel", label: "Phone", tag: "Optional", autoComplete: "tel", placeholder: "So I can call instead of type" }
+    ]
+  },
+  {
+    kicker: "Where you fish",
+    heading: "What are you chasing?",
+    intro: "",
+    fields: [
+      { id: "species", type: "select", label: "What are you fishing for?", required: true, empty: "Pick a species", options: SPECIES },
+      { id: "budget", type: "select", label: "What's your budget for this build?", required: true, empty: "Pick a range", options: ["$600–$750","$750–$1,000","$1,000–$1,400","$1,400+","Not sure yet — tell me what it takes"] },
+      { id: "lastRod", type: "textarea", label: "What did your last rod get wrong?", tag: "Optional", placeholder: "The honest answer here shapes the build more than anything else on this form." },
+      { id: "heard", type: "select", label: "How did you hear about Clarion?", tag: "Optional", empty: "Pick one", options: ["Instagram","A friend or another angler","Google search","Saw a Clarion rod on the water","Somewhere else"] }
+    ]
+  },
+  {
+    kicker: "The angler",
+    heading: "The angler.",
+    intro: "A factory measures the rod. We measure you. These numbers drive every decision on the bench.",
+    fields: [
+      { id: "height", type: "select", label: "Your height", empty: "Pick a range", options: ["Under 5'6\"","5'6\"–5'10\"","5'10\"–6'2\"","Over 6'2\""] },
+      { id: "hand", type: "select", label: "Hand size", empty: "Pick one", options: ["Small","Medium","Large","Extra large","Not sure, I'll send a measurement"] },
+      { id: "castHand", type: "radio", label: "Casting hand", options: ["Right","Left"] },
+      { id: "castStyle", type: "select", label: "How do you cast most of the time?", empty: "Pick one", options: ["Overhead","Roll cast","One-handed pitch / flip","Mix of everything","Not sure — you pick"] },
+      { id: "stance", type: "select", label: "Deck or wade?", empty: "Pick one", options: ["Boat deck","Wading","Kayak","Pier or bank","Mix"] }
+    ]
+  },
+  {
+    kicker: "The rod",
+    heading: "The rod.",
+    intro: "Not sure on any of these? Pick \"you pick\" — that's what the angler profile is for.",
+    fields: [
+      { id: "length", type: "select", label: "Length", empty: PICK, options: [PICK,"Under 6'6\"","6'6\"–7'","7'–7'6\"","7'6\"–8'","Over 8'"] },
+      { id: "power", type: "select", label: "Power", empty: PICK, options: [PICK,"Ultralight","Light","Medium light","Medium","Medium heavy","Heavy"] },
+      { id: "action", type: "select", label: "Action", empty: PICK, options: [PICK,"Slow","Moderate","Moderate fast","Fast","Extra fast"] },
+      { id: "tackle", type: "radio", label: "Casting, spinning, or fly?", options: ["Casting","Spinning","Fly",PICK] },
+      { id: "reelLine", type: "text", label: "What reel and line will you pair with it?", tag: "Optional", placeholder: "Reel model and line weight, if you know it" }
+    ]
+  },
+  {
+    kicker: "Components",
+    heading: "Make it yours.",
+    intro: "These tiers are curated. They're the parts I actually build with — not a supplier catalog.",
+    fields: [
+      { id: "guides", type: "select", label: "Guide train", empty: "Pick a tier", options: ["Standard — Alconite rings, stainless frames","Signature — SiC rings, stainless frames","Flagship — SiC rings, titanium frames",PICK] },
+      { id: "gripMaterial", type: "select", label: "Grip material", empty: "Pick one", options: ["Flor-grade cork","Split cork","Teak","EVA",PICK] },
+      { id: "gripShape", type: "select", label: "Grip shape", empty: "Pick one", options: ["Full","Split","Reverse taper","Shaped to my hand, you decide"] },
+      { id: "thread", type: "text", label: "Thread colors", tag: "Optional", placeholder: "Two or three colors, or name a boat, a team, or a water" },
+      { id: "inscription", type: "text", label: "Inscription", tag: "Optional", placeholder: "Your name, a boat name, or a date — hand-lettered and sealed under the finish" }
+    ]
+  }
+];
+
+class Component extends DCLogic {
+  state = { step: 0, vals: {}, errors: {}, submitted: false, explainerOpen: false };
+
+  // Contact comes first, so an abandoned form is still a lead: values persist locally,
+  // and once the endpoint exists a partial record posts as soon as name + email are in.
+  componentDidMount() {
+    try {
+      const saved = JSON.parse(localStorage.getItem("clarion_build_form") || "null");
+      if (saved && saved.vals) this.setState({ vals: saved.vals, step: saved.step || 0 });
+    } catch (e) {}
+  }
+
+  persist(vals, step) {
+    try { localStorage.setItem("clarion_build_form", JSON.stringify({ vals: vals, step: step })); } catch (e) {}
+  }
+
+  post(fields, subject) {
+    if (!ACCESS_KEY) return;
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(Object.assign({
+        access_key: ACCESS_KEY,
+        subject: subject,
+        from_name: "Clarion Tackle Co. website"
+      }, fields))
+    }).catch(() => {});
+  }
+
+  capturePartial() {
+    const v = this.state.vals;
+    if (this._captured || !v.name || !v.email) return;
+    this._captured = true;
+    this.post({
+      name: v.name,
+      email: v.email,
+      phone: v.phone || "",
+      status: "Started the build form — has not finished yet",
+      started: new Date().toLocaleString()
+    }, "New lead started a build form — " + v.name);
+  }
+
+  set(id, v) {
+    this.setState((s) => {
+      const vals = Object.assign({}, s.vals, { [id]: v });
+      const errors = Object.assign({}, s.errors);
+      delete errors[id];
+      if (id === "species" && DEFAULTS[v]) {
+        const d = DEFAULTS[v];
+        if (!s.vals.length) vals.length = d[0];
+        if (!s.vals.power) vals.power = d[1];
+        if (!s.vals.action) vals.action = d[2];
+        if (!s.vals.tackle) vals.tackle = d[3];
+      }
+      this.persist(vals, s.step);
+      return { vals: vals, errors: errors };
+    });
+  }
+
+  validate() {
+    const errors = {};
+    STEPS[this.state.step].fields.forEach((f) => {
+      const v = (this.state.vals[f.id] || "").trim();
+      if (f.required && !v) errors[f.id] = "This one I need.";
+      else if (f.inputType === "email" && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) errors[f.id] = "That email doesn't look right.";
+    });
+    this.setState({ errors: errors });
+    return Object.keys(errors).length === 0;
+  }
+
+  onNext = (e) => {
+    e.preventDefault();
+    if (!this.validate()) return;
+    if (this.state.step === 0) this.capturePartial();
+    if (this.state.step < STEPS.length - 1) {
+      this.setState((s) => { this.persist(s.vals, s.step + 1); return { step: s.step + 1 }; });
+      if (typeof window !== "undefined") window.scrollTo(0, 0);
+      return;
+    }
+    this.submit();
+  };
+
+  onBack = () => {
+    this.setState((s) => ({ step: Math.max(0, s.step - 1), errors: {} }));
+    if (typeof window !== "undefined") window.scrollTo(0, 0);
+  };
+
+  submit() {
+    const v = this.state.vals;
+    try { localStorage.removeItem("clarion_build_form"); } catch (e) {}
+    // Labelled keys so the email reads like a spec sheet, not a JSON dump.
+    const labels = {};
+    const base = { name: 1, email: 1, phone: 1 };
+    STEPS.forEach((s) => s.fields.forEach((f) => {
+      if (v[f.id] && !base[f.id]) labels[f.label.replace(/\?$/, "")] = v[f.id];
+    }));
+    this.post(Object.assign({
+      name: v.name || "",
+      email: v.email || "",
+      phone: v.phone || "",
+      status: "COMPLETE build request",
+      submitted: new Date().toLocaleString()
+    }, labels), "Build request — " + (v.name || "new angler") + " · " + (v.species || "custom"));
+    this.setState({ submitted: true });
+    if (typeof window !== "undefined") window.scrollTo(0, 0);
+  }
+
+  recap() {
+    const v = this.state.vals;
+    const guide = (v.guides || "").split(" — ")[0];
+    const bits = [
+      (v.species ? "a " + v.species.toLowerCase() + " build" : "a custom build"),
+      [v.length, v.power, v.action].filter((x) => x && x !== PICK).join(" "),
+      v.tackle && v.tackle !== PICK ? v.tackle.toLowerCase() : "",
+      guide && guide !== PICK ? guide + " guides" : "",
+      v.gripMaterial && v.gripMaterial !== PICK ? v.gripMaterial.toLowerCase() + " grip" : ""
+    ].filter(Boolean);
+    return bits.join(", ") + ".";
+  }
+
+  renderVals() {
+    const step = STEPS[this.state.step];
+    const vals = this.state.vals;
+    const border = (id) => (this.state.errors[id] ? "#E0834A" : "rgba(239,233,220,0.24)");
+    return {
+      notSubmitted: !this.state.submitted,
+      submitted: this.state.submitted,
+      endpointMissing: !ACCESS_KEY,
+      specRecap: this.recap(),
+      stepCounter: "Step " + (this.state.step + 1) + " of " + STEPS.length,
+      stepKicker: step.kicker,
+      stepHeading: step.heading,
+      stepIntro: step.intro || false,
+      progressPct: Math.round(((this.state.step + 1) / STEPS.length) * 100) + "%",
+      canGoBack: this.state.step > 0,
+      nextLabel: this.state.step === STEPS.length - 1 ? "Send my spec" : "Continue",
+      onNext: this.onNext,
+      onBack: this.onBack,
+      showGuideExplainer: this.state.step === 4,
+      explainerOpen: this.state.explainerOpen,
+      toggleExplainer: () => this.setState((s) => ({ explainerOpen: !s.explainerOpen })),
+      fields: step.fields.map((f) => ({
+        id: f.id,
+        label: f.label,
+        tag: f.tag || "",
+        hint: f.hint || false,
+        error: this.state.errors[f.id] || false,
+        border: border(f.id),
+        value: vals[f.id] || "",
+        emptyLabel: f.empty || "",
+        placeholder: f.placeholder || "",
+        inputType: f.inputType || "text",
+        autoComplete: f.autoComplete || "off",
+        isSelect: f.type === "select",
+        isRadio: f.type === "radio",
+        isText: f.type === "text",
+        isTextarea: f.type === "textarea",
+        options: (f.options || []).map((o) => ({ v: o })),
+        radios: (f.options || []).map((o) => {
+          const on = vals[f.id] === o;
+          return {
+            v: o,
+            bg: on ? "#C9A24A" : "transparent",
+            fg: on ? "#141210" : "rgba(239,233,220,0.8)",
+            border: on ? "#C9A24A" : "rgba(239,233,220,0.28)",
+            onClick: () => this.set(f.id, o)
+          };
+        }),
+        onChange: (e) => this.set(f.id, e.target.value)
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

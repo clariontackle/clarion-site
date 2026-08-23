@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="icon" href="uploads/IMG_2214-00de7e7b.jpeg">
+<meta name="ext-resource-dependency" content="uploads/fly.jpg" data-resource-id="waterFly">
+<meta name="ext-resource-dependency" content="uploads/AdobeStock_1019134892.jpeg" data-resource-id="waterSalt">
+<meta name="ext-resource-dependency" content="uploads/sailfish.webp" data-resource-id="waterFresh">
+<meta name="ext-resource-dependency" content="uploads/5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG" data-resource-id="proofStrip">
+<meta name="ext-resource-dependency" content="uploads/3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG" data-resource-id="offerAngler">
+<meta name="ext-resource-dependency" content="uploads/220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" data-resource-id="offerCustom">
+<meta name="ext-resource-dependency" content="uploads/5E915BE7-8131-4A74-AF34-6800EFBB39CC.PNG" data-resource-id="offerEngraving">
+<meta name="ext-resource-dependency" content="uploads/14E00E82-DFCB-4D08-8499-A6A866502F88.PNG" data-resource-id="gal1">
+<meta name="ext-resource-dependency" content="uploads/204875B1-944E-41F7-ADEF-BCE547954F56.PNG" data-resource-id="gal2">
+<meta name="ext-resource-dependency" content="uploads/EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG" data-resource-id="gal3">
+<meta name="ext-resource-dependency" content="uploads/image000002.jpeg" data-resource-id="gal4">
+<meta name="ext-resource-dependency" content="uploads/image000003.JPG" data-resource-id="gal5">
+<meta name="ext-resource-dependency" content="uploads/IMG_0001.jpg" data-resource-id="gal6">
+<meta name="ext-resource-dependency" content="uploads/image000004.JPG" data-resource-id="gal7">
+<meta name="ext-resource-dependency" content="uploads/B9B75050-73E3-4CEB-96FE-C5389D7DBD1E.PNG" data-resource-id="gal8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#141210; -webkit-text-size-adjust:100%; overflow-x:clip; }
+  * { box-sizing:border-box; }
+  img, video { max-width:100%; }
+  a { color:#C9A24A; text-decoration:none; }
+  a:hover { color:#E0C27C; }
+  :focus-visible { outline:2px solid #C9A24A; outline-offset:3px; }
+  @keyframes clarionRipple { from { opacity:0.85; transform:translate(-50%,-50%) scale(0.06); } to { opacity:0; transform:translate(-50%,-50%) scale(1); } }
+  @keyframes clarionDrop { 0% { opacity:0; transform:translate(-50%,-50%) scale(0.2); } 35% { opacity:1; } 100% { opacity:0; transform:translate(-50%,-50%) scale(1.9); } }
+  @keyframes clarionPop { from { opacity:0; transform:translateY(22px) scale(0.97); } to { opacity:1; transform:none; } }
+</style>
+</helmet>
+
+<div style="background:#141210; color:#EFE9DC; font-family:Barlow, sans-serif;">
+
+  <header style="position:sticky; top:0; z-index:50; height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 clamp(14px,4vw,56px); background:rgba(20,18,16,0.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(239,233,220,0.10);">
+    <a href="#top" style="display:flex; align-items:center; gap:10px; flex:none; min-width:0;">
+      <img src="uploads/Clarion.png" alt="Clarion Tackle Co." style="height:24px; width:auto; filter:invert(1) brightness(1.6); display:block;">
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.34em; text-transform:uppercase; color:rgba(239,233,220,0.55); padding-top:5px; white-space:nowrap;">Tackle Co.</span>
+      </sc-if>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="flex:1 1 auto; min-width:0; display:flex; align-items:center; gap:clamp(12px,2vw,30px); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; justify-content:center;">
+        <a href="#series" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">What We Build</a>
+        <a href="#custom" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Built For You</a>
+        <a href="#process" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Process</a>
+        <a href="#story" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">About</a>
+        <a href="#about" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Grips</a>
+      </nav>
+    </sc-if>
+    <div style="display:flex; align-items:center; gap:8px; flex:none;">
+      <a href="{{ form }}" style="background:#C9A24A; color:#0A0908; font-size:11px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; padding:12px clamp(12px,2vw,20px); white-space:nowrap;" style-hover="background:#E0C27C">Start Your Build</a>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleNav }}" aria-label="Menu" style="width:44px; height:44px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; background:none; border:1px solid rgba(239,233,220,0.24); cursor:pointer; padding:0;">
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+        </button>
+      </sc-if>
+    </div>
+  </header>
+
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:fixed; top:64px; left:0; right:0; z-index:49; max-height:calc(100vh - 64px); overflow:auto; background:rgba(10,9,8,0.98); border-bottom:1px solid rgba(239,233,220,0.14); display:flex; flex-direction:column; padding:8px 0;">
+      <a href="#series" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">What We Build</a>
+      <a href="#custom" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Built For You</a>
+      <a href="#process" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Process</a>
+      <a href="#story" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">About</a>
+      <a href="#about" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Grips</a>
+    </nav>
+  </sc-if>
+
+  <section id="top" style="position:relative; scroll-margin-top:64px; min-height:min(90vh,900px); display:flex; align-items:flex-end; padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px); background:#0A0908; overflow:hidden;">
+    <video ref="{{ heroVideo }}" src="uploads/stock.mp4" poster="uploads/11D78C60-2538-4D6B-8EC9-031C8BAE0C0E.PNG" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" disableRemotePlayback="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:60% center;"></video>
+    <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.7) 44%, rgba(10,9,8,0.22) 80%, rgba(10,9,8,0.45) 100%);"></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,9,8,0.85) 0%, rgba(10,9,8,0.25) 45%, rgba(10,9,8,0.35) 100%);"></div>
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+      <img src="uploads/IMG_2214-00de7e7b.jpeg" alt="" style="position:absolute; right:clamp(20px,4vw,64px); bottom:clamp(28px,5vw,60px); height:clamp(100px,12vw,170px); width:auto; filter:invert(1); mix-blend-mode:screen; opacity:0.16; pointer-events:none;">
+    </sc-if>
+    <div style="position:relative; width:100%; max-width:1280px; margin:0 auto;">
+      <div style="max-width:900px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:clamp(10px,1.1vw,11px); letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:clamp(18px,2.4vw,26px);">Tampa Bay, Florida</div>
+        <h1 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(46px,9vw,112px); line-height:0.94; margin:0 0 clamp(20px,2.6vw,28px); letter-spacing:-0.005em;">A Clear<br><span style="color:#C9A24A;">Difference.</span></h1>
+        <p style="max-width:44ch; font-size:clamp(16px,1.5vw,20px); line-height:1.62; color:rgba(239,233,220,0.76); margin:0 0 clamp(28px,4vw,40px); font-weight:300; text-wrap:pretty;">Built for The Angler. Custom rods, made to order in Tampa Bay. Every build documented. Nothing on a shelf.</p>
+        <div style="display:flex; align-items:center; gap:clamp(16px,3vw,28px); flex-wrap:wrap;">
+          <a href="{{ form }}" style="background:#C9A24A; color:#0A0908; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:18px clamp(24px,4vw,34px); min-height:52px; display:flex; align-items:center;" style-hover="background:#E0C27C">Start Your Build</a>
+          <a href="#series" style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(239,233,220,0.82); border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;" style-hover="color:#C9A24A">See how we build →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="series" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#EFE9DC; color:#141210;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63; margin-bottom:clamp(24px,3vw,36px);">What We Build</div>
+      <div id="water" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:clamp(12px,1.6vw,20px);">
+        <sc-for list="{{ waters }}" as="w" hint-placeholder-count="3">
+          <div style="position:relative; aspect-ratio:4/5; overflow:hidden; background:#141210;">
+            <div role="img" aria-label="{{ w.name }}" style="position:absolute; inset:0; background-size:cover; background-position:{{ w.pos }}; background-image:url({{ w.img }});"></div>
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,9,8,0.05) 35%, rgba(10,9,8,0.88) 100%);"></div>
+            <div style="position:absolute; left:0; right:0; bottom:0; padding:clamp(18px,2vw,26px); display:flex; flex-direction:column; gap:6px;">
+              <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(24px,3vw,36px); line-height:1; color:#EFE9DC;">{{ w.name }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#C9A24A;">{{ w.note }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin:clamp(56px,7vw,96px) 0 0;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:clamp(20px,2.6vw,30px);">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63;">Gallery</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(20,18,16,0.4);">{{ slideCounter }}</span>
+        </div>
+        <div style="position:relative; width:100%; max-width:560px; margin:0 auto; aspect-ratio:3/4; overflow:hidden; background:#141210;">
+          <sc-for list="{{ slides }}" as="s" hint-placeholder-count="3">
+            <div role="img" style="position:absolute; inset:0; background-size:cover; background-position:center; background-image:{{ s.bg }}; opacity:{{ s.op }}; z-index:{{ s.z }}; transition:opacity 900ms ease;"></div>
+          </sc-for>
+          <div style="position:absolute; inset:0; z-index:4; pointer-events:none; background:linear-gradient(0deg, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 26%);"></div>
+          <button type="button" onClick="{{ prevSlide }}" aria-label="Previous photo" style="position:absolute; z-index:6; left:0; top:0; bottom:0; width:clamp(48px,12%,72px); display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; color:rgba(239,233,220,0.7); font-size:22px; line-height:1; padding:0;" style-hover="color:#C9A24A; background:linear-gradient(90deg, rgba(10,9,8,0.5), rgba(10,9,8,0))">‹</button>
+          <button type="button" onClick="{{ nextSlide }}" aria-label="Next photo" style="position:absolute; z-index:6; right:0; top:0; bottom:0; width:clamp(48px,12%,72px); display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; color:rgba(239,233,220,0.7); font-size:22px; line-height:1; padding:0;" style-hover="color:#C9A24A; background:linear-gradient(270deg, rgba(10,9,8,0.5), rgba(10,9,8,0))">›</button>
+          <div style="position:absolute; left:0; right:0; bottom:18px; z-index:5; display:flex; justify-content:center; gap:10px;">
+            <sc-for list="{{ dots }}" as="d" hint-placeholder-count="3">
+              <button type="button" onClick="{{ d.onClick }}" aria-label="{{ d.label }}" style="width:26px; height:26px; display:flex; align-items:center; justify-content:center; background:none; border:none; padding:0; cursor:pointer;">
+                <span style="display:block; width:9px; height:9px; border-radius:50%; border:1px solid rgba(239,233,220,0.65); background:{{ d.bg }}; transition:background 300ms ease;"></span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="scroll-margin-top:64px; padding:clamp(64px,9vw,140px) clamp(20px,5vw,64px); background:#141210;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(32px,5vw,80px); align-items:center;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:clamp(18px,2.4vw,26px);">Handmade Grips</div>
+          <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(32px,4.6vw,58px); line-height:1.03; margin:0 0 clamp(22px,3vw,30px); text-wrap:balance;">Shaped to <span style="color:#C9A24A;">your hand</span>, not a mold.</h2>
+          <p style="font-size:17px; line-height:1.72; color:rgba(239,233,220,0.72); font-weight:300; max-width:52ch; margin:0 0 20px; text-wrap:pretty;">Factory grips come off a lathe by the thousand — one diameter, one length, one shape for every angler who buys that rod. We turn every Clarion grip by hand.</p>
+          <p style="font-size:17px; line-height:1.72; color:rgba(239,233,220,0.72); font-weight:300; max-width:52ch; margin:0 0 clamp(26px,3.5vw,34px); text-wrap:pretty;">Tell us how you hold a rod and how long you hold it, and the cork gets shaped to that — length, taper, and diameter cut to fit the hand that's actually going to fish it.</p>
+          <a href="{{ form }}" style="display:inline-block; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;">Request a fitted grip →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:stretch;">
+          <img src="uploads/435F997C-74E9-451B-BB37-CBBE8E9E525C.PNG" alt="A hand-turned teak grip" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; background:#0A0908; display:block;">
+          <video ref="{{ gripLatheVideo }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" style="width:100%; aspect-ratio:3/4; object-fit:cover; background:#0A0908; display:block;"></video>
+        </div>
+      </div>
+      <dl style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:clamp(22px,3vw,44px); margin:clamp(48px,6vw,80px) 0 0;">
+        <sc-for list="{{ grips }}" as="g" hint-placeholder-count="4">
+          <div style="border-top:1px solid rgba(239,233,220,0.22); padding:20px 0 0; display:flex; flex-direction:column; gap:10px;">
+            <dt style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#C9A24A;">{{ g.k }}</dt>
+            <dd style="margin:0; font-size:16px; line-height:1.6; color:rgba(239,233,220,0.74); font-weight:300; text-wrap:pretty;">{{ g.v }}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </div>
+  </section>
+
+  <section id="custom" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#EFE9DC; color:#141210;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63; margin-bottom:clamp(24px,3vw,36px);">Built for the Angler</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(28px,4.5vw,68px); align-items:start;">
+        <video ref="{{ gripVideo }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" style="width:100%; aspect-ratio:4/5; object-fit:cover; background:#141210; display:block;"></video>
+        <div style="display:flex; flex-direction:column; gap:clamp(20px,2.6vw,26px);">
+          <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(30px,4.2vw,54px); margin:0; line-height:1.03; text-wrap:balance;">A factory measures the rod. <span style="color:#C9A24A;">We measure you.</span></h2>
+          <p style="font-size:17px; line-height:1.68; color:rgba(20,18,16,0.74); font-weight:300; margin:0; max-width:50ch; text-wrap:pretty;">Before a single component gets ordered, we build a profile of the angler — how you're built, how you fish, and what you're chasing. Those numbers drive every decision on the bench.</p>
+          <dl style="display:grid; grid-template-columns:minmax(0,auto) minmax(0,1fr); gap:0; margin:0; font-family:'IBM Plex Mono',monospace; font-size:clamp(10px,1.1vw,12px); border-top:1px solid rgba(20,18,16,0.16);">
+            <sc-for list="{{ anglerSpecs }}" as="s" hint-placeholder-count="8">
+              <dt style="padding:13px 20px 13px 0; border-bottom:1px solid rgba(20,18,16,0.1); color:#8A7C63; text-transform:uppercase; letter-spacing:0.1em;">{{ s.k }}</dt>
+              <dd style="padding:13px 0; border-bottom:1px solid rgba(20,18,16,0.1); margin:0; text-align:right; color:#141210;">{{ s.v }}</dd>
+            </sc-for>
+          </dl>
+          <p style="font-size:17px; line-height:1.68; color:#141210; margin:0; max-width:50ch; text-wrap:pretty;">Two anglers chasing the same fish in the same water still get two different rods. That's the point.</p>
+          <div style="display:flex; align-items:center; gap:clamp(16px,2.5vw,24px); flex-wrap:wrap;">
+            <a href="{{ form }}" style="background:#141210; color:#EFE9DC; font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 28px; min-height:50px; display:flex; align-items:center;" style-hover="background:#26364E">Start your profile</a>
+            <a href="#process" style="font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#141210; border-bottom:1px solid #C9A24A; padding-bottom:5px;">See the build process →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" style="scroll-margin-top:64px; padding:clamp(64px,9vw,140px) clamp(20px,5vw,64px); background:#0A0908;">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(32px,5.5vw,88px); align-items:center;">
+      <img src="uploads/IMG_0398.jpg" alt="The builder behind Clarion, on the water in the mangroves" loading="lazy" style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; display:block;">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:clamp(18px,2.4vw,26px);">About Clarion</div>
+        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(30px,4.2vw,54px); line-height:1.03; margin:0 0 clamp(22px,3vw,30px); text-wrap:balance;">Built for the angler, <span style="color:#C9A24A;">by the angler.</span></h2>
+        <p style="font-size:17px; line-height:1.74; color:rgba(239,233,220,0.72); font-weight:300; max-width:54ch; margin:0 0 20px; text-wrap:pretty;">I grew up fishing native trout streams in the Appalachian mountains with whatever rod I could afford. One day I fished a buddy's rod, built specifically for the bait I was throwing, and started outfishing myself — same water, same bait, same hands.</p>
+        <p style="font-size:17px; line-height:1.74; color:rgba(239,233,220,0.72); font-weight:300; max-width:54ch; margin:0 0 20px; text-wrap:pretty;">That's when I learned a rod isn't just a stick with guides on it. Every inch of it is a decision, and most of those decisions get made in a hurry, on an assembly line, by someone who's never fished it.</p>
+        <p style="font-size:17px; line-height:1.74; color:rgba(239,233,220,0.72); font-weight:300; max-width:54ch; margin:0 0 20px; text-wrap:pretty;">I started building my own rods in 2018 — dialed to my exact cast, my exact presentation, my exact hands. Not because I wanted a hobby, but because I couldn't ignore how much precision was being skipped just to hit a price point. When a rod is built right, down to the smallest detail, you feel it before you even cast. It becomes an extension of your arm instead of something you're fighting.</p>
+        <p style="font-size:17px; line-height:1.74; color:#EFE9DC; max-width:54ch; margin:0 0 clamp(28px,3.6vw,36px); text-wrap:pretty;">That's the standard every Clarion rod is held to. Built one at a time, by hand, with the same obsessive attention to detail I'd want if I were the one holding it on the water. Because I am.</p>
+        <p style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(21px,2.4vw,30px); line-height:1.15; color:#C9A24A; margin:0 0 clamp(28px,3.6vw,36px); border-left:2px solid #C9A24A; padding-left:20px;">If I won't fish it, I won't build it.</p>
+        <div style="display:flex; flex-direction:column; gap:6px; margin:0 0 clamp(28px,3.6vw,36px);">
+          <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:21px; line-height:1; color:#EFE9DC;">Benjamin D.</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,233,220,0.5);">Founder &amp; builder, Clarion Tackle Co.</span>
+        </div>
+        <a href="{{ form }}" style="display:inline-block; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;">Start your build →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#26364E;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(32px,4.6vw,60px); line-height:1.04; margin:0 0 22px; max-width:16ch; text-wrap:balance;">Three steps. No shortcuts. No surprises.</h2>
+      <p style="font-size:17px; line-height:1.7; color:rgba(239,233,220,0.7); font-weight:300; max-width:56ch; margin:0 0 clamp(36px,5vw,52px); text-wrap:pretty;">Every Clarion order runs the same track, and you know exactly where yours is the whole way through.</p>
+      <ol style="list-style:none; margin:0 0 clamp(32px,4.5vw,44px); padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr)); gap:clamp(28px,3.5vw,52px);">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+          <li style="border-top:1px solid rgba(239,233,220,0.3); padding:22px 0 0; display:flex; flex-direction:column; gap:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C9A24A;">{{ st.n }}</span>
+            <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(21px,2.2vw,27px); line-height:1.06;">{{ st.name }}</span>
+            <p style="margin:0; font-size:16px; line-height:1.66; font-weight:300; color:rgba(239,233,220,0.72); text-wrap:pretty;">{{ st.body }}</p>
+            <dl style="margin:auto 0 0; padding-top:8px; display:grid; grid-template-columns:minmax(0,auto) minmax(0,1fr); gap:8px 16px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;">
+              <dt style="color:rgba(239,233,220,0.45);">Cost</dt>
+              <dd style="margin:0; text-align:right; color:#EFE9DC;">{{ st.cost }}</dd>
+              <dt style="color:rgba(239,233,220,0.45);">Takes</dt>
+              <dd style="margin:0; text-align:right; color:#EFE9DC;">{{ st.time }}</dd>
+            </dl>
+          </li>
+        </sc-for>
+      </ol>
+      <a href="{{ form }}" style="display:inline-block; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;">Start step one →</a>
+    </div>
+  </section>
+
+  <section id="numbers" style="scroll-margin-top:64px; padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px); background:#141210;">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:clamp(28px,3.5vw,52px);">
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+        <div style="border-top:1px solid rgba(239,233,220,0.24); padding:22px 0 0; display:flex; flex-direction:column; gap:12px;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:#C9A24A;">{{ f.k }}</span>
+          <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(26px,3.2vw,40px); line-height:1.02; color:#EFE9DC;">{{ f.v }}</span>
+          <p style="margin:0; font-size:15px; line-height:1.66; font-weight:300; color:rgba(239,233,220,0.66); text-wrap:pretty;">{{ f.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ showProof }}" hint-placeholder-val="{{ true }}">
+    <section style="position:relative; scroll-margin-top:64px; padding:clamp(64px,10vw,140px) clamp(20px,5vw,64px); background:#0A0908; background-image:repeating-linear-gradient(115deg, rgba(201,162,74,0.10) 0 2px, rgba(201,162,74,0) 2px 14px);">
+      <div style="max-width:1280px; margin:0 auto;">
+        <blockquote style="margin:0 auto; max-width:1000px; text-align:center;">
+          <div style="display:flex; justify-content:center; gap:8px; margin:0 0 28px; color:#C9A24A; font-size:22px; letter-spacing:0.1em;">★★★★★</div>
+          <p style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(26px,3.2vw,42px); line-height:1.16; margin:0 0 20px; text-wrap:balance;">“By far the <span style="color:#C9A24A;">most responsive</span> rod I have ever owned.”</p>
+          <p style="font-size:clamp(17px,1.6vw,21px); line-height:1.55; font-weight:300; color:rgba(239,233,220,0.78); max-width:44ch; margin:0 auto 30px; text-wrap:pretty;">Stands up to more than any factory rod. The balance is perfect.</p>
+          <footer style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C9A24A;">Christopher D. — Great Lakes walleye &amp; Florida snook</footer>
+        </blockquote>
+        <div role="img" aria-label="Christopher's Clarion build — walleye, blue and copper wraps, sunset on the pier" style="position:relative; margin:clamp(40px,5vw,64px) auto 0; aspect-ratio:1512/520; min-height:200px; background-color:#0A0908; background-size:cover; background-position:center bottom; background-image:url(uploads/5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG);"></div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="start" style="position:relative; scroll-margin-top:64px; overflow:hidden; padding:clamp(64px,10vw,140px) clamp(20px,5vw,64px); background:#C9A24A; color:#0A0908; text-align:center;">
+    <div style="max-width:900px; margin:0 auto;">
+      <img src="uploads/IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:44px; width:auto; mix-blend-mode:multiply; opacity:0.55; display:block; margin:0 auto 22px;">
+      <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(36px,6vw,80px); line-height:1; margin:0 0 24px; text-wrap:balance;">Tell us what you fish.</h2>
+      <p style="font-size:clamp(16px,1.6vw,18px); line-height:1.66; font-weight:300; max-width:56ch; margin:0 auto clamp(30px,4vw,40px); color:rgba(10,9,8,0.78); text-wrap:pretty;">Every Clarion build starts the same way — a conversation about where you fish, what you're after, and what your last rod got wrong. Fill out the intake and we'll go from there.</p>
+      <a href="{{ form }}" style="background:#0A0908; color:#EFE9DC; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:20px clamp(28px,5vw,44px); min-height:56px; display:inline-flex; align-items:center;" style-hover="background:#141210">Start Your Build</a>
+    </div>
+  </section>
+
+  <template id="__bundler_thumbnail" data-bg-color="#0A0908">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0A0908"></rect><text x="200" y="232" font-family="Anton, Impact, sans-serif" font-size="150" fill="#C9A24A" text-anchor="middle">C</text></svg>
+  </template>
+
+  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:200; background:rgba(10,9,8,0.82); display:flex; align-items:center; justify-content:center; padding:clamp(12px,4vw,48px);">
+      <div style="position:relative; width:min(720px,100%); max-height:92vh; overflow:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); background:#141210; box-shadow:0 40px 120px rgba(0,0,0,0.6); animation:clarionPop 420ms cubic-bezier(0.16,1,0.3,1) both; transition:transform 320ms cubic-bezier(0.16,1,0.3,1), box-shadow 320ms ease;" style-hover="transform:translateY(-6px) scale(1.012); box-shadow:0 52px 140px rgba(0,0,0,0.72)">
+        <sc-if value="{{ showModalImage }}" hint-placeholder-val="{{ true }}">
+          <img src="uploads/220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" alt="" loading="lazy" style="width:100%; height:100%; min-height:200px; object-fit:cover; display:block;">
+        </sc-if>
+        <div style="position:relative; padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; justify-content:center; gap:16px; overflow:hidden;">
+          <div aria-hidden="true" style="position:absolute; inset:0; background-image:url('uploads/c-pattern.png'); background-size:190px; background-repeat:repeat; opacity:0.10; pointer-events:none;"></div>
+          <button type="button" onClick="{{ closeModal }}" aria-label="Close" style="position:absolute; z-index:2; top:12px; right:12px; width:40px; height:40px; border:1px solid rgba(239,233,220,0.35); background:rgba(20,18,16,0.7); color:#EFE9DC; font-size:18px; line-height:1; cursor:pointer;" style-hover="background:#C9A24A; color:#141210; border-color:#C9A24A">✕</button>
+          <sc-if value="{{ modalNotSent }}" hint-placeholder-val="{{ true }}">
+            <div style="position:relative; display:flex; flex-direction:column; gap:18px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Free Download</div>
+              <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(25px,2.8vw,34px); line-height:1.04; margin:0; color:#EFE9DC;">A guide on <span style="color:#C9A24A;">guides.</span></h2>
+              <p style="font-size:16px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:40ch; text-wrap:pretty;">Alconite, SiC, titanium frames, single-foot vs double — what each one actually does to your cast, and how to tell which setup is right for the way you fish.</p>
+              <form onSubmit="{{ submitModal }}" style="display:flex; flex-direction:column; gap:12px;">
+                <input type="email" required="{{ true }}" value="{{ email }}" onChange="{{ onEmail }}" placeholder="Email address" style="background:#0A0908; border:1px solid rgba(239,233,220,0.24); color:#EFE9DC; font-family:Barlow,sans-serif; font-size:16px; padding:16px 18px; width:100%;">
+                <input type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="Phone (optional)" style="background:#0A0908; border:1px solid rgba(239,233,220,0.24); color:#EFE9DC; font-family:Barlow,sans-serif; font-size:16px; padding:16px 18px; width:100%;">
+                <div style="position:relative;">
+                  <sc-if value="{{ splashing }}" hint-placeholder-val="{{ false }}">
+                    <div aria-hidden="true" style="position:absolute; inset:-60px; overflow:hidden; pointer-events:none; z-index:3;">
+                      <div style="position:absolute; left:50%; top:50%; width:340px; height:340px; border-radius:50%; border:2px solid #C9A24A; animation:clarionRipple 720ms ease-out both;"></div>
+                      <div style="position:absolute; left:50%; top:50%; width:340px; height:340px; border-radius:50%; border:2px solid rgba(201,162,74,0.6); animation:clarionRipple 720ms ease-out 120ms both;"></div>
+                      <div style="position:absolute; left:50%; top:50%; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle, rgba(201,162,74,0.32), rgba(201,162,74,0) 62%); animation:clarionDrop 700ms ease-out both;"></div>
+                    </div>
+                  </sc-if>
+                  <button type="submit" style="background:#C9A24A; color:#141210; border:none; font-family:Barlow,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:18px 24px; min-height:54px; cursor:pointer; width:100%;" style-hover="background:#DDB863">Send me the download</button>
+                </div>
+              </form>
+              <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.7; letter-spacing:0.04em; color:rgba(239,233,220,0.42); margin:0;">No spam, no drip campaign. The download, plus finished builds now and then. Unsubscribe any time.</p>
+              <button type="button" onClick="{{ closeModal }}" style="background:none; border:none; color:rgba(239,233,220,0.6); font-family:Barlow,sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; align-self:flex-start; padding:0; text-decoration:underline;" style-hover="color:#C9A24A">No thanks, I'm just looking</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ modalSent }}" hint-placeholder-val="{{ false }}">
+            <div style="position:relative; display:flex; flex-direction:column; gap:18px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Sent</div>
+              <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(27px,3.4vw,42px); line-height:1.02; margin:0; color:#EFE9DC;">Check your inbox.</h2>
+              <p style="font-size:16px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:40ch; text-wrap:pretty;">The download is on its way. Read it, then tell us what you fish — that's where every build starts.</p>
+              <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+                <a href="{{ form }}" onClick="{{ closeModal }}" style="background:#C9A24A; color:#141210; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 28px; min-height:50px; display:inline-flex; align-items:center;" style-hover="background:#DDB863">Start your build</a>
+                <button type="button" onClick="{{ closeModal }}" style="background:none; border:none; color:rgba(239,233,220,0.6); font-family:Barlow,sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; padding:0; text-decoration:underline;" style-hover="color:#C9A24A">Close</button>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <footer style="padding:clamp(48px,6vw,88px) clamp(20px,5vw,64px) 40px; background:#0A0908; border-top:1px solid rgba(239,233,220,0.1);">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:clamp(32px,4vw,48px);">
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div style="display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap;">
+          <img src="uploads/IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:32px; width:auto; filter:invert(1); mix-blend-mode:screen;">
+          <img src="uploads/Clarion.png" alt="Clarion Tackle Co." loading="lazy" style="height:28px; width:auto; filter:invert(1) brightness(1.6); padding-bottom:2px;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(239,233,220,0.5); padding-bottom:4px;">Tackle Co.</span>
+        </div>
+        <p style="font-size:15px; line-height:1.62; color:rgba(239,233,220,0.55); font-weight:300; max-width:34ch; margin:0; text-wrap:pretty;">Made-to-order fishing rods, documented at the bench. Built in Tampa Bay, Florida.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; color:rgba(239,233,220,0.4);">Explore</span>
+        <a href="#series" style="color:rgba(239,233,220,0.75);">What We Build</a>
+        <a href="#custom" style="color:rgba(239,233,220,0.75);">Built For You</a>
+        <a href="#process" style="color:rgba(239,233,220,0.75);">The Process</a>
+        <a href="{{ form }}" style="color:rgba(239,233,220,0.75);">Start Your Build</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; color:rgba(239,233,220,0.4);">Contact</span>
+        <a href="https://www.instagram.com/clarionrods/" style="color:rgba(239,233,220,0.75);">Instagram</a>
+        <a href="mailto:hello@clarionrods.com" style="color:rgba(239,233,220,0.75); text-transform:none; letter-spacing:0.04em;">hello@clarionrods.com</a>
+        <span style="color:rgba(239,233,220,0.45);">Tampa Bay, FL</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showProof&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+const FORM = "Clarion Build Form.dc.html";
+// Paste the same web3forms.com access key you put in the build form. The
+// lead-magnet popup stays switched off entirely until this is set, so no
+// email is ever collected into nothing.
+const ACCESS_KEY = "623c8342-3bf9-41ef-aed3-26963c076915";
+const MODAL_ENDPOINT = ACCESS_KEY ? "https://api.web3forms.com/submit" : "";
+
+class Component extends DCLogic {
+  gripVideo = React.createRef();
+  heroVideo = React.createRef();
+  gripLatheVideo = React.createRef();
+  state = { modalOpen: false, email: "", phone: "", sent: false, slide: 0 };
+
+  componentDidMount() {
+    this.startHero();
+    this.lazyVideos();
+    this.onResize();
+    window.addEventListener("resize", this.onResize);
+    this.armModal();
+    this.startSlides();
+  }
+
+  // iOS/Android only honour autoplay when the element is muted+inline at parse time,
+  // and refuse outright in Low Power Mode — so we also retry on the first touch.
+  startHero() {
+    const v = this.heroVideo.current;
+    if (!v) return;
+    v.muted = true; v.defaultMuted = true; v.volume = 0;
+    v.setAttribute("muted", "");
+    v.setAttribute("playsinline", "");
+    const attempt = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    attempt();
+    v.addEventListener("loadeddata", attempt, { once: true });
+    this._kick = () => { attempt(); };
+    ["touchstart", "pointerdown", "scroll"].forEach((e) =>
+      window.addEventListener(e, this._kick, { once: true, passive: true })
+    );
+  }
+
+  // The two below-fold clips are ~21MB together. Nothing is fetched until they're
+  // near the viewport, and they pause once they scroll away.
+  lazyVideos() {
+    const items = [
+      [this.gripVideo.current, "uploads/Jul-23-2026-1784845032_7618861-1.mp4"],
+      [this.gripLatheVideo.current, "uploads/Aug-13-2026-1786849389_5219331.mp4"]
+    ].filter((x) => x[0]);
+    const start = (v) => {
+      v.muted = true; v.defaultMuted = true; v.volume = 0;
+      if (!v.getAttribute("src")) { v.setAttribute("src", v.dataset.clarionSrc); v.load(); }
+      const p = v.play(); if (p && p.catch) p.catch(() => {});
+    };
+    if (typeof IntersectionObserver === "undefined") { items.forEach(([v, s]) => { v.dataset.clarionSrc = s; start(v); }); return; }
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const v = e.target;
+        if (e.isIntersecting) start(v);
+        else if (!v.paused) v.pause();
+      });
+    }, { rootMargin: "400px 0px" });
+    items.forEach(([v, s]) => { v.dataset.clarionSrc = s; this._io.observe(v); });
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._kick) ["touchstart", "pointerdown", "scroll"].forEach((e) => window.removeEventListener(e, this._kick));
+    clearTimeout(this._t); clearTimeout(this._s); clearTimeout(this._arm); clearInterval(this._slide);
+    window.removeEventListener("resize", this.onResize);
+    document.removeEventListener("mouseout", this.onExitIntent);
+    window.removeEventListener("scroll", this.onScrollDepth);
+  }
+
+  onResize = () => {
+    const w = window.innerWidth;
+    this.setState({ isMobile: w < 1120, isNarrow: w < 700, isWide: w >= 480 });
+  };
+
+  // Exit-intent on desktop, 50% scroll depth on mobile, never inside the first 20s,
+  // once per visitor. Stays disarmed entirely while MODAL_ENDPOINT is empty so no
+  // email is ever collected into nothing.
+  armModal() {
+    if (!MODAL_ENDPOINT) return;
+    let seen = false;
+    try { seen = localStorage.getItem("clarion_queue_modal") === "1"; } catch (e) {}
+    if (seen) return;
+    this._arm = setTimeout(() => {
+      document.addEventListener("mouseout", this.onExitIntent);
+      window.addEventListener("scroll", this.onScrollDepth, { passive: true });
+    }, 20000);
+  }
+  onExitIntent = (e) => {
+    if (window.innerWidth < 1120) return;
+    if (e.relatedTarget || e.clientY > 8) return;
+    this.openModal();
+  };
+  onScrollDepth = () => {
+    if (window.innerWidth >= 1120) return;
+    const d = document.documentElement;
+    if ((window.scrollY + window.innerHeight) / d.scrollHeight >= 0.5) this.openModal();
+  };
+  openModal() {
+    document.removeEventListener("mouseout", this.onExitIntent);
+    window.removeEventListener("scroll", this.onScrollDepth);
+    this.setState({ modalOpen: true });
+  }
+  closeModal = () => {
+    try { localStorage.setItem("clarion_queue_modal", "1"); } catch (e) {}
+    this.setState({ modalOpen: false });
+  };
+  submitModal = (e) => {
+    e.preventDefault();
+    if (!MODAL_ENDPOINT) return;
+    try { localStorage.setItem("clarion_queue_modal", "1"); } catch (e2) {}
+    fetch(MODAL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        subject: "Guide-on-guides download request",
+        from_name: "Clarion Tackle Co. website",
+        email: this.state.email,
+        phone: this.state.phone,
+        source: "Lead magnet — A guide on guides"
+      })
+    }).catch(() => {});
+    this.setState({ splashing: true });
+    this._s = setTimeout(() => this.setState({ splashing: false, sent: true }), 760);
+  };
+
+  startSlides() {
+    clearInterval(this._slide);
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    this._slide = setInterval(() => {
+      this.setState((s) => ({ slide: ((s.slide || 0) + 1) % this.galleryShots().length }));
+    }, 4800);
+  }
+  galleryShots() {
+    return [
+      this.res("offerAngler", "uploads/3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG"),
+      this.res("gal1", "uploads/14E00E82-DFCB-4D08-8499-A6A866502F88.PNG"),
+      this.res("gal2", "uploads/204875B1-944E-41F7-ADEF-BCE547954F56.PNG"),
+      this.res("gal3", "uploads/EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG"),
+      this.res("gal4", "uploads/image000002.jpeg"),
+      this.res("gal5", "uploads/image000003.JPG"),
+      this.res("gal6", "uploads/IMG_0001.jpg"),
+      this.res("offerCustom", "uploads/220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG")
+    ];
+  }
+  goSlide = (i) => { this.setState({ slide: i }); this.startSlides(); };
+  stepSlide = (d) => {
+    const n = this.galleryShots().length;
+    this.setState((s) => ({ slide: (((s.slide || 0) + d) % n + n) % n }));
+    this.startSlides();
+  };
+
+  res(id, fallback) {
+    const r = typeof window !== "undefined" && window.__resources;
+    return (r && r[id]) || fallback;
+  }
+
+  pad(n) { return n < 10 ? "0" + n : String(n); }
+
+  renderVals() {
+    const shots = this.galleryShots();
+    const cur = this.state.slide || 0;
+    return {
+      showProof: this.props.showProof ?? true,
+      form: FORM,
+      isMobile: !!this.state.isMobile,
+      isDesktop: !this.state.isMobile,
+      isWide: this.state.isWide !== false,
+      showModalImage: !this.state.isNarrow,
+      navOpen: !!this.state.navOpen,
+      toggleNav: () => this.setState((s) => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false }),
+      slideCounter: this.pad(cur + 1) + " / " + this.pad(shots.length),
+      prevSlide: () => this.stepSlide(-1),
+      nextSlide: () => this.stepSlide(1),
+      // Only the visible frame and its neighbours are fetched; the rest stay empty
+      // until the carousel reaches them.
+      slides: shots.map((img, i) => {
+        const d = Math.min(Math.abs(i - cur), shots.length - Math.abs(i - cur));
+        const near = d <= 1 || this._seen && this._seen[i];
+        if (near) { this._seen = this._seen || {}; this._seen[i] = true; }
+        return { bg: near ? "url(" + img + ")" : "none", op: cur === i ? 1 : 0, z: cur === i ? 2 : 1 };
+      }),
+      dots: shots.map((img, i) => ({
+        bg: cur === i ? "#C9A24A" : "rgba(239,233,220,0.2)",
+        label: "Show photo " + (i + 1),
+        onClick: () => this.goSlide(i)
+      })),
+      facts: [
+        { k: "Builds start at", v: "$600", body: "That's a real number, not a teaser. Most builds land above it, and I'll tell you where yours sits before you commit to anything." },
+        { k: "Current lead time", v: "12 weeks", body: "I build one rod at a time. Some go quicker — I'd rather tell you twelve and hand it to you in nine." },
+        { k: "Shipping", v: "$50 flat", body: "Hard tube, insured, tracked. Rods 8 feet and over add [OVERSIZE SURCHARGE] for oversize." },
+        { k: "Warranty", v: "Blank backed by its maker", body: "Every blank I build on carries its manufacturer's warranty, registered in your name before it ships. If a blank ever fails, you claim the replacement and I rebuild your rod with your existing components — you cover labor only." }
+      ],
+      reviews: [
+        { stars: "★★★★★", score: "5.0", quote: "By far the most responsive rod I have ever owned.", body: "Stands up to more than any factory rod. The balance is perfect.", who: "Christopher D.", fishes: "Great Lakes walleye & Florida snook", verified: "Verified Clarion build" },
+        { stars: "★★★★☆", score: "4.0", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" },
+        { stars: "★★★★★", score: "4.7", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" },
+        { stars: "★★★★☆", score: "4.5", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" },
+        { stars: "★★★★☆", score: "4.3", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" }
+      ],
+      waters: [
+        { name: "Fresh Water", note: "Streams, rivers, lakes", img: this.res("waterFly", "uploads/fly.jpg"), pos: "center" },
+        { name: "Inshore", note: "Backwater, flats, surf", img: this.res("waterSalt", "uploads/AdobeStock_1019134892.jpeg"), pos: "42% center" },
+        { name: "Offshore", note: "Reef, pelagic", img: this.res("waterFresh", "uploads/sailfish.webp"), pos: "58% center" }
+      ],
+      modalOpen: this.state.modalOpen,
+      modalSent: this.state.sent,
+      modalNotSent: !this.state.sent,
+      splashing: this.state.splashing,
+      email: this.state.email,
+      phone: this.state.phone,
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onPhone: (e) => this.setState({ phone: e.target.value }),
+      closeModal: this.closeModal,
+      submitModal: this.submitModal,
+      anglerSpecs: [
+        { k: "Height & Reach", v: "Sets blank length and butt section" },
+        { k: "Hand Size", v: "Grip diameter and taper" },
+        { k: "Casting Hand", v: "Reel seat and guide orientation" },
+        { k: "Cast Style", v: "Overhead, roll, or one-handed pitch" },
+        { k: "Where You Fish", v: "Flats, surf, mangroves, or offshore" },
+        { k: "Target Species", v: "Power, action, and tip recovery" },
+        { k: "Reel & Line", v: "Balance point and guide train" },
+        { k: "Deck or Wade", v: "Overall length and grip config" }
+      ],
+      gripVideo: this.gripVideo,
+      heroVideo: this.heroVideo,
+      gripLatheVideo: this.gripLatheVideo,
+      grips: [
+        { k: "Material", v: "Flor-grade cork for the all-day rods, teak when you want the boat to notice." },
+        { k: "Shape", v: "Full, split, or reverse-taper, turned to the diameter you actually palm." },
+        { k: "Length", v: "Cut to your forearm and your cast, not to a catalog spec." },
+        { k: "Finish", v: "Hand-sanded and sealed, so it stays tacky after a season in the salt." }
+      ],
+      steps: [
+        { n: "01", name: "Consultation & Spec", body: "You send the intake, I come back within the day. We talk through species, water, your cast, and what your last rod got wrong, and I write the spec sheet — blank, guides, seat, grip, thread.", cost: "No charge", time: "1–3 days" },
+        { n: "02", name: "Quote & Payment", body: "A line-item quote against that spec: components at cost, labor stated plainly, shipping flat. Nothing starts until you've read it and said go.", cost: "Paid in full at approval", time: "Yours to sit on" },
+        { n: "03", name: "Build & Delivery", body: "Your rod goes on the bench alone. Photos at every stage, guides static-tested with your reel, finish cured slow. It ships insured in a hard tube with the build file.", cost: "$50 flat shipping", time: "12 weeks from payment" }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
