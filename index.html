@@ -11,22 +11,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="icon" href="uploads/IMG_2214-00de7e7b.jpeg">
-<meta name="ext-resource-dependency" content="uploads/fly.jpg" data-resource-id="waterFly">
-<meta name="ext-resource-dependency" content="uploads/AdobeStock_1019134892.jpeg" data-resource-id="waterSalt">
-<meta name="ext-resource-dependency" content="uploads/sailfish.webp" data-resource-id="waterFresh">
-<meta name="ext-resource-dependency" content="uploads/5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG" data-resource-id="proofStrip">
-<meta name="ext-resource-dependency" content="uploads/3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG" data-resource-id="offerAngler">
-<meta name="ext-resource-dependency" content="uploads/220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" data-resource-id="offerCustom">
-<meta name="ext-resource-dependency" content="uploads/5E915BE7-8131-4A74-AF34-6800EFBB39CC.PNG" data-resource-id="offerEngraving">
-<meta name="ext-resource-dependency" content="uploads/14E00E82-DFCB-4D08-8499-A6A866502F88.PNG" data-resource-id="gal1">
-<meta name="ext-resource-dependency" content="uploads/204875B1-944E-41F7-ADEF-BCE547954F56.PNG" data-resource-id="gal2">
-<meta name="ext-resource-dependency" content="uploads/EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG" data-resource-id="gal3">
-<meta name="ext-resource-dependency" content="uploads/image000002.jpeg" data-resource-id="gal4">
-<meta name="ext-resource-dependency" content="uploads/image000003.JPG" data-resource-id="gal5">
-<meta name="ext-resource-dependency" content="uploads/IMG_0001.jpg" data-resource-id="gal6">
-<meta name="ext-resource-dependency" content="uploads/image000004.JPG" data-resource-id="gal7">
-<meta name="ext-resource-dependency" content="uploads/B9B75050-73E3-4CEB-96FE-C5389D7DBD1E.PNG" data-resource-id="gal8">
+<link rel="icon" href="IMG_2214-00de7e7b.jpeg">
+<meta name="ext-resource-dependency" content="fly.jpg" data-resource-id="waterFly">
+<meta name="ext-resource-dependency" content="AdobeStock_1019134892.jpeg" data-resource-id="waterSalt">
+<meta name="ext-resource-dependency" content="sailfish.webp" data-resource-id="waterFresh">
+<meta name="ext-resource-dependency" content="5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG" data-resource-id="proofStrip">
+<meta name="ext-resource-dependency" content="3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG" data-resource-id="offerAngler">
+<meta name="ext-resource-dependency" content="220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" data-resource-id="offerCustom">
+<meta name="ext-resource-dependency" content="5E915BE7-8131-4A74-AF34-6800EFBB39CC.PNG" data-resource-id="offerEngraving">
+<meta name="ext-resource-dependency" content="14E00E82-DFCB-4D08-8499-A6A866502F88.PNG" data-resource-id="gal1">
+<meta name="ext-resource-dependency" content="204875B1-944E-41F7-ADEF-BCE547954F56.PNG" data-resource-id="gal2">
+<meta name="ext-resource-dependency" content="EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG" data-resource-id="gal3">
+<meta name="ext-resource-dependency" content="image000002.jpeg" data-resource-id="gal4">
+<meta name="ext-resource-dependency" content="image000003.JPG" data-resource-id="gal5">
+<meta name="ext-resource-dependency" content="IMG_0001.jpg" data-resource-id="gal6">
+<meta name="ext-resource-dependency" content="image000004.JPG" data-resource-id="gal7">
+<meta name="ext-resource-dependency" content="B9B75050-73E3-4CEB-96FE-C5389D7DBD1E.PNG" data-resource-id="gal8">
 <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
   html, body { margin:0; padding:0; background:#141210; -webkit-text-size-adjust:100%; overflow-x:clip; }
@@ -45,7 +45,7 @@
 
   <header style="position:sticky; top:0; z-index:50; height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 clamp(14px,4vw,56px); background:rgba(20,18,16,0.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(239,233,220,0.10);">
     <a href="#top" style="display:flex; align-items:center; gap:10px; flex:none; min-width:0;">
-      <img src="uploads/Clarion.png" alt="Clarion Tackle Co." style="height:24px; width:auto; filter:invert(1) brightness(1.6); display:block;">
+      <img src="Clarion.png" alt="Clarion Tackle Co." style="height:24px; width:auto; filter:invert(1) brightness(1.6); display:block;">
       <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
         <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.34em; text-transform:uppercase; color:rgba(239,233,220,0.55); padding-top:5px; white-space:nowrap;">Tackle Co.</span>
       </sc-if>
@@ -82,11 +82,11 @@
   </sc-if>
 
   <section id="top" style="position:relative; scroll-margin-top:64px; min-height:min(90vh,900px); display:flex; align-items:flex-end; padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px); background:#0A0908; overflow:hidden;">
-    <video ref="{{ heroVideo }}" src="uploads/stock.mp4" poster="uploads/11D78C60-2538-4D6B-8EC9-031C8BAE0C0E.PNG" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" disableRemotePlayback="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:60% center;"></video>
+    <video ref="{{ heroVideo }}" src="stock.mp4" poster="11D78C60-2538-4D6B-8EC9-031C8BAE0C0E.PNG" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" disableRemotePlayback="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:60% center;"></video>
     <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.7) 44%, rgba(10,9,8,0.22) 80%, rgba(10,9,8,0.45) 100%);"></div>
     <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,9,8,0.85) 0%, rgba(10,9,8,0.25) 45%, rgba(10,9,8,0.35) 100%);"></div>
     <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
-      <img src="uploads/IMG_2214-00de7e7b.jpeg" alt="" style="position:absolute; right:clamp(20px,4vw,64px); bottom:clamp(28px,5vw,60px); height:clamp(100px,12vw,170px); width:auto; filter:invert(1); mix-blend-mode:screen; opacity:0.16; pointer-events:none;">
+      <img src="IMG_2214-00de7e7b.jpeg" alt="" style="position:absolute; right:clamp(20px,4vw,64px); bottom:clamp(28px,5vw,60px); height:clamp(100px,12vw,170px); width:auto; filter:invert(1); mix-blend-mode:screen; opacity:0.16; pointer-events:none;">
     </sc-if>
     <div style="position:relative; width:100%; max-width:1280px; margin:0 auto;">
       <div style="max-width:900px;">
@@ -152,7 +152,7 @@
           <a href="{{ form }}" style="display:inline-block; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;">Request a fitted grip →</a>
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:stretch;">
-          <img src="uploads/435F997C-74E9-451B-BB37-CBBE8E9E525C.PNG" alt="A hand-turned teak grip" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; background:#0A0908; display:block;">
+          <img src="435F997C-74E9-451B-BB37-CBBE8E9E525C.PNG" alt="A hand-turned teak grip" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; background:#0A0908; display:block;">
           <video ref="{{ gripLatheVideo }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" style="width:100%; aspect-ratio:3/4; object-fit:cover; background:#0A0908; display:block;"></video>
         </div>
       </div>
@@ -193,7 +193,7 @@
 
   <section id="story" style="scroll-margin-top:64px; padding:clamp(64px,9vw,140px) clamp(20px,5vw,64px); background:#0A0908;">
     <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(32px,5.5vw,88px); align-items:center;">
-      <img src="uploads/IMG_0398.jpg" alt="The builder behind Clarion, on the water in the mangroves" loading="lazy" style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; display:block;">
+      <img src="IMG_0398.jpg" alt="The builder behind Clarion, on the water in the mangroves" loading="lazy" style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; display:block;">
       <div>
         <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:clamp(18px,2.4vw,26px);">About Clarion</div>
         <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(30px,4.2vw,54px); line-height:1.03; margin:0 0 clamp(22px,3vw,30px); text-wrap:balance;">Built for the angler, <span style="color:#C9A24A;">by the angler.</span></h2>
@@ -255,14 +255,14 @@
           <p style="font-size:clamp(17px,1.6vw,21px); line-height:1.55; font-weight:300; color:rgba(239,233,220,0.78); max-width:44ch; margin:0 auto 30px; text-wrap:pretty;">Stands up to more than any factory rod. The balance is perfect.</p>
           <footer style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C9A24A;">Christopher D. — Great Lakes walleye &amp; Florida snook</footer>
         </blockquote>
-        <div role="img" aria-label="Christopher's Clarion build — walleye, blue and copper wraps, sunset on the pier" style="position:relative; margin:clamp(40px,5vw,64px) auto 0; aspect-ratio:1512/520; min-height:200px; background-color:#0A0908; background-size:cover; background-position:center bottom; background-image:url(uploads/5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG);"></div>
+        <div role="img" aria-label="Christopher's Clarion build — walleye, blue and copper wraps, sunset on the pier" style="position:relative; margin:clamp(40px,5vw,64px) auto 0; aspect-ratio:1512/520; min-height:200px; background-color:#0A0908; background-size:cover; background-position:center bottom; background-image:url(5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG);"></div>
       </div>
     </section>
   </sc-if>
 
   <section id="start" style="position:relative; scroll-margin-top:64px; overflow:hidden; padding:clamp(64px,10vw,140px) clamp(20px,5vw,64px); background:#C9A24A; color:#0A0908; text-align:center;">
     <div style="max-width:900px; margin:0 auto;">
-      <img src="uploads/IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:44px; width:auto; mix-blend-mode:multiply; opacity:0.55; display:block; margin:0 auto 22px;">
+      <img src="IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:44px; width:auto; mix-blend-mode:multiply; opacity:0.55; display:block; margin:0 auto 22px;">
       <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(36px,6vw,80px); line-height:1; margin:0 0 24px; text-wrap:balance;">Tell us what you fish.</h2>
       <p style="font-size:clamp(16px,1.6vw,18px); line-height:1.66; font-weight:300; max-width:56ch; margin:0 auto clamp(30px,4vw,40px); color:rgba(10,9,8,0.78); text-wrap:pretty;">Every Clarion build starts the same way — a conversation about where you fish, what you're after, and what your last rod got wrong. Fill out the intake and we'll go from there.</p>
       <a href="{{ form }}" style="background:#0A0908; color:#EFE9DC; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:20px clamp(28px,5vw,44px); min-height:56px; display:inline-flex; align-items:center;" style-hover="background:#141210">Start Your Build</a>
@@ -277,10 +277,10 @@
     <div style="position:fixed; inset:0; z-index:200; background:rgba(10,9,8,0.82); display:flex; align-items:center; justify-content:center; padding:clamp(12px,4vw,48px);">
       <div style="position:relative; width:min(720px,100%); max-height:92vh; overflow:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); background:#141210; box-shadow:0 40px 120px rgba(0,0,0,0.6); animation:clarionPop 420ms cubic-bezier(0.16,1,0.3,1) both; transition:transform 320ms cubic-bezier(0.16,1,0.3,1), box-shadow 320ms ease;" style-hover="transform:translateY(-6px) scale(1.012); box-shadow:0 52px 140px rgba(0,0,0,0.72)">
         <sc-if value="{{ showModalImage }}" hint-placeholder-val="{{ true }}">
-          <img src="uploads/220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" alt="" loading="lazy" style="width:100%; height:100%; min-height:200px; object-fit:cover; display:block;">
+          <img src="220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" alt="" loading="lazy" style="width:100%; height:100%; min-height:200px; object-fit:cover; display:block;">
         </sc-if>
         <div style="position:relative; padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; justify-content:center; gap:16px; overflow:hidden;">
-          <div aria-hidden="true" style="position:absolute; inset:0; background-image:url('uploads/c-pattern.png'); background-size:190px; background-repeat:repeat; opacity:0.10; pointer-events:none;"></div>
+          <div aria-hidden="true" style="position:absolute; inset:0; background-image:url('c-pattern.png'); background-size:190px; background-repeat:repeat; opacity:0.10; pointer-events:none;"></div>
           <button type="button" onClick="{{ closeModal }}" aria-label="Close" style="position:absolute; z-index:2; top:12px; right:12px; width:40px; height:40px; border:1px solid rgba(239,233,220,0.35); background:rgba(20,18,16,0.7); color:#EFE9DC; font-size:18px; line-height:1; cursor:pointer;" style-hover="background:#C9A24A; color:#141210; border-color:#C9A24A">✕</button>
           <sc-if value="{{ modalNotSent }}" hint-placeholder-val="{{ true }}">
             <div style="position:relative; display:flex; flex-direction:column; gap:18px;">
@@ -325,8 +325,8 @@
     <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:clamp(32px,4vw,48px);">
       <div style="display:flex; flex-direction:column; gap:18px;">
         <div style="display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap;">
-          <img src="uploads/IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:32px; width:auto; filter:invert(1); mix-blend-mode:screen;">
-          <img src="uploads/Clarion.png" alt="Clarion Tackle Co." loading="lazy" style="height:28px; width:auto; filter:invert(1) brightness(1.6); padding-bottom:2px;">
+          <img src="IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:32px; width:auto; filter:invert(1); mix-blend-mode:screen;">
+          <img src="Clarion.png" alt="Clarion Tackle Co." loading="lazy" style="height:28px; width:auto; filter:invert(1) brightness(1.6); padding-bottom:2px;">
           <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(239,233,220,0.5); padding-bottom:4px;">Tackle Co.</span>
         </div>
         <p style="font-size:15px; line-height:1.62; color:rgba(239,233,220,0.55); font-weight:300; max-width:34ch; margin:0; text-wrap:pretty;">Made-to-order fishing rods, documented at the bench. Built in Tampa Bay, Florida.</p>
@@ -393,8 +393,8 @@ class Component extends DCLogic {
   // near the viewport, and they pause once they scroll away.
   lazyVideos() {
     const items = [
-      [this.gripVideo.current, "uploads/Jul-23-2026-1784845032_7618861-1.mp4"],
-      [this.gripLatheVideo.current, "uploads/Aug-13-2026-1786849389_5219331.mp4"]
+      [this.gripVideo.current, "Jul-23-2026-1784845032_7618861-1.mp4"],
+      [this.gripLatheVideo.current, "Aug-13-2026-1786849389_5219331.mp4"]
     ].filter((x) => x[0]);
     const start = (v) => {
       v.muted = true; v.defaultMuted = true; v.volume = 0;
@@ -487,14 +487,14 @@ class Component extends DCLogic {
   }
   galleryShots() {
     return [
-      this.res("offerAngler", "uploads/3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG"),
-      this.res("gal1", "uploads/14E00E82-DFCB-4D08-8499-A6A866502F88.PNG"),
-      this.res("gal2", "uploads/204875B1-944E-41F7-ADEF-BCE547954F56.PNG"),
-      this.res("gal3", "uploads/EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG"),
-      this.res("gal4", "uploads/image000002.jpeg"),
-      this.res("gal5", "uploads/image000003.JPG"),
-      this.res("gal6", "uploads/IMG_0001.jpg"),
-      this.res("offerCustom", "uploads/220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG")
+      this.res("offerAngler", "3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG"),
+      this.res("gal1", "14E00E82-DFCB-4D08-8499-A6A866502F88.PNG"),
+      this.res("gal2", "204875B1-944E-41F7-ADEF-BCE547954F56.PNG"),
+      this.res("gal3", "EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG"),
+      this.res("gal4", "image000002.jpeg"),
+      this.res("gal5", "image000003.JPG"),
+      this.res("gal6", "IMG_0001.jpg"),
+      this.res("offerCustom", "220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG")
     ];
   }
   goSlide = (i) => { this.setState({ slide: i }); this.startSlides(); };
@@ -554,9 +554,9 @@ class Component extends DCLogic {
         { stars: "★★★★☆", score: "4.3", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" }
       ],
       waters: [
-        { name: "Fresh Water", note: "Streams, rivers, lakes", img: this.res("waterFly", "uploads/fly.jpg"), pos: "center" },
-        { name: "Inshore", note: "Backwater, flats, surf", img: this.res("waterSalt", "uploads/AdobeStock_1019134892.jpeg"), pos: "42% center" },
-        { name: "Offshore", note: "Reef, pelagic", img: this.res("waterFresh", "uploads/sailfish.webp"), pos: "58% center" }
+        { name: "Fresh Water", note: "Streams, rivers, lakes", img: this.res("waterFly", "fly.jpg"), pos: "center" },
+        { name: "Inshore", note: "Backwater, flats, surf", img: this.res("waterSalt", "AdobeStock_1019134892.jpeg"), pos: "42% center" },
+        { name: "Offshore", note: "Reef, pelagic", img: this.res("waterFresh", "sailfish.webp"), pos: "58% center" }
       ],
       modalOpen: this.state.modalOpen,
       modalSent: this.state.sent,
