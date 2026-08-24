@@ -303,6 +303,11 @@
               <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Free Download</div>
               <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(25px,2.8vw,34px); line-height:1.04; margin:0; color:#EFE9DC;">A guide on <span style="color:#C9A24A;">guides.</span></h2>
               <p style="font-size:16px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:40ch; text-wrap:pretty;">Alconite, SiC, titanium frames, single-foot vs double — what each one actually does to your cast, and how to tell which setup is right for the way you fish.</p>
+              <div style="display:flex; flex-wrap:wrap; gap:6px 18px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.5);">
+                <span>11 pages</span>
+                <span>Manufacturer spec tables</span>
+                <span>No brand placement</span>
+              </div>
               <form onSubmit="{{ submitModal }}" style="display:flex; flex-direction:column; gap:12px;">
                 <input type="email" required="{{ true }}" value="{{ email }}" onChange="{{ onEmail }}" placeholder="Email address" style="background:#0A0908; border:1px solid rgba(239,233,220,0.24); color:#EFE9DC; font-family:Barlow,sans-serif; font-size:16px; padding:16px 18px; width:100%;">
                 <input type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="Phone (optional)" style="background:#0A0908; border:1px solid rgba(239,233,220,0.24); color:#EFE9DC; font-family:Barlow,sans-serif; font-size:16px; padding:16px 18px; width:100%;">
@@ -314,22 +319,24 @@
                       <div style="position:absolute; left:50%; top:50%; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle, rgba(201,162,74,0.32), rgba(201,162,74,0) 62%); animation:clarionDrop 700ms ease-out both;"></div>
                     </div>
                   </sc-if>
-                  <button type="submit" style="background:#C9A24A; color:#141210; border:none; font-family:Barlow,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:18px 24px; min-height:54px; cursor:pointer; width:100%;" style-hover="background:#DDB863">Send me the download</button>
+                  <button type="submit" style="background:#C9A24A; color:#141210; border:none; font-family:Barlow,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:18px 24px; min-height:54px; cursor:pointer; width:100%;" style-hover="background:#DDB863">Get the guide</button>
                 </div>
               </form>
               <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.7; letter-spacing:0.04em; color:rgba(239,233,220,0.42); margin:0;">No spam, no drip campaign. The download, plus finished builds now and then. Unsubscribe any time.</p>
+              <a href="a-guide-on-guides.pdf" download="" target="_blank" rel="noopener" onClick="{{ skipToDownload }}" style="font-family:Barlow,sans-serif; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239,233,220,0.5); text-decoration:underline;" style-hover="color:#C9A24A">Or just read it — no email</a>
               <button type="button" onClick="{{ closeModal }}" style="background:none; border:none; color:rgba(239,233,220,0.6); font-family:Barlow,sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; align-self:flex-start; padding:0; text-decoration:underline;" style-hover="color:#C9A24A">No thanks, I'm just looking</button>
             </div>
           </sc-if>
           <sc-if value="{{ modalSent }}" hint-placeholder-val="{{ false }}">
             <div style="position:relative; display:flex; flex-direction:column; gap:18px;">
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Sent</div>
-              <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(27px,3.4vw,42px); line-height:1.02; margin:0; color:#EFE9DC;">Check your inbox.</h2>
-              <p style="font-size:16px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:40ch; text-wrap:pretty;">The download is on its way. Read it, then tell us what you fish — that's where every build starts.</p>
-              <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
-                <a href="{{ form }}" onClick="{{ closeModal }}" style="background:#C9A24A; color:#141210; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 28px; min-height:50px; display:inline-flex; align-items:center;" style-hover="background:#DDB863">Start your build</a>
-                <button type="button" onClick="{{ closeModal }}" style="background:none; border:none; color:rgba(239,233,220,0.6); font-family:Barlow,sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; padding:0; text-decoration:underline;" style-hover="color:#C9A24A">Close</button>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Ready</div>
+              <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(27px,3.4vw,42px); line-height:1.02; margin:0; color:#EFE9DC;">Here it is.</h2>
+              <p style="font-size:16px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:40ch; text-wrap:pretty;">Eleven pages on rings, frames, and guide trains — with Fuji's own published numbers, not marketing copy. Yours to keep.</p>
+              <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
+                <a href="a-guide-on-guides.pdf" download="" target="_blank" rel="noopener" style="background:#C9A24A; color:#141210; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 28px; min-height:50px; display:inline-flex; align-items:center; gap:10px;" style-hover="background:#DDB863">Download the guide <span aria-hidden="true">↓</span></a>
+                <a href="{{ form }}" onClick="{{ closeModal }}" style="border:1px solid rgba(239,233,220,0.3); color:#EFE9DC; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 26px; min-height:50px; display:inline-flex; align-items:center;" style-hover="border-color:#C9A24A; color:#C9A24A">Start your build</a>
               </div>
+              <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.7; letter-spacing:0.04em; color:rgba(239,233,220,0.42); margin:0;">PDF, 1 MB. Downloads straight to your device — no confirmation email to wait on.</p>
             </div>
           </sc-if>
         </div>
@@ -470,6 +477,13 @@ class Component extends DCLogic {
     window.removeEventListener("scroll", this.onScrollDepth);
     this.setState({ modalOpen: true });
   }
+  // Gate is soft on purpose: someone who won't trade an email still reads the
+  // guide, and the modal is marked seen so it never nags them again.
+  skipToDownload = () => {
+    try { localStorage.setItem("clarion_modal_seen", "1"); } catch (e) {}
+    this.setState({ modalOpen: false });
+  };
+
   closeModal = () => {
     try { localStorage.setItem("clarion_queue_modal", "1"); } catch (e) {}
     this.setState({ modalOpen: false });
@@ -483,7 +497,7 @@ class Component extends DCLogic {
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
         access_key: ACCESS_KEY,
-        subject: "Guide-on-guides download request",
+        subject: "Guide-on-guides download — new lead",
         from_name: "Clarion Tackle Co. website",
         email: this.state.email,
         phone: this.state.phone,
@@ -583,6 +597,7 @@ class Component extends DCLogic {
       onEmail: (e) => this.setState({ email: e.target.value }),
       onPhone: (e) => this.setState({ phone: e.target.value }),
       closeModal: this.closeModal,
+      skipToDownload: this.skipToDownload,
       submitModal: this.submitModal,
       anglerSpecs: [
         { k: "Height & Reach", v: "Sets blank length and butt section" },
