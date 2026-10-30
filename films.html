@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="icon" href="IMG_2214-00de7e7b.jpeg">
+<title>Clarion Outdoor Films × Wilson's Reel Adventures</title>
+<meta name="description" content="Official photo and film partner of Wilson's Reel Adventures. Edited photos, social highlights and cinematic films of your charter. Packages from $250 — book with Wilson's.">
+<meta name="ext-resource-dependency" content="wilsons-logo.png" data-resource-id="wilsonsLogo">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clarion Outdoor Films">
+<meta property="og:title" content="Clarion Outdoor Films × Wilson's Reel Adventures">
+<meta property="og:description" content="Your charter, shot like a film. Photo and film packages for Wilson's Reel Adventures trips, from $250.">
+<meta property="og:image" content="https://i.ytimg.com/vi/06mDUNvE9yQ/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#0A0908; -webkit-text-size-adjust:100%; overflow-x:clip; }
+  * { box-sizing:border-box; }
+  img { max-width:100%; }
+  a { color:#C9A24A; text-decoration:none; }
+  a:hover { color:#E0C27C; }
+  :focus-visible { outline:2px solid #C9A24A; outline-offset:3px; }
+  input::placeholder, textarea::placeholder { color:rgba(239,233,220,0.4); }
+  @keyframes clarionPop { from { opacity:0; transform:translateY(22px) scale(0.97); } to { opacity:1; transform:none; } }
+  @keyframes clarionRise { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:none; } }
+</style>
+</helmet>
+
+<div style="background:#0A0908; color:#EFE9DC; font-family:Barlow, sans-serif;">
+
+  <header style="position:fixed; top:0; left:0; right:0; z-index:50; height:68px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 clamp(16px,4vw,56px); background:{{ headerBg }}; border-bottom:1px solid {{ headerLine }}; backdrop-filter:blur(14px); transition:background 300ms ease, border-color 300ms ease;">
+    <a href="#top" style="display:flex; align-items:center; gap:12px; flex:none; min-width:0;">
+      <img src="Clarion.png" alt="Clarion" style="height:24px; width:auto; filter:invert(1) brightness(1.6); display:block;">
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.34em; text-transform:uppercase; color:rgba(239,233,220,0.7); padding-top:5px; white-space:nowrap;">Outdoor Films</span>
+      </sc-if>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="flex:1 1 auto; min-width:0; display:flex; align-items:center; justify-content:center; gap:clamp(16px,2.4vw,36px);">
+        <button type="button" onClick="{{ watchFilm }}" style="background:none; border:none; padding:0; cursor:pointer; font-family:Barlow,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.88);" style-hover="color:#C9A24A">The Film</button>
+        <a href="#packages" style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.88); white-space:nowrap;" style-hover="color:#C9A24A">Packages</a>
+        <a href="#how" style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.88); white-space:nowrap;" style-hover="color:#C9A24A">How It Works</a>
+        <a href="index.html" style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.88); white-space:nowrap;" style-hover="color:#C9A24A">Clarion Tackle</a>
+      </nav>
+    </sc-if>
+    <div style="display:flex; align-items:center; gap:8px; flex:none;">
+      <a href="https://www.wilsonsreeladventures.com/#book" style="background:#C9A24A; color:#0A0908; font-size:11px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; padding:13px clamp(14px,2vw,22px); white-space:nowrap;" style-hover="background:#E0C27C; color:#0A0908">Book Your Charter</a>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleNav }}" aria-label="Menu" style="width:44px; height:44px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; background:rgba(10,9,8,0.4); border:1px solid rgba(239,233,220,0.32); cursor:pointer; padding:0;">
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+        </button>
+      </sc-if>
+    </div>
+  </header>
+
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:fixed; top:68px; left:0; right:0; z-index:49; max-height:calc(100svh - 68px); overflow:auto; background:rgba(10,9,8,0.98); border-bottom:1px solid rgba(239,233,220,0.14); display:flex; flex-direction:column; padding:8px 0;">
+      <button type="button" onClick="{{ watchFilm }}" style="text-align:left; background:none; border:none; cursor:pointer; padding:16px clamp(20px,5vw,56px); font-family:Barlow,sans-serif; font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:#C9A24A;">▶&#160;&#160;Watch The Film</button>
+      <a href="#packages" onClick="{{ closeNav }}" style="padding:16px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.85);">Packages</a>
+      <a href="#how" onClick="{{ closeNav }}" style="padding:16px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.85);">How It Works</a>
+      <a href="https://www.wilsonsreeladventures.com/#book" onClick="{{ closeNav }}" style="padding:16px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.85);">Book Your Charter</a>
+      <a href="index.html" onClick="{{ closeNav }}" style="padding:16px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.85);">Clarion Tackle</a>
+    </nav>
+  </sc-if>
+
+  <section id="top" ref="{{ heroRef }}" data-screen-label="Hero" style="position:relative; height:100svh; min-height:620px; max-height:1080px; overflow:hidden; background:#0A0908; display:flex; align-items:flex-end;">
+    <div aria-hidden="true" style="position:absolute; inset:0; background-color:#0A0908; background-image:url(https://i.ytimg.com/vi/06mDUNvE9yQ/hq2.jpg); background-size:cover; background-position:center; transform:scale(1.4); filter:blur(8px) brightness(0.8);"></div>
+    <sc-if value="{{ bgEnabled }}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none; opacity:{{ bgOpacity }}; transition:opacity 1400ms ease;">
+        <iframe src="https://www.youtube.com/embed/06mDUNvE9yQ?autoplay=1&amp;mute=1&amp;start=6&amp;loop=1&amp;playlist=06mDUNvE9yQ&amp;controls=0&amp;playsinline=1&amp;rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0" title="Clarion Outdoor Films reel (background)" tabIndex="-1" frameBorder="0" allow="autoplay; encrypted-media" referrerPolicy="strict-origin-when-cross-origin" onLoad="{{ onBgLoad }}" style="position:absolute; top:50%; left:50%; width:{{ bgW }}; height:{{ bgH }}; transform:translate(-50%,-50%); border:0; pointer-events:none;"></iframe>
+      </div>
+    </sc-if>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,9,8,0.72) 0%, rgba(10,9,8,0.12) 20%, rgba(10,9,8,0.3) 40%, rgba(10,9,8,0.72) 66%, rgba(10,9,8,0.97) 100%);"></div>
+    <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,9,8,0.6) 0%, rgba(10,9,8,0) 62%);"></div>
+
+    <div style="position:relative; width:100%; max-width:1360px; margin:0 auto; padding:0 clamp(20px,5vw,64px) clamp(44px,7vw,88px);">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:clamp(9.5px,1vw,11px); letter-spacing:0.3em; text-transform:uppercase; color:#E0C27C; margin-bottom:clamp(16px,2.2vw,24px); animation:clarionRise 900ms 120ms ease both;">Clarion Outdoor Films <span style="color:rgba(239,233,220,0.55);">×</span> Wilson's Reel Adventures</div>
+      <h1 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(54px,11vw,176px); line-height:0.86; letter-spacing:-0.01em; margin:0 0 clamp(20px,2.6vw,30px); animation:clarionRise 1000ms 220ms ease both;">Your charter.<br><span style="color:#C9A24A;">Shot like a film.</span></h1>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:clamp(22px,4vw,48px); flex-wrap:wrap; animation:clarionRise 1000ms 380ms ease both;">
+        <div style="display:flex; flex-direction:column; gap:clamp(22px,3vw,30px); max-width:560px;">
+          <p style="font-size:clamp(16px,1.6vw,21px); line-height:1.55; font-weight:400; color:rgba(239,233,220,0.92); margin:0; text-wrap:pretty;">Photo and film for your Wilson's Reel Adventures charter. You fish — we shoot it. You go home with the whole trip on camera.</p>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <button type="button" onClick="{{ watchFilm }}" style="display:flex; align-items:center; gap:14px; background:#EFE9DC; color:#0A0908; border:none; cursor:pointer; font-family:Barlow,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(22px,3vw,30px) 0 8px; min-height:56px;" style-hover="background:#FFFFFF">
+              <span style="width:40px; height:40px; flex:none; display:flex; align-items:center; justify-content:center; background:#0A0908; color:#EFE9DC; font-size:12px; padding-left:3px;">▶</span>
+              Watch the film
+            </button>
+            <a href="#packages" style="display:flex; align-items:center; background:rgba(10,9,8,0.35); color:#EFE9DC; border:1px solid rgba(239,233,220,0.5); font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(22px,3vw,30px); min-height:56px; backdrop-filter:blur(6px);" style-hover="border-color:#C9A24A; color:#C9A24A">See packages</a>
+          </div>
+        </div>
+        <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px; text-align:right;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(239,233,220,0.7);">Packages from</div>
+            <div style="font-family:Anton,sans-serif; font-size:clamp(38px,4.4vw,58px); line-height:1; color:#EFE9DC;">$250</div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:#C9A24A; color:#0A0908; padding:13px clamp(20px,5vw,64px);">
+    <div style="max-width:1360px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:500; line-height:1.6; letter-spacing:0.22em; text-transform:uppercase; text-align:center;">
+      <span aria-hidden="true" style="flex:none;">✓</span>
+      <span>Official film partner of Wilson's Reel Adventures</span>
+    </div>
+  </div>
+
+  <section data-screen-label="Partnership" style="padding:clamp(64px,9vw,128px) clamp(20px,5vw,64px); background:#0A0908;">
+    <div style="max-width:1100px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:clamp(34px,4.4vw,52px); text-align:center;">
+      <div style="display:flex; align-items:center; justify-content:center; gap:clamp(22px,5vw,56px); flex-wrap:wrap;">
+        <img src="IMG_2214-00de7e7b.jpeg" alt="Clarion" style="height:clamp(58px,8vw,92px); width:auto; filter:invert(1); mix-blend-mode:screen; display:block;">
+        <span aria-hidden="true" style="font-family:Anton,sans-serif; font-size:clamp(22px,3vw,34px); color:#C9A24A;">×</span>
+        <img src="wilsons-logo.png" alt="Wilson's Reel Adventures" style="height:clamp(70px,10vw,116px); width:auto; display:block;">
+      </div>
+      <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(30px,5.2vw,72px); line-height:0.98; letter-spacing:-0.005em; margin:0; max-width:18ch; text-wrap:balance;">A cinematic experience <span style="color:#C9A24A;">time won't forget.</span></h2>
+      <p style="max-width:52ch; font-size:clamp(16px,1.5vw,19px); line-height:1.62; font-weight:300; color:rgba(239,233,220,0.78); margin:0; text-wrap:pretty;">Clarion Outdoor Films has teamed up with Wilson's Reel Adventures to put a cinematographer on board your charter. You book the trip with Wilson's. We film it.</p>
+    </div>
+  </section>
+
+  <section id="film" ref="{{ filmRef }}" data-screen-label="The Film" style="scroll-margin-top:68px; padding:0 clamp(0px,4vw,56px) clamp(64px,9vw,128px); background:#0A0908;">
+    <div style="max-width:1360px; margin:0 auto;">
+      <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden;">
+        <sc-if value="{{ filmPlaying }}" hint-placeholder-val="{{ false }}">
+          <iframe src="https://www.youtube.com/embed/06mDUNvE9yQ?autoplay=1&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" title="A day with Wilson's Reel Adventures, shot by Clarion Outdoor Films" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
+        </sc-if>
+        <sc-if value="{{ filmIdle }}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{ playFilm }}" aria-label="Play A day with Wilson's, with sound" style="position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; cursor:pointer; background-color:#0A0908; overflow:hidden; display:flex; align-items:center; justify-content:center;" style-hover="filter:brightness(1.08)">
+            <span aria-hidden="true" style="position:absolute; inset:0; background-image:url(https://i.ytimg.com/vi/06mDUNvE9yQ/maxresdefault.jpg); background-size:cover; background-position:center; transform:scale(1.34);"></span>
+            <span aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.1) 45%, rgba(10,9,8,0.25) 100%);"></span>
+            <span style="position:relative; width:clamp(68px,9vw,112px); height:clamp(68px,9vw,112px); display:flex; align-items:center; justify-content:center; background:#C9A24A; color:#0A0908; font-size:clamp(20px,2.6vw,32px); padding-left:6px;">▶</span>
+            <span style="position:absolute; left:clamp(18px,3vw,40px); right:clamp(18px,3vw,40px); bottom:clamp(16px,2.6vw,34px); display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; text-align:left;">
+              <span style="display:flex; flex-direction:column; gap:8px;"><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:#E0C27C;">Shot by Clarion Outdoor Films</span><span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(22px,3.4vw,46px); line-height:1; color:#EFE9DC;">A day with Wilson's</span></span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Sound on</span>
+            </span>
+          </button>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" data-screen-label="Packages" style="scroll-margin-top:68px; padding:clamp(64px,9vw,128px) clamp(20px,5vw,64px); background:#EFE9DC; color:#141210;">
+    <div style="max-width:1360px; margin:0 auto;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:clamp(20px,4vw,56px); flex-wrap:wrap; margin-bottom:clamp(36px,5vw,64px);">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#7A5C1C; margin-bottom:16px;">Three packages · Add to any Wilson's trip</div>
+          <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(44px,8vw,116px); line-height:0.88; letter-spacing:-0.01em; margin:0;">Pick your<br>coverage.</h2>
+        </div>
+        <p style="max-width:40ch; font-size:clamp(15px,1.4vw,18px); line-height:1.6; font-weight:400; color:rgba(20,18,16,0.74); margin:0; text-wrap:pretty;">We ride along on your Wilson's Reel Adventures charter and shoot the whole trip. Choose your package when you book with Wilson's.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:{{ tierCols }}; gap:clamp(14px,1.6vw,22px); align-items:stretch;">
+
+        <div style="display:flex; flex-direction:column; background:#FFFFFF; border:1px solid rgba(20,18,16,0.14); padding:clamp(28px,3vw,40px);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:#7A5C1C; margin-bottom:18px;">01 — Photo</div>
+          <div style="font-family:Anton,sans-serif; font-size:clamp(58px,6.4vw,88px); line-height:0.9; color:#141210; margin-bottom:10px;">$250</div>
+          <h3 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(20px,2vw,24px); line-height:1.1; margin:0 0 clamp(22px,2.6vw,30px); padding-bottom:clamp(22px,2.6vw,30px); border-bottom:1px solid rgba(20,18,16,0.14);">Photo</h3>
+          <ul style="list-style:none; margin:0 0 clamp(28px,3vw,36px); padding:0; display:flex; flex-direction:column; gap:14px; flex:1 1 auto;">
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; color:rgba(20,18,16,0.86);"><span aria-hidden="true" style="color:#7A5C1C; flex:none;">—</span>Edited photos of your crew and your catch</li>
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; color:rgba(20,18,16,0.86);"><span aria-hidden="true" style="color:#7A5C1C; flex:none;">—</span>Your own private download page for the full gallery</li>
+          </ul>
+          <a href="https://www.wilsonsreeladventures.com/#book" style="display:flex; align-items:center; justify-content:center; text-align:center; width:100%; background:none; border:1.5px solid #141210; color:#141210; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:18px 20px; min-height:56px;" style-hover="background:#141210; color:#EFE9DC">Book Your Charter →</a>
+        </div>
+
+        <div style="display:flex; flex-direction:column; background:#FFFFFF; border:1px solid rgba(20,18,16,0.14); padding:clamp(28px,3vw,40px);">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:#7A5C1C; margin-bottom:18px;">02 — Photo + Film</div>
+          <div style="font-family:Anton,sans-serif; font-size:clamp(58px,6.4vw,88px); line-height:0.9; color:#141210; margin-bottom:10px;">$400</div>
+          <h3 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(20px,2vw,24px); line-height:1.1; margin:0 0 clamp(22px,2.6vw,30px); padding-bottom:clamp(22px,2.6vw,30px); border-bottom:1px solid rgba(20,18,16,0.14);">Photo + Film</h3>
+          <ul style="list-style:none; margin:0 0 clamp(28px,3vw,36px); padding:0; display:flex; flex-direction:column; gap:14px; flex:1 1 auto;">
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; font-weight:600; color:#141210;"><span aria-hidden="true" style="color:#7A5C1C; flex:none;">—</span>Everything in Photo</li>
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; color:rgba(20,18,16,0.86);"><span aria-hidden="true" style="color:#7A5C1C; flex:none;">—</span>Highlight video of the day, cut for social media</li>
+          </ul>
+          <a href="https://www.wilsonsreeladventures.com/#book" style="display:flex; align-items:center; justify-content:center; text-align:center; width:100%; background:none; border:1.5px solid #141210; color:#141210; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:18px 20px; min-height:56px;" style-hover="background:#141210; color:#EFE9DC">Book Your Charter →</a>
+        </div>
+
+        <div style="position:relative; display:flex; flex-direction:column; background:#0A0908; color:#EFE9DC; padding:clamp(28px,3vw,40px); box-shadow:0 30px 70px -34px rgba(10,9,8,0.7);">
+          <div style="position:absolute; top:0; left:0; right:0; height:4px; background:#C9A24A;"></div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:18px; flex-wrap:wrap;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:#C9A24A;">03 — Cinematic</div>
+            <div style="background:#C9A24A; color:#0A0908; font-family:'IBM Plex Mono',monospace; font-size:9px; font-weight:500; letter-spacing:0.24em; text-transform:uppercase; padding:6px 10px;">The full experience</div>
+          </div>
+          <div style="font-family:Anton,sans-serif; font-size:clamp(58px,6.4vw,88px); line-height:0.9; color:#C9A24A; margin-bottom:10px;">$600</div>
+          <h3 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(20px,2vw,24px); line-height:1.1; margin:0 0 clamp(22px,2.6vw,30px); padding-bottom:clamp(22px,2.6vw,30px); border-bottom:1px solid rgba(239,233,220,0.18);">Cinematic</h3>
+          <ul style="list-style:none; margin:0 0 clamp(28px,3vw,36px); padding:0; display:flex; flex-direction:column; gap:14px; flex:1 1 auto;">
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; font-weight:600; color:#EFE9DC;"><span aria-hidden="true" style="color:#C9A24A; flex:none;">—</span>Everything in Photo + Film</li>
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; color:rgba(239,233,220,0.86);"><span aria-hidden="true" style="color:#C9A24A; flex:none;">—</span>Full cinematic highlight film of the day</li>
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; color:rgba(239,233,220,0.86);"><span aria-hidden="true" style="color:#C9A24A; flex:none;">—</span>Wireless mics, so the film carries the real sound of the trip</li>
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; color:rgba(239,233,220,0.86);"><span aria-hidden="true" style="color:#C9A24A; flex:none;">—</span>Drone aerial footage</li>
+            <li style="display:flex; gap:12px; font-size:15.5px; line-height:1.5; color:rgba(239,233,220,0.86);"><span aria-hidden="true" style="color:#C9A24A; flex:none;">—</span>Expanded coverage, start to finish</li>
+          </ul>
+          <a href="https://www.wilsonsreeladventures.com/#book" style="display:flex; align-items:center; justify-content:center; text-align:center; width:100%; background:#C9A24A; border:1.5px solid #C9A24A; color:#0A0908; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:18px 20px; min-height:56px;" style-hover="background:#E0C27C; border-color:#E0C27C; color:#0A0908">Book Your Charter →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" data-screen-label="How it works" style="scroll-margin-top:68px; padding:clamp(60px,8vw,112px) clamp(20px,5vw,64px); background:#0A0908;">
+    <div style="max-width:1360px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:14px;">How it works</div>
+      <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(34px,5vw,68px); line-height:0.92; margin:0 0 clamp(36px,4.6vw,60px);">Three steps.</h2>
+      <div style="display:grid; grid-template-columns:{{ tierCols }}; gap:clamp(28px,3.4vw,52px);">
+        <div style="display:flex; flex-direction:column; gap:14px; border-top:2px solid #C9A24A; padding-top:24px;">
+          <div style="font-family:Anton,sans-serif; font-size:clamp(44px,5vw,68px); line-height:0.9; color:rgba(239,233,220,0.22);">01</div>
+          <h3 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(21px,2.2vw,28px); line-height:1.05; margin:0; color:#EFE9DC;">Book Your Charter</h3>
+          <p style="font-size:15.5px; line-height:1.62; font-weight:300; color:rgba(239,233,220,0.76); margin:0; text-wrap:pretty;">Pick your trip on the Wilson's Reel Adventures site and add your Clarion package in the booking step. Mention it in your booking notes so the date is held for filming.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px; border-top:2px solid #C9A24A; padding-top:24px;">
+          <div style="font-family:Anton,sans-serif; font-size:clamp(44px,5vw,68px); line-height:0.9; color:rgba(239,233,220,0.22);">02</div>
+          <h3 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(21px,2.2vw,28px); line-height:1.05; margin:0; color:#EFE9DC;">We film the trip</h3>
+          <p style="font-size:15.5px; line-height:1.62; font-weight:300; color:rgba(239,233,220,0.76); margin:0; text-wrap:pretty;">We ride along with you and Capt. Bill and work around the fishing. You fish the trip you booked — the camera stays out of the way.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px; border-top:2px solid #C9A24A; padding-top:24px;">
+          <div style="font-family:Anton,sans-serif; font-size:clamp(44px,5vw,68px); line-height:0.9; color:rgba(239,233,220,0.22);">03</div>
+          <h3 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(21px,2.2vw,28px); line-height:1.05; margin:0; color:#EFE9DC;">Delivery</h3>
+          <p style="font-size:15.5px; line-height:1.62; font-weight:300; color:rgba(239,233,220,0.76); margin:0; text-wrap:pretty;">Photos land on your private download page, and your highlight or cinematic film is edited, graded and delivered to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reserve" data-screen-label="Book" style="position:relative; scroll-margin-top:68px; padding:clamp(72px,10vw,140px) clamp(20px,5vw,64px); background:#141210; border-top:1px solid rgba(239,233,220,0.1); overflow:hidden;">
+    <img src="IMG_2214-00de7e7b.jpeg" alt="" aria-hidden="true" style="position:absolute; right:-6%; top:50%; transform:translateY(-50%); height:clamp(320px,52vw,760px); width:auto; filter:invert(1); mix-blend-mode:screen; opacity:0.05; pointer-events:none;">
+    <div style="position:relative; max-width:1100px; margin:0 auto; display:flex; flex-direction:column; align-items:center; text-align:center; gap:clamp(22px,3vw,32px);">
+      <img src="wilsons-logo.png" alt="Wilson's Reel Adventures" style="height:clamp(76px,10vw,120px); width:auto; display:block;">
+      <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(44px,7.6vw,108px); line-height:0.88; letter-spacing:-0.01em; margin:0;">Book the charter.<br><span style="color:#C9A24A;">We'll film it.</span></h2>
+      <p style="max-width:50ch; font-size:clamp(15px,1.5vw,19px); line-height:1.6; font-weight:300; color:rgba(239,233,220,0.8); margin:0; text-wrap:pretty;">All bookings go through Wilson's Reel Adventures. Choose your trip, add your Clarion package, and you're set. Filming dates are limited — one boat at a time.</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <a href="https://www.wilsonsreeladventures.com/#book" style="display:flex; align-items:center; background:#C9A24A; color:#0A0908; font-size:13px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(26px,3.4vw,40px); min-height:60px;" style-hover="background:#E0C27C; color:#0A0908">Book Your Charter →</a>
+        <a href="tel:+18132774657" style="display:flex; align-items:center; border:1px solid rgba(239,233,220,0.4); color:#EFE9DC; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(22px,3vw,32px); min-height:60px;" style-hover="border-color:#C9A24A; color:#C9A24A">Call / Text Capt. Bill</a>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(239,233,220,0.66);">(813) 277-4657 · Cockroach Bay, Ruskin FL</div>
+    </div>
+  </section>
+
+  <footer style="padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px); background:#0A0908; border-top:1px solid rgba(239,233,220,0.1);">
+    <div style="max-width:1360px; margin:0 auto; display:flex; flex-wrap:wrap; gap:28px; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:clamp(16px,2.4vw,26px); flex-wrap:wrap;">
+        <img src="IMG_2214-00de7e7b.jpeg" alt="Clarion" style="height:40px; width:auto; filter:invert(1); mix-blend-mode:screen; opacity:0.75;">
+        <span aria-hidden="true" style="font-family:Anton,sans-serif; font-size:16px; color:rgba(201,162,74,0.8);">×</span>
+        <img src="wilsons-logo.png" alt="Wilson's Reel Adventures" style="height:50px; width:auto; opacity:0.9;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; line-height:1.9; letter-spacing:0.26em; text-transform:uppercase; color:rgba(239,233,220,0.6);">Clarion Outdoor Films<br>Tampa Bay, Florida</div>
+      </div>
+      <a href="index.html" style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.7);" style-hover="color:#C9A24A">← Clarion Tackle Co.</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+// Informational page only. Every booking goes to Wilson's Reel Adventures.
+class Component extends DCLogic {
+  heroRef = React.createRef();
+  filmRef = React.createRef();
+
+  state = {
+    navOpen: false,
+    isMobile: false,
+    isWide: true,
+    threeUp: true,
+    scrolled: false,
+    bgOn: false,
+    bgEnabled: true,
+    filmPlaying: false,
+    bgW: "177.78vh",
+    bgH: "100vh"
+  };
+
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) this.setState({ bgEnabled: false });
+    this.onResize();
+    this.onScroll();
+    window.addEventListener("resize", this.onResize);
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("scroll", this.onScroll);
+    clearTimeout(this._fade);
+  }
+
+  // Background embed covers the hero at 16:9 with overscan so YouTube's
+  // title bar and corner logo sit outside the visible frame.
+  onResize = () => {
+    const w = window.innerWidth;
+    const hero = this.heroRef.current;
+    const W = hero ? hero.clientWidth : w;
+    const H = hero ? hero.clientHeight : window.innerHeight;
+    const cw = Math.max(W, H * 16 / 9) * 1.22;
+    this.setState({
+      isMobile: w < 1120,
+      isWide: w >= 520,
+      threeUp: w >= 900,
+      bgW: Math.ceil(cw) + "px",
+      bgH: Math.ceil(cw * 9 / 16) + "px"
+    });
+  };
+
+  onScroll = () => {
+    const s = window.scrollY > 40;
+    if (s !== this.state.scrolled) this.setState({ scrolled: s });
+  };
+
+  onBgLoad = () => {
+    clearTimeout(this._fade);
+    this._fade = setTimeout(() => this.setState({ bgOn: true }), 1600);
+  };
+
+  watchFilm = () => {
+    this.setState({ navOpen: false, filmPlaying: true });
+    const el = document.getElementById("film");
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 68, behavior: "smooth" });
+  };
+
+  renderVals() {
+    const solid = this.state.scrolled || this.state.navOpen;
+    return {
+      heroRef: this.heroRef,
+      filmRef: this.filmRef,
+      headerBg: solid ? "rgba(10,9,8,0.92)" : "rgba(10,9,8,0)",
+      headerLine: solid ? "rgba(239,233,220,0.10)" : "rgba(239,233,220,0)",
+      isMobile: this.state.isMobile,
+      isDesktop: !this.state.isMobile,
+      isWide: this.state.isWide,
+      tierCols: this.state.threeUp ? "repeat(3,minmax(0,1fr))" : "minmax(0,1fr)",
+      bgEnabled: this.state.bgEnabled,
+      bgOpacity: this.state.bgOn ? 1 : 0,
+      bgW: this.state.bgW,
+      bgH: this.state.bgH,
+      onBgLoad: this.onBgLoad,
+      filmPlaying: this.state.filmPlaying,
+      filmIdle: !this.state.filmPlaying,
+      playFilm: () => this.setState({ filmPlaying: true }),
+      watchFilm: this.watchFilm,
+      navOpen: this.state.navOpen,
+      toggleNav: () => this.setState((s) => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
