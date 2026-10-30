@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="icon" href="IMG_2214-00de7e7b.jpeg">
+<title>Resources — Clarion Tackle Co.</title>
+<meta name="description" content="Clarion Outdoors, Issue 01 · Fall 2026. Real days on Tampa Bay. Real fish. No spots given away. Plus A Guide on Guides, free.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clarion Tackle Co.">
+<meta property="og:title" content="Clarion Outdoors, Issue 01 · Fall 2026">
+<meta property="og:description" content="Real days on Tampa Bay. Real fish. No spots given away.">
+<meta property="og:image" content="https://www.clariontackle.com/magazine/issue-01/pages/page-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#0A0908; -webkit-text-size-adjust:100%; overflow-x:clip; }
+  * { box-sizing:border-box; }
+  img { max-width:100%; }
+  a { color:#C9A24A; text-decoration:none; }
+  a:hover { color:#E0C27C; }
+  :focus-visible { outline:2px solid #C9A24A; outline-offset:3px; }
+</style>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer="" src="/_vercel/insights/script.js"></script>
+</helmet>
+
+<div style="background:#0A0908; color:#EFE9DC; font-family:Barlow, sans-serif; min-height:100vh;">
+
+  <header style="position:sticky; top:0; z-index:50; height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 clamp(14px,4vw,56px); background:rgba(20,18,16,0.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(239,233,220,0.10);">
+    <a href="index.html" style="display:flex; align-items:center; gap:10px; flex:0 1 auto; min-width:0;">
+      <img src="Clarion.png" alt="Clarion Tackle Co." style="height:{{ logoH }}; width:auto; min-width:0; flex-shrink:1; filter:invert(1) brightness(1.6); display:block;">
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.34em; text-transform:uppercase; color:rgba(239,233,220,0.55); padding-top:5px; white-space:nowrap;">Tackle Co.</span>
+      </sc-if>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="flex:1 1 auto; min-width:0; display:flex; align-items:center; gap:clamp(12px,2vw,30px); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; justify-content:center;">
+        <a href="index.html#series" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">What We Build</a>
+        <a href="index.html#custom" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Built For You</a>
+        <a href="index.html#process" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Process</a>
+        <a href="index.html#story" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">About</a>
+        <a href="resources.html" aria-current="page" style="color:#C9A24A; white-space:nowrap;">Resources</a>
+      </nav>
+    </sc-if>
+    <div style="display:flex; align-items:center; gap:{{ hdrGap }}; flex:none;">
+      <a href="films.html" style="border:1px solid #C9A24A; color:#C9A24A; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ filmsPad }}; white-space:nowrap;" style-hover="background:rgba(201,162,74,0.14); color:#E0C27C">{{ filmsLabel }}</a>
+      <a href="build.html" style="background:#C9A24A; color:#0A0908; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ buildPad }}; white-space:nowrap;" style-hover="background:#E0C27C; color:#0A0908">Start Your Build</a>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleNav }}" aria-label="Menu" style="width:44px; height:44px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; background:none; border:1px solid rgba(239,233,220,0.24); cursor:pointer; padding:0;">
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
+        </button>
+      </sc-if>
+    </div>
+  </header>
+
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:fixed; top:64px; left:0; right:0; z-index:49; max-height:calc(100vh - 64px); overflow:auto; background:rgba(10,9,8,0.98); border-bottom:1px solid rgba(239,233,220,0.14); display:flex; flex-direction:column; padding:8px 0;">
+      <a href="index.html#series" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">What We Build</a>
+      <a href="index.html#custom" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Built For You</a>
+      <a href="index.html#process" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Process</a>
+      <a href="index.html#story" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">About</a>
+      <a href="index.html#about" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Grips</a>
+      <a href="resources.html" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:#EFE9DC;">Resources</a>
+      <a href="films.html" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:#C9A24A;">Outdoor Films</a>
+    </nav>
+  </sc-if>
+
+  <section id="magazine" data-screen-label="Magazine" style="position:relative; padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px) clamp(28px,3.5vw,44px);">
+    <div style="max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:clamp(24px,4vw,56px);">
+      <div style="flex:1 1 420px; min-width:0; display:flex; flex-direction:column; gap:clamp(14px,1.8vw,20px);">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63;">Resources · The Magazine</div>
+        <h1 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(42px,7vw,96px); line-height:0.9; letter-spacing:-0.005em; margin:0; text-wrap:balance;">Clarion Outdoors<br><span style="color:#C9A24A;">Issue 01 · Fall 2026</span></h1>
+        <p style="font-size:clamp(16px,1.5vw,19px); line-height:1.55; font-weight:300; color:rgba(239,233,220,0.82); margin:0; max-width:44ch; text-wrap:pretty;">Real days on Tampa Bay. Real fish. No spots given away.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; flex:none;">
+        <a href="magazine/issue-01/index.html" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:12px; background:#C9A24A; color:#0A0908; font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(22px,2.6vw,30px); min-height:54px; white-space:nowrap;" style-hover="background:#E0C27C; color:#0A0908">Read full screen ↗</a>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,233,220,0.45);">36 pages · Opens in a new tab</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 clamp(0px,3vw,40px);">
+    <div ref="{{ bookWrap }}" style="position:relative; width:100%; max-width:1600px; margin:0 auto; height:{{ bookH }}; min-height:560px; background:#0A0908; border-top:1px solid rgba(239,233,220,0.1); border-bottom:1px solid rgba(239,233,220,0.1); scroll-margin-top:64px;">
+      <iframe src="{{ bookSrc }}" title="Clarion Outdoors, Issue 01" allow="fullscreen" allowFullScreen="{{ true }}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; border:0; display:block; background:#0A0908;"></iframe>
+    </div>
+  </section>
+
+  <section style="padding:clamp(36px,5vw,64px) clamp(20px,5vw,64px) clamp(56px,7vw,96px);">
+    <div style="max-width:1280px; margin:0 auto; display:flex; flex-direction:column; gap:clamp(18px,2.2vw,26px);">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(26px,3vw,38px); line-height:1; margin:0;">What's inside</h2>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(239,233,220,0.45);">Tap a section to open it in the book</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,160px),1fr)); border-top:1px solid rgba(239,233,220,0.14); border-left:1px solid rgba(239,233,220,0.14);">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="7">
+          <a href="{{ s.href }}" onClick="{{ s.go }}" style="display:flex; flex-direction:column; justify-content:space-between; gap:22px; min-height:112px; padding:18px 18px 16px; border-right:1px solid rgba(239,233,220,0.14); border-bottom:1px solid rgba(239,233,220,0.14); color:#EFE9DC; background:{{ s.bg }}; transition:background 200ms ease;" style-hover="background:rgba(201,162,74,0.1); color:#EFE9DC">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:#C9A24A;">P. {{ s.pageLabel }}</span>
+            <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(19px,1.8vw,23px); line-height:1.02;">{{ s.title }}</span>
+          </a>
+        </sc-for>
+      </div>
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:1.7; letter-spacing:0.2em; text-transform:uppercase; color:#8A7C63; margin:clamp(10px,1.4vw,18px) 0 0;">Next issue: The woods. <span style="color:rgba(239,233,220,0.75);">Clarion Outdoors goes hunting.</span></p>
+    </div>
+  </section>
+
+  <section id="guide" data-screen-label="Guide on Guides" style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px); background:#141210; border-top:1px solid rgba(239,233,220,0.1);">
+    <div style="max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:clamp(24px,4vw,56px);">
+      <div style="flex:1 1 420px; min-width:0; display:flex; flex-direction:column; gap:16px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63;">Resources · Free download</div>
+        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(32px,4.4vw,56px); line-height:0.95; margin:0;">A Guide on <span style="color:#C9A24A;">"Guides"</span></h2>
+        <p style="font-size:clamp(15px,1.4vw,17px); line-height:1.6; font-weight:300; color:rgba(239,233,220,0.78); margin:0; max-width:48ch; text-wrap:pretty;">Rings, frames and guide trains, explained. Find out which setup is right for how you fish.</p>
+      </div>
+      <a href="a-guide-on-guides.pdf" download="" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; border:1px solid #C9A24A; color:#C9A24A; font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(22px,2.6vw,30px); min-height:54px; white-space:nowrap;" style-hover="background:rgba(201,162,74,0.14); color:#E0C27C">Download the PDF ↓</a>
+    </div>
+  </section>
+
+  <footer style="padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px) 36px; background:#0A0908; border-top:1px solid rgba(239,233,220,0.1);">
+    <div style="max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px;">
+      <div style="display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap;">
+        <img src="IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:32px; width:auto; filter:invert(1); mix-blend-mode:screen;">
+        <img src="Clarion.png" alt="Clarion Tackle Co." loading="lazy" style="height:28px; width:auto; filter:invert(1) brightness(1.6); padding-bottom:2px;">
+      </div>
+      <p style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(16px,1.6vw,20px); letter-spacing:0.02em; color:rgba(239,233,220,0.8); margin:0;">If I won't fish it, I won't build it.</p>
+      <div style="display:flex; gap:22px; flex-wrap:wrap; font-size:12px; letter-spacing:0.16em; text-transform:uppercase;">
+        <a href="index.html" style="color:rgba(239,233,220,0.7);">Home</a>
+        <a href="build.html" style="color:rgba(239,233,220,0.7);">Start Your Build</a>
+        <a href="https://www.instagram.com/clarionrods/" style="color:rgba(239,233,220,0.7);">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const BOOK = "magazine/issue-01/index.html";
+const SECTIONS = [
+  ["From Above", 6], ["First Throw", 14], ["The Catch", 18], ["On the Water", 20],
+  ["Field Guides", 24], ["Rod Room", 28], ["The Bench", 30]
+];
+
+class Component extends DCLogic {
+  state = { page: 0, vw: 1200, vh: 900 };
+  bookWrap = React.createRef();
+
+  componentDidMount() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onResize); }
+  onResize = () => this.setState({ vw: window.innerWidth, vh: window.innerHeight, navOpen: false });
+
+  // The flipbook only reads #page-N on load, so a changing query forces it to reopen there.
+  openAt(n, e) {
+    if (e) e.preventDefault();
+    this.setState({ page: n });
+    const el = this.bookWrap.current;
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 64, behavior: "smooth" });
+  }
+
+  renderVals() {
+    const { vw, vh, page } = this.state;
+    const tight = vw < 520;
+    const mobile = vw < 1120;
+    return {
+      bookWrap: this.bookWrap,
+      bookSrc: page ? BOOK + "?p=" + page + "#page-" + page : BOOK,
+      bookH: vw < 700 ? "calc(100svh - 64px)" : "min(85vh, 980px)",
+      sections: SECTIONS.map(([title, n]) => ({
+        title, pageLabel: n < 10 ? "0" + n : String(n),
+        href: BOOK + "#page-" + n,
+        bg: page === n ? "rgba(201,162,74,0.12)" : "transparent",
+        go: (e) => this.openAt(n, e)
+      })),
+      logoH: vw < 400 ? "19px" : "24px",
+      hdrGap: tight ? "6px" : "8px",
+      hdrTrack: tight ? "0.08em" : "0.16em",
+      filmsLabel: tight ? "Films" : "Outdoor Films",
+      filmsPad: tight ? "11px 10px" : "11px clamp(10px,1.6vw,18px)",
+      buildPad: tight ? "12px 11px" : "12px clamp(12px,2vw,20px)",
+      isMobile: mobile, isDesktop: !mobile, isWide: vw >= 480,
+      navOpen: !!this.state.navOpen,
+      toggleNav: () => this.setState((s) => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

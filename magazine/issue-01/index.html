@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Clarion Outdoors, Issue 01">
+<meta property="og:description" content="Inshore fishing on Tampa Bay. Fall 2026.">
+<meta property="og:image" content="https://www.clariontackle.com/magazine/issue-01/pages/page-01.jpg">
+<title>Clarion Outdoors Issue 01</title>
+<meta name="description" content="Clarion Outdoors, Issue 01, Fall 2026. Inshore fishing on Tampa Bay, from Clarion Tackle Co. and Clarion Outdoor Films.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: full-height reading room. Header strip, the book centered on a dark chart-table, controls docked below. */
+:root{
+  --ink:#0A0908;          /* room */
+  --panel:#141210;        /* bars, drawer */
+  --line:#2C2620;         /* hairlines */
+  --cream:#EFE9DC;        /* text */
+  --muted:#9A8C72;        /* secondary text */
+  --gold:#C9A24A;         /* accent */
+  --turn:1000ms; --ease:cubic-bezier(.45,.05,.2,1);
+  --display:'Anton','Impact','Arial Narrow',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--mono);overflow:hidden;-webkit-font-smoothing:antialiased}
+.room{position:relative;height:100%;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;isolation:isolate}
+.room::before{content:"";position:absolute;inset:0;z-index:-1;background:url("assets/bathy-gold.svg") center/1400px auto repeat;opacity:.07;pointer-events:none}
+.room::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 45%,rgba(201,162,74,.10),rgba(10,9,8,0) 60%);pointer-events:none}
+
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line);background:rgba(20,18,16,.72)}
+.brand{display:flex;align-items:flex-end;gap:10px;min-width:0}
+.brand img{height:30px;width:auto;display:block}
+.brand span{font-size:11px;letter-spacing:.38em;text-transform:uppercase;padding-bottom:2px}
+.issue{display:flex;align-items:center;gap:18px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.issue a{color:var(--gold);text-decoration:none;letter-spacing:.12em;text-transform:none;font-size:12px}
+.issue a:hover{text-decoration:underline}
+.issue a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.stage{position:relative;min-height:0;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px max(16px,env(safe-area-inset-right,0px)) 34px max(16px,env(safe-area-inset-left,0px))}
+.book-wrap{position:relative;width:100%;height:100%}
+#book{position:relative;width:100%;height:100%}
+#book .page{background:#EFE9DC;overflow:hidden}
+#book .page img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none;backface-visibility:hidden}
+#book .page::after{content:"";position:absolute;inset:0;pointer-events:none}
+#book .page.--left::after{background:linear-gradient(to left,rgba(0,0,0,.16),rgba(0,0,0,.04) 3%,rgba(0,0,0,0) 8%)}
+#book .page.--right::after{background:linear-gradient(to right,rgba(0,0,0,.16),rgba(0,0,0,.04) 3%,rgba(0,0,0,0) 8%)}
+/* Static shadow under the open book: cheaper than a filter on the animating layer, so flips stay at full frame rate. */
+.under{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;box-shadow:0 26px 60px rgba(0,0,0,.6),0 6px 16px rgba(0,0,0,.35);transition:left var(--turn) var(--ease),width var(--turn) var(--ease),opacity .4s;opacity:0}
+.under.on{opacity:1}
+.book-wrap{opacity:0;transition:transform var(--turn) var(--ease),opacity .5s}
+.book-wrap.ready{opacity:1}
+
+.hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);max-width:calc(100% - 32px);text-align:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:opacity .6s}
+.hint.gone{opacity:0}
+
+.controls{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding-block:12px 14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-top:1px solid var(--line);background:rgba(20,18,16,.72)}
+.nav{display:flex;align-items:center;gap:14px;justify-self:center}
+.tools{display:flex;gap:8px;justify-self:end}
+.spacer{justify-self:start;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.round{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--cream);transition:border-color .2s,background .2s,color .2s}
+.round:hover{border-color:var(--gold);color:var(--gold)}
+.round:disabled{opacity:.3;cursor:default;border-color:var(--line);color:var(--cream)}
+.round svg{width:18px;height:18px}
+.chip{display:flex;align-items:center;gap:8px;height:36px;padding:0 14px;border:1px solid var(--line);border-radius:18px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:border-color .2s,color .2s}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.chip svg{width:14px;height:14px}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.label{min-width:150px;text-align:center}
+.label b{display:block;font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:.02em;text-transform:uppercase;line-height:1.1}
+.label small{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-variant-numeric:tabular-nums}
+.progress{position:absolute;left:0;right:0;top:-1px;height:2px;background:transparent}
+.progress i{display:block;height:100%;width:0;background:var(--gold);transition:width .5s}
+.controls{position:relative}
+
+.drawer{position:fixed;inset:0;z-index:50;background:rgba(10,9,8,.96);display:grid;grid-template-rows:auto 1fr;padding-top:env(safe-area-inset-top,0px)}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
+.drawer h2{margin:0;font-family:var(--display);font-weight:400;font-size:28px;text-transform:uppercase;letter-spacing:.02em}
+.grid{overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:18px 14px;align-content:start;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.thumb{display:flex;flex-direction:column;gap:6px;text-align:left}
+.thumb img{width:100%;aspect-ratio:612/792;object-fit:cover;display:block;background:var(--panel);outline:1px solid var(--line);transition:outline-color .2s,transform .2s}
+.thumb:hover img{outline-color:var(--gold);transform:translateY(-2px)}
+.thumb span{font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.thumb.on img{outline:2px solid var(--gold)}
+
+@media (max-width:640px){
+  .issue .full,.spacer{display:none}
+  .controls{grid-template-columns:auto 1fr auto}
+  .nav{gap:8px}
+  .label{min-width:0}
+  .label b{font-size:18px}
+  .chip .t{display:none}
+  .chip{padding:0 11px}
+  .brand img{height:24px}
+}
+@media (prefers-reduced-motion:reduce){.progress i,.hint{transition:none}}
+</style>
+</head>
+<body>
+<div class="room">
+  <header class="bar">
+    <div class="brand"><img src="assets/clarion-script-cream.svg" alt="Clarion"><span>Outdoors</span></div>
+    <div class="issue"><span class="full">Issue 01 · Fall 2026</span><a href="https://clariontackle.com" target="_blank" rel="noopener">clariontackle.com</a></div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="book-wrap" id="wrap">
+      <div class="under" id="under" aria-hidden="true"></div>
+      <div id="book" aria-label="Clarion Outdoors, Issue 01. Use the arrow keys to turn pages."></div>
+    </div>
+    <div class="hint" id="hint">Drag a corner, click a page or use the arrow keys</div>
+  </main>
+
+  <footer class="controls">
+    <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+    <div class="spacer">36 pages</div>
+    <div class="nav">
+      <button class="round" id="prev" aria-label="Previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="label" aria-live="polite"><b id="where">Cover</b><small id="count">1 of 36</small></div>
+      <button class="round" id="next" aria-label="Next page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="tools">
+      <button class="chip" id="all" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="6" height="7"/><rect x="14" y="4" width="6" height="7"/><rect x="4" y="14" width="6" height="7"/><rect x="14" y="14" width="6" height="7"/></svg><span class="t">Pages</span></button>
+      <button class="chip" id="fs" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span class="t">Full screen</span></button>
+    </div>
+  </footer>
+</div>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <header><h2 id="drawer-title">All pages</h2><button class="round" id="close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+  <div class="grid" id="grid"></div>
+</div>
+
+<script src="js/page-flip.browser.js"></script>
+<script>
+(function () {
+  var TOTAL = 36;
+  var TITLES = {1:"Cover",2:"Contents",3:"Editor's letter",4:"Up front",5:"Tides",6:"From above",14:"First throw",16:"Skill",17:"The livewell",18:"The catch",20:"On the water",24:"Field guide",26:"Handle with care",27:"Camera",28:"Rod room",30:"The bench",31:"Anatomy",32:"Behind the lens",34:"Last light",35:"Featured charter",36:"Back cover"};
+  var SECTIONS = [[1,"Cover"],[2,"Contents"],[3,"Editor's letter"],[4,"Up front"],[5,"Know your water"],[6,"From above"],[14,"First throw"],[16,"Skill"],[17,"The livewell"],[18,"The catch"],[20,"On the water"],[24,"Field guides"],[26,"Handle with care"],[27,"Camera"],[28,"Rod room"],[30,"The bench"],[31,"Anatomy"],[32,"Behind the lens"],[34,"Last light"],[35,"Featured charter"],[36,"Back cover"]];
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function section(p){ var s = ""; for (var k = 0; k < SECTIONS.length; k++) { if (SECTIONS[k][0] <= p) s = SECTIONS[k][1]; } return s; }
+
+  var bookEl = document.getElementById("book");
+  var imgs = [];
+  for (var i = 1; i <= TOTAL; i++) {
+    var d = document.createElement("div");
+    d.className = "page";
+    if (i === 1 || i === TOTAL) d.setAttribute("data-density", "hard");
+    var im = document.createElement("img");
+    im.alt = "Page " + i;
+    im.setAttribute("data-src", "pages/page-" + pad(i) + ".jpg");
+    im.draggable = false;
+    d.appendChild(im);
+    bookEl.appendChild(d);
+    imgs.push(im);
+  }
+  function load(k){
+    var im = imgs[k];
+    if (!im || im.getAttribute("src")) return;
+    im.decoding = "async";
+    im.src = im.getAttribute("data-src");
+    if (im.decode) im.decode().catch(function(){});
+  }
+  function preload(idx){ for (var k = idx - 2; k <= idx + 6; k++) load(k); }
+  preload(0);
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var TURN = reduce ? 250 : 1000;
+  document.documentElement.style.setProperty("--turn", TURN + "ms");
+  document.documentElement.style.setProperty("--ease", "cubic-bezier(.45,.05,.2,1)");
+  var pf = new St.PageFlip(bookEl, {
+    width: 612, height: 792, size: "stretch",
+    minWidth: 240, maxWidth: 1100, minHeight: 310, maxHeight: 1424,
+    showCover: true, usePortrait: true, autoSize: true,
+    maxShadowOpacity: 0.32, flippingTime: TURN,
+    mobileScrollSupport: false, swipeDistance: 30, showPageCorners: true
+  });
+  pf.loadFromHTML(bookEl.querySelectorAll(".page"));
+
+  var wrap = document.getElementById("wrap"), under = document.getElementById("under");
+  var where = document.getElementById("where"), count = document.getElementById("count");
+  var prev = document.getElementById("prev"), next = document.getElementById("next");
+  var bar = document.getElementById("progress"), hint = document.getElementById("hint");
+
+  /* Where the visible paper sits for a given page index, so the book can slide
+     to center the single cover and the shadow can sit under the paper. */
+  function center(idx){
+    var r = pf.getBoundsRect ? pf.getBoundsRect() : null;
+    if (!r) return;
+    var landscape = pf.getOrientation() === "landscape";
+    var left = r.left, width = r.width, shift = 0;
+    if (!landscape) { left = r.left + r.pageWidth; width = r.pageWidth; }
+    else if (idx === 0) { left = r.left + r.pageWidth; width = r.pageWidth; shift = -r.pageWidth / 2; }
+    else if (idx >= TOTAL - 1) { width = r.pageWidth; shift = r.pageWidth / 2; }
+    wrap.style.transform = shift ? "translateX(" + shift + "px)" : "";
+    under.style.left = left + "px"; under.style.top = r.top + "px";
+    under.style.width = width + "px"; under.style.height = r.height + "px";
+    under.classList.add("on");
+  }
+  /* Start the slide at the same moment the page starts to turn, so the cover
+     glides into the spread in one motion instead of turning and then jumping. */
+  var pendingDir = 0, pointerSide = 1;
+  bookEl.addEventListener("pointerdown", function(e){
+    var b = bookEl.getBoundingClientRect();
+    pointerSide = e.clientX < b.left + b.width / 2 ? -1 : 1;
+  }, true);
+  function predict(idx, dir){
+    if (dir < 0) return idx <= 2 ? 0 : idx - 2;
+    return idx >= TOTAL - 3 ? TOTAL - 1 : idx + 2;
+  }
+  pf.on("changeState", function(e){
+    if (e.data === "flipping") { center(predict(pf.getCurrentPageIndex(), pendingDir || pointerSide)); pendingDir = 0; }
+    else if (e.data === "read") center(pf.getCurrentPageIndex());
+  });
+  function go(dir){
+    if (pf.getState && pf.getState() !== "read") return;
+    pendingDir = dir;
+    if (dir > 0) pf.flipNext("bottom"); else pf.flipPrev("bottom");
+  }
+  function update(){
+    var idx = pf.getCurrentPageIndex();
+    var landscape = pf.getOrientation() === "landscape";
+    var first = idx + 1, txt;
+    if (idx === 0) txt = "1 of " + TOTAL;
+    else if (idx >= TOTAL - 1) txt = TOTAL + " of " + TOTAL;
+    else if (landscape) { var a = (idx % 2 === 1) ? idx + 1 : idx; first = a; txt = "Pages " + a + "–" + (a + 1) + " of " + TOTAL; }
+    else txt = "Page " + (idx + 1) + " of " + TOTAL;
+    where.textContent = section(first) || "Clarion Outdoors";
+    count.textContent = txt;
+    prev.disabled = idx === 0;
+    next.disabled = idx >= TOTAL - 1;
+    bar.style.width = ((Math.min(TOTAL, first + (landscape && idx > 0 && idx < TOTAL - 1 ? 1 : 0))) / TOTAL * 100) + "%";
+    preload(idx);
+    center(idx);
+    var th = document.querySelectorAll(".thumb");
+    for (var t = 0; t < th.length; t++) th[t].classList.toggle("on", t === idx || (landscape && idx > 0 && t === idx + (idx % 2 === 1 ? 1 : -1)));
+  }
+  if (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) hint.textContent = "Swipe or tap the page edges";
+  function reveal(){ update(); wrap.classList.add("ready"); }
+  if (imgs[0].decode) imgs[0].decode().then(reveal, reveal); else reveal();
+  setTimeout(function(){ wrap.classList.add("ready"); }, 1500);
+  var moved = false;
+  pf.on("flip", function(){ update(); if (!moved) { moved = true; hint.classList.add("gone"); } });
+  pf.on("changeOrientation", update);
+  pf.on("init", update);
+  pf.on("update", update);
+  window.addEventListener("resize", function(){ setTimeout(update, 60); });
+
+  prev.addEventListener("click", function(){ go(-1); });
+  next.addEventListener("click", function(){ go(1); });
+  document.addEventListener("keydown", function(e){
+    if (!drawer.hidden) { if (e.key === "Escape") closeDrawer(); return; }
+    if (e.key === "ArrowRight" || e.key === "PageDown") { e.preventDefault(); go(1); }
+    if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(-1); }
+    if (e.key === "Home") pf.turnToPage(0), update();
+    if (e.key === "End") pf.turnToPage(TOTAL - 1), update();
+  });
+
+  var drawer = document.getElementById("drawer"), grid = document.getElementById("grid");
+  for (var g = 1; g <= TOTAL; g++) (function(n){
+    var b = document.createElement("button");
+    b.className = "thumb";
+    b.innerHTML = '<img loading="lazy" alt="" src="pages/thumbs/page-' + pad(n) + '.jpg"><span>' + pad(n) + (TITLES[n] ? " · " + TITLES[n] : "") + '</span>';
+    b.setAttribute("aria-label", "Go to page " + n);
+    b.addEventListener("click", function(){ closeDrawer(); preload(n - 1); pf.turnToPage(n - 1); update(); });
+    grid.appendChild(b);
+  })(g);
+  function openDrawer(){ drawer.hidden = false; update(); document.getElementById("close").focus(); }
+  function closeDrawer(){ drawer.hidden = true; document.getElementById("all").focus(); }
+  document.getElementById("all").addEventListener("click", openDrawer);
+  document.getElementById("close").addEventListener("click", closeDrawer);
+
+  var fs = document.getElementById("fs");
+  var root = document.documentElement;
+  if (!(document.fullscreenEnabled || document.webkitFullscreenEnabled)) fs.hidden = true;
+  fs.addEventListener("click", function(){
+    try {
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      } else {
+        var p = (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
+        if (p && p.catch) p.catch(function(){ fs.hidden = true; });
+      }
+    } catch (err) { fs.hidden = true; }
+  });
+
+  var m = /^#page-(\d+)$/.exec(location.hash || "");
+  if (m) { var n = Math.max(1, Math.min(TOTAL, parseInt(m[1], 10))); preload(n - 1); setTimeout(function(){ pf.turnToPage(n - 1); update(); }, 50); }
+  setTimeout(update, 120);
+})();
+</script>
+</body>
+</html>

@@ -75,6 +75,7 @@
         <a href="#process" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Process</a>
         <a href="#story" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">About</a>
         <a href="#about" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Grips</a>
+        <a href="resources.html" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Resources</a>
       </nav>
     </sc-if>
     <div style="display:flex; align-items:center; gap:{{ hdrGap }}; flex:none;">
@@ -97,6 +98,7 @@
       <a href="#process" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Process</a>
       <a href="#story" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">About</a>
       <a href="#about" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Grips</a>
+      <a href="resources.html" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Resources</a>
       <a href="films.html" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:#C9A24A;">Outdoor Films</a>
     </nav>
   </sc-if>
@@ -348,6 +350,20 @@
     </div>
   </sc-if>
 
+  <section id="magazine" data-screen-label="Magazine teaser" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#141210; border-top:1px solid rgba(239,233,220,0.1);">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(36px,6vw,96px); align-items:center;">
+      <a href="resources.html" aria-label="Read Clarion Outdoors, Issue 01" style="display:block; justify-self:center; width:min(100%,440px); box-shadow:0 40px 80px -30px rgba(0,0,0,0.9), 0 0 0 1px rgba(239,233,220,0.08);" style-hover="transform:translateY(-4px)">
+        <img src="magazine-cover.jpg" alt="Clarion Outdoors, Issue 01 cover" loading="lazy" style="width:100%; height:auto; display:block;">
+      </a>
+      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:clamp(16px,2vw,22px);">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63;">New · The Magazine</div>
+        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(40px,5.8vw,80px); line-height:0.92; margin:0;">Clarion Outdoors,<br><span style="color:#C9A24A;">Issue 01</span></h2>
+        <p style="font-size:clamp(16px,1.5vw,19px); line-height:1.6; font-weight:300; color:rgba(239,233,220,0.8); margin:0; max-width:40ch; text-wrap:pretty;">36 pages of inshore fishing on Tampa Bay. Real days, real fish, no spots given away.</p>
+        <a href="resources.html" style="display:inline-flex; align-items:center; background:#C9A24A; color:#0A0908; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(24px,3vw,34px); min-height:56px; white-space:nowrap; margin-top:6px;" style-hover="background:#E0C27C; color:#0A0908">Read the magazine →</a>
+      </div>
+    </div>
+  </section>
+
   <section id="films" ref="{{ filmsBand }}" onMouseEnter="{{ filmsEnter }}" onMouseLeave="{{ filmsLeave }}" data-screen-label="Outdoor Films" style="position:relative; background:#0A0908; border-top:1px solid rgba(239,233,220,0.1);">
     <div aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none;">
       <div style="position:absolute; inset:0; background-image:url(https://i.ytimg.com/vi/06mDUNvE9yQ/hq2.jpg); background-size:cover; background-position:center; transform:scale(1.4); filter:blur(7px) brightness(0.85);"></div>
@@ -391,6 +407,7 @@
         <a href="#custom" style="color:rgba(239,233,220,0.75);">Built For You</a>
         <a href="#process" style="color:rgba(239,233,220,0.75);">The Process</a>
         <a href="{{ form }}" style="color:rgba(239,233,220,0.75);">Start Your Build</a>
+        <a href="resources.html" style="color:rgba(239,233,220,0.75);">Resources</a>
         <a href="films.html" style="color:#C9A24A;">Outdoor Films</a>
       </div>
       <div style="display:flex; flex-direction:column; gap:12px; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;">
