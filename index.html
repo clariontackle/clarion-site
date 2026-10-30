@@ -75,10 +75,12 @@
         <a href="#process" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Process</a>
         <a href="#story" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">About</a>
         <a href="#about" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Grips</a>
-        <a href="resources.html" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Resources</a>
       </nav>
     </sc-if>
     <div style="display:flex; align-items:center; gap:{{ hdrGap }}; flex:none;">
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <a href="resources.html" style="border:1px solid rgba(239,233,220,0.35); color:#EFE9DC; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ filmsPad }}; white-space:nowrap;" style-hover="border-color:#C9A24A; color:#C9A24A">Resources</a>
+      </sc-if>
       <a href="films.html" style="border:1px solid #C9A24A; color:#C9A24A; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ filmsPad }}; white-space:nowrap;" style-hover="background:rgba(201,162,74,0.14); color:#E0C27C">{{ filmsLabel }}</a>
       <a href="{{ form }}" style="background:#C9A24A; color:#0A0908; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ buildPad }}; white-space:nowrap;" style-hover="background:#E0C27C">Start Your Build</a>
       <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
