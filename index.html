@@ -388,6 +388,21 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
 .gift-amts span b{font-family:var(--d);font-weight:400;font-size:20px;letter-spacing:.04em;color:var(--brass-hi);margin-right:6px;vertical-align:-2px}
 .gift-fine{font-size:13px;color:var(--foam-2)}
 
+/* grips gallery */
+.grips{display:flex;flex-direction:column;gap:12px}
+.grips-main{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:#FFFFFF;box-shadow:inset 0 0 0 1px var(--line)}
+.grips-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4% 6%;opacity:0;transform:scale(1.03);transition:opacity .6s var(--ease),transform 1.2s var(--ease)}
+.grips-main img[data-wide]{padding:6% 4%}
+.grips-main img.on{opacity:1;transform:none}
+.grips-count{position:absolute;left:18px;bottom:14px;color:var(--ink-3)}
+.grips-count b{color:var(--brass);font-weight:500}
+.grips-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.grips-thumbs button{aspect-ratio:1;border:0;padding:0;border-radius:14px;background:#FFFFFF;overflow:hidden;cursor:pointer;box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .3s,transform .3s var(--ease)}
+.grips-thumbs button img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.grips-thumbs button:hover{transform:translateY(-2px)}
+.grips-thumbs button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--brass)}
+.grips-thumbs button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+
 /* films band: live preview of "A day with Wilson's" */
 .films{flex-direction:column;align-items:stretch;justify-content:flex-end}
 .films .pv{position:relative;display:block;margin:0 clamp(26px,5vw,64px) clamp(26px,5vw,64px);aspect-ratio:16/9;border-radius:16px;overflow:hidden;isolation:isolate;
@@ -558,7 +573,10 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
         <p class="body">Tell us how you hold a rod and how long you hold it, and the cork gets shaped to that. Length, taper, and diameter cut to fit the hand that's actually going to fish it.</p>
         <div><a class="link" href="build.html">Request a fitted grip →</a></div>
       </div>
-      <div class="photo float" style="aspect-ratio:4/5"><img src="img/grip.jpg" alt="A hand-turned teak grip" loading="lazy"></div>
+      <div class="grips float" id="grips" aria-roledescription="gallery" aria-label="Grip styles">
+        <div class="grips-main"><img src="img/grip-1.jpg" alt="Split cork grip with dark burl rings and a matching butt cap" loading="lazy" class="on"><img src="img/grip-2.jpg" alt="Split cork grip on a blue blank" loading="lazy"><img src="img/grip-3.jpg" alt="Full cork grip with red and white wraps, shown with its guide wraps" loading="lazy" data-wide><img src="img/grip-4.jpg" alt="Split cork casting grip with dark burl accent rings" loading="lazy"><img src="img/grip-5.jpg" alt="Split cork spinning grip with wide dark burl bands" loading="lazy"><span class="grips-count label" aria-live="polite"><b id="gripNum">01</b> / 05</span></div>
+        <div class="grips-thumbs" role="group" aria-label="Pick a grip style"><button type="button" aria-label="Show grip style 1" aria-pressed="true"><img src="img/grip-1.jpg" alt="" loading="lazy"></button><button type="button" aria-label="Show grip style 2" aria-pressed="false"><img src="img/grip-2.jpg" alt="" loading="lazy"></button><button type="button" aria-label="Show grip style 3" aria-pressed="false"><img src="img/grip-3.jpg" alt="" loading="lazy"></button><button type="button" aria-label="Show grip style 4" aria-pressed="false"><img src="img/grip-4.jpg" alt="" loading="lazy"></button><button type="button" aria-label="Show grip style 5" aria-pressed="false"><img src="img/grip-5.jpg" alt="" loading="lazy"></button></div>
+      </div>
     </div>
     <div class="chips">
       <div class="chip"><span class="label">Material</span><p>Flor-grade cork for the all-day rods, teak when you want the boat to notice.</p></div>
@@ -756,6 +774,23 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
   function step(d){var w=sw.firstElementChild.getBoundingClientRect().width+14;sw.scrollBy({left:d*w,behavior:'smooth'})}
   document.getElementById('prev').addEventListener('click',function(){step(-1)});
   document.getElementById('next').addEventListener('click',function(){step(1)});
+})();
+</script><script>
+(function(){
+  var g=document.getElementById('grips'); if(!g) return;
+  var imgs=g.querySelectorAll('.grips-main img'), btns=g.querySelectorAll('.grips-thumbs button'), num=document.getElementById('gripNum');
+  var cur=0, timer=null, held=false, seen=false;
+  var still=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(i){ cur=(i+imgs.length)%imgs.length;
+    for(var k=0;k<imgs.length;k++){ imgs[k].classList.toggle('on',k===cur); btns[k].setAttribute('aria-pressed',k===cur?'true':'false'); }
+    num.textContent=(cur<9?'0':'')+(cur+1); }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} }
+  function start(){ if(still||held||timer||!seen) return; timer=setInterval(function(){show(cur+1);},4500); }
+  for(var k=0;k<btns.length;k++){ (function(k){ btns[k].addEventListener('click',function(){ held=true; stop(); show(k); }); })(k); }
+  g.addEventListener('mouseenter',stop); g.addEventListener('mouseleave',start);
+  g.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){held=true;stop();show(cur+1);btns[cur].focus();} if(e.key==='ArrowLeft'){held=true;stop();show(cur-1);btns[cur].focus();} });
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ seen=e.isIntersecting; if(seen) start(); else stop(); }); },{threshold:.35}).observe(g); }
+  else { seen=true; start(); }
 })();
 </script>
 
