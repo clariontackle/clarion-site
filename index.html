@@ -207,11 +207,36 @@ p{margin:0;text-wrap:pretty}
 .menu-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:none;color:inherit;display:grid;place-content:center;gap:4px;cursor:pointer}
 .menu-btn span{display:block;width:16px;height:1.5px;background:currentColor}
 @media (min-width:1100px){.nav{display:flex}.menu-btn{display:none}}
-.drawer{position:fixed;inset:0;z-index:70;background:var(--navy);color:var(--foam);display:flex;flex-direction:column;justify-content:center;gap:2px;
-  padding:calc(env(safe-area-inset-top,0px) + 80px) max(28px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 40px) max(28px, env(safe-area-inset-left,0px))}
-.drawer a{font-family:var(--d);font-size:clamp(46px,13vw,72px);line-height:1}
-.drawer a:hover{color:var(--brass-hi)}
-.drawer .close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(16px, env(safe-area-inset-right,0px));width:48px;height:48px;border-radius:50%;background:none;border:1.5px solid var(--foam-line);color:var(--foam);font-size:18px;cursor:pointer}
+.drawer{position:fixed;inset:0;z-index:70;color:var(--foam);display:flex;flex-direction:column;gap:clamp(18px,3vh,32px);overflow-y:auto;overscroll-behavior:contain;
+  background:radial-gradient(120% 90% at 100% 0%,rgba(154,102,64,.22),transparent 60%),var(--navy);
+  padding:calc(env(safe-area-inset-top,0px) + 14px) max(22px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(22px, env(safe-area-inset-left,0px))}
+.drawer[hidden]{display:none}
+@media (min-width:760px){.drawer{padding-left:max(44px, env(safe-area-inset-left,0px));padding-right:max(44px, env(safe-area-inset-right,0px))}}
+.dr-top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+.dr-top .brand img{height:26px}
+.drawer .close{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 6px 0 20px;border-radius:999px;border:0;background:rgba(246,243,237,.06);box-shadow:inset 0 0 0 1.5px rgba(224,210,174,.45);
+  color:var(--foam);font-family:var(--l);font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .3s var(--ease)}
+.drawer .close i{font-style:normal;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--brass);color:var(--deep);font-size:15px;transition:transform .45s var(--ease)}
+.drawer .close:hover{background:rgba(246,243,237,.12)}.drawer .close:hover i{transform:rotate(90deg)}
+.dr-main{flex:1 0 auto;display:grid;align-items:center;gap:clamp(24px,4vw,64px)}
+@media (min-width:900px){.dr-main{grid-template-columns:minmax(0,1fr) minmax(0,38%)}}
+.dr-links{display:flex;flex-direction:column}
+.dr-links a{display:flex;align-items:baseline;gap:clamp(12px,1.6vw,22px);font-family:var(--d);font-size:clamp(42px,8.4vh,84px);line-height:1.02;padding:2px 0;transition:color .3s,transform .45s var(--ease)}
+.dr-links a small{font-family:var(--l);font-weight:500;font-size:10px;letter-spacing:.2em;color:var(--brass);min-width:2.2em;transform:translateY(-.4em)}
+.dr-links a:hover{color:var(--brass-hi);transform:translateX(8px)}
+@media (max-height:620px){.dr-links a{font-size:clamp(34px,7.4vh,60px)}}
+.dr-photo{display:none;margin:0;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-height:70vh;box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
+.dr-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.dr-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:linear-gradient(0deg,rgba(8,7,7,.85),transparent);color:var(--brass-hi)}
+@media (min-width:900px){.dr-photo{display:block}}
+.dr-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;padding-top:20px;border-top:1px solid var(--foam-line)}
+.dr-contact{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--foam-2)}
+.dr-contact a:hover{color:var(--brass-hi)}
+.drawer:not([hidden]) .dr-links a{animation:drIn .6s var(--ease) both}
+.dr-links a:nth-child(2){animation-delay:.04s}.dr-links a:nth-child(3){animation-delay:.08s}.dr-links a:nth-child(4){animation-delay:.12s}
+.dr-links a:nth-child(5){animation-delay:.16s}.dr-links a:nth-child(6){animation-delay:.2s}.dr-links a:nth-child(7){animation-delay:.24s}
+@keyframes drIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.drawer:not([hidden]) .dr-links a{animation:none}}
 
 /* hero */
 .hero{position:relative;margin-top:-70px;min-height:min(100svh,1000px);display:flex;align-items:flex-end;color:var(--foam);overflow:hidden;background:var(--deep)}
@@ -405,9 +430,27 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
   </div>
 </header>
 
-<div class="drawer" id="drawer" hidden>
-  <button class="close" id="closeBtn" type="button" aria-label="Close menu">✕</button>
-  <a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">Process</a><a href="#story">About</a><a href="#about">Grips</a><a href="resources.html">Resources</a><a href="films.html" style="color:var(--brass-hi)">Outdoor Films</a>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="dr-top">
+    <a class="brand" href="#top" aria-label="Clarion Tackle Co., back to top"><img src="img/clarion-script-cream.svg" alt="Clarion"></a>
+    <button class="close" id="closeBtn" type="button" aria-label="Close menu">Close <i aria-hidden="true">✕</i></button>
+  </div>
+  <div class="dr-main">
+    <nav class="dr-links" aria-label="Site">
+      <a href="#series"><small>01</small>What We Build</a>
+      <a href="#custom"><small>02</small>Built For You</a>
+      <a href="#process"><small>03</small>Process</a>
+      <a href="#story"><small>04</small>About</a>
+      <a href="#about"><small>05</small>Grips</a>
+      <a href="resources.html"><small>06</small>Resources</a>
+      <a href="films.html" style="color:var(--brass-hi)"><small>07</small>Outdoor Films</a>
+    </nav>
+    <figure class="dr-photo"><img src="img/builder.jpg" alt="Building a Clarion rod at the bench" loading="lazy"><figcaption class="label">Made to order in Tampa Bay</figcaption></figure>
+  </div>
+  <div class="dr-foot">
+    <a class="btn brass" href="build.html">Start Your Build <span class="dot">→</span></a>
+    <div class="dr-contact"><a href="https://www.instagram.com/clarionrods/">Instagram</a><a href="mailto:hello@clarionrods.com">hello@clarionrods.com</a></div>
+  </div>
 </div>
 
 <main>
@@ -639,7 +682,8 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
   function onScroll(){hdr.classList.toggle('solid', window.scrollY>window.innerHeight*0.6)}
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
   var drawer=document.getElementById('drawer'), mb=document.getElementById('menuBtn');
-  function setMenu(open){drawer.hidden=!open; mb.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':'';}
+  function setMenu(open){drawer.hidden=!open; mb.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':''; (open?document.getElementById('closeBtn'):mb).focus({preventScroll:true});}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!drawer.hidden)setMenu(false)});
   mb.addEventListener('click',function(){setMenu(true)});
   document.getElementById('closeBtn').addEventListener('click',function(){setMenu(false)});
   drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
