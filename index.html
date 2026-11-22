@@ -206,7 +206,8 @@ p{margin:0;text-wrap:pretty}
 @media (min-width:560px){.hide-sm{display:inline-flex}}
 .menu-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:none;color:inherit;display:grid;place-content:center;gap:4px;cursor:pointer}
 .menu-btn span{display:block;width:16px;height:1.5px;background:currentColor}
-@media (min-width:1100px){.nav{display:flex}.menu-btn{display:none}}
+@media (min-width:1240px){.nav{display:flex}.menu-btn{display:none}}
+@media (min-width:1240px) and (max-width:1399px){.nav{gap:20px}}
 .drawer{position:fixed;inset:0;z-index:70;color:var(--foam);display:flex;flex-direction:column;gap:clamp(18px,3vh,32px);overflow-y:auto;overscroll-behavior:contain;
   background:radial-gradient(120% 90% at 100% 0%,rgba(154,102,64,.22),transparent 60%),var(--navy);
   padding:calc(env(safe-area-inset-top,0px) + 14px) max(22px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(22px, env(safe-area-inset-left,0px))}
@@ -221,7 +222,7 @@ p{margin:0;text-wrap:pretty}
 .dr-main{flex:1 0 auto;display:grid;align-items:center;gap:clamp(24px,4vw,64px)}
 @media (min-width:900px){.dr-main{grid-template-columns:minmax(0,1fr) minmax(0,38%)}}
 .dr-links{display:flex;flex-direction:column}
-.dr-links a{display:flex;align-items:baseline;gap:clamp(12px,1.6vw,22px);font-family:var(--d);font-size:clamp(42px,8.4vh,84px);line-height:1.02;padding:2px 0;transition:color .3s,transform .45s var(--ease)}
+.dr-links a{display:flex;align-items:baseline;gap:clamp(12px,1.6vw,22px);font-family:var(--d);font-size:clamp(40px,7.6vh,80px);line-height:1.02;padding:2px 0;transition:color .3s,transform .45s var(--ease)}
 .dr-links a small{font-family:var(--l);font-weight:500;font-size:10px;letter-spacing:.2em;color:var(--brass);min-width:2.2em;transform:translateY(-.4em)}
 .dr-links a:hover{color:var(--brass-hi);transform:translateX(8px)}
 @media (max-height:620px){.dr-links a{font-size:clamp(34px,7.4vh,60px)}}
@@ -234,7 +235,7 @@ p{margin:0;text-wrap:pretty}
 .dr-contact a:hover{color:var(--brass-hi)}
 .drawer:not([hidden]) .dr-links a{animation:drIn .6s var(--ease) both}
 .dr-links a:nth-child(2){animation-delay:.04s}.dr-links a:nth-child(3){animation-delay:.08s}.dr-links a:nth-child(4){animation-delay:.12s}
-.dr-links a:nth-child(5){animation-delay:.16s}.dr-links a:nth-child(6){animation-delay:.2s}.dr-links a:nth-child(7){animation-delay:.24s}
+.dr-links a:nth-child(5){animation-delay:.16s}.dr-links a:nth-child(6){animation-delay:.2s}.dr-links a:nth-child(7){animation-delay:.24s}.dr-links a:nth-child(8){animation-delay:.28s}
 @keyframes drIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.drawer:not([hidden]) .dr-links a{animation:none}}
 
@@ -371,6 +372,22 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
 .fcol a{color:var(--foam-2)} .fcol a:hover{color:var(--brass-hi)}
 .note{font-size:12px;color:rgba(244,240,231,.45);margin-top:56px}
 
+/* gift cards */
+#gift{position:relative;overflow:hidden;isolation:isolate}
+#gift::before{content:"";position:absolute;z-index:-1;width:min(900px,120vw);aspect-ratio:1;left:-20%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(203,184,140,.16),transparent 62%);pointer-events:none}
+.gift{display:grid;gap:clamp(36px,6vw,96px);align-items:center}
+@media (min-width:900px){.gift{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
+.gift-card{display:block;justify-self:center;width:min(100%,600px);border-radius:18px;overflow:hidden;transform:perspective(1200px) rotateY(8deg) rotateX(3deg) rotate(-2deg);
+  box-shadow:0 50px 90px -34px rgba(0,0,0,.95), 0 0 0 1px rgba(224,210,174,.22);transition:transform .8s var(--ease), box-shadow .8s var(--ease)}
+.gift-card:hover{transform:perspective(1200px) rotateY(0) rotateX(0) rotate(0) translateY(-6px);box-shadow:0 60px 100px -34px rgba(0,0,0,.95), 0 0 0 1px rgba(224,210,174,.45)}
+.gift-card img{display:block;width:100%;height:auto;aspect-ratio:1.6/1}
+@media (prefers-reduced-motion:reduce){.gift-card,.gift-card:hover{transform:none}}
+.gift-copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.gift-amts{display:flex;flex-wrap:wrap;gap:10px}
+.gift-amts span{font-family:var(--l);font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(224,210,174,.4);color:var(--foam)}
+.gift-amts span b{font-family:var(--d);font-weight:400;font-size:20px;letter-spacing:.04em;color:var(--brass-hi);margin-right:6px;vertical-align:-2px}
+.gift-fine{font-size:13px;color:var(--foam-2)}
+
 /* films band: live preview of "A day with Wilson's" */
 .films{flex-direction:column;align-items:stretch;justify-content:flex-end}
 .films .pv{position:relative;display:block;margin:0 clamp(26px,5vw,64px) clamp(26px,5vw,64px);aspect-ratio:16/9;border-radius:16px;overflow:hidden;isolation:isolate;
@@ -386,30 +403,51 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
   .films .pv{flex:none;width:min(420px,34vw);margin:0 clamp(26px,5vw,64px) clamp(26px,5vw,64px) 0}
 }
 
-/* lead-magnet popup: A guide on guides */
-.gm{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:clamp(12px,4vw,48px);background:rgba(8,7,7,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+
+/* welcome popup: gift cards, guide, magazine */
+.gm{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:clamp(10px,3vw,40px);background:rgba(8,7,7,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .gm[hidden],.gm [hidden]{display:none !important}
-.gm-card{position:relative;width:min(760px,100%);max-height:92svh;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));
-  background:var(--salt-2);color:var(--foam);border-radius:24px;box-shadow:0 40px 120px rgba(0,0,0,.6), inset 0 0 0 1px rgba(224,210,174,.18);animation:gmPop .45s var(--ease) both}
+.gm-card{position:relative;width:min(620px,100%);max-height:86svh;display:flex;flex-direction:column;overflow:hidden;
+  background:var(--salt-2);color:var(--foam);border-radius:20px;box-shadow:0 40px 120px rgba(0,0,0,.6), inset 0 0 0 1px rgba(224,210,174,.18);animation:gmPop .45s var(--ease) both}
 @keyframes gmPop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.gm-card{animation:none}}
-.gm-img{width:100%;height:100%;min-height:220px;max-height:560px;object-fit:cover;display:block}
-@media (max-width:600px){.gm-img{max-height:200px}}
-.gm-body{padding:clamp(26px,4vw,40px);display:flex;flex-direction:column;gap:16px}
-.gm-body .lede{font-size:15px;color:var(--foam-2)}
-.gm-x{position:absolute;z-index:2;top:12px;right:12px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(8,7,7,.6);color:var(--foam);font-size:17px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(246,243,237,.3);transition:background .3s,color .3s}
+.gm-track{flex:1 1 auto;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}
+.gm-track::-webkit-scrollbar{display:none}
+.gm-slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;display:grid;overflow-y:auto;max-height:calc(86svh - 54px)}
+@media (min-width:720px){.gm-slide{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.gm .btn:not(.sm){min-height:48px}}
+.gm-media{position:relative;min-height:150px;background:var(--deep);overflow:hidden}
+.gm-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.gm-media-card{display:grid;place-items:center;padding:clamp(14px,3vw,24px);background:radial-gradient(circle at 40% 40%,rgba(203,184,140,.18),transparent 65%),var(--deep)}
+.gm-media-card img{position:static;height:auto;aspect-ratio:1.6/1;border-radius:12px;transform:rotate(-3deg);box-shadow:0 30px 60px -24px rgba(0,0,0,.95), 0 0 0 1px rgba(224,210,174,.25)}
+.gm-media-mag{display:grid;place-items:center;padding:clamp(14px,3vw,24px);background:radial-gradient(circle at 50% 40%,rgba(154,102,64,.3),transparent 65%),var(--deep)}
+.gm-media-mag img{position:static;width:auto;height:auto;max-height:240px;max-width:72%;border-radius:6px;transform:rotate(-2deg);box-shadow:0 30px 60px -24px rgba(0,0,0,.95)}
+@media (max-width:719px){.gm-media{min-height:0;height:120px}.gm-media-card img{max-width:170px}.gm-media-mag img{max-height:100px}.gm-media:not(.gm-media-card):not(.gm-media-mag) img{object-position:center 35%}}
+.gm-body{padding:clamp(16px,2.6vw,26px);padding-top:clamp(18px,3vw,30px);display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.gm-body .h2{font-size:clamp(28px,3.4vw,38px)}
+.gm-body .lede{font-size:13.5px;color:var(--foam-2)}
+.gm-ask{display:flex;flex-direction:column;align-items:flex-start;gap:10px;width:100%}
+.gm-x{position:absolute;z-index:3;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(8,7,7,.6);color:var(--foam);font-size:17px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(246,243,237,.3);transition:background .3s,color .3s}
 .gm-x:hover{background:var(--brass);color:var(--deep)}
 .gm-tags{display:flex;flex-wrap:wrap;gap:8px}
 .gm-tags span{font-family:var(--l);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--foam-2);padding:7px 11px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--foam-line)}
-.gm form{display:flex;flex-direction:column;gap:10px}
-.gm input{font:inherit;font-size:16px;color:var(--foam);background:rgba(255,255,255,.05);border:0;border-radius:14px;box-shadow:inset 0 0 0 1px var(--foam-line);padding:0 18px;min-height:52px;transition:box-shadow .3s}
+.gm form{display:flex;flex-direction:column;gap:8px;width:100%}
+.gm input{font:inherit;font-size:16px;color:var(--foam);background:rgba(255,255,255,.05);border:0;border-radius:14px;box-shadow:inset 0 0 0 1px var(--foam-line);padding:0 16px;min-height:44px;transition:box-shadow .3s}
 .gm input::placeholder{color:rgba(246,243,237,.45)}
 .gm input:focus{outline:none;box-shadow:inset 0 0 0 1.5px var(--brass)}
-.gm .btn{justify-content:space-between}
+.gm form .btn{justify-content:space-between}
 .gm-fine{font-size:12px;color:rgba(246,243,237,.55)}
-.gm-skip{background:none;border:0;padding:0;font:inherit;font-size:12px;letter-spacing:.06em;color:rgba(246,243,237,.62);text-decoration:underline;text-underline-offset:3px;cursor:pointer;align-self:flex-start}
+.gm-skip{background:none;border:0;padding:0;font:inherit;font-size:12px;letter-spacing:.06em;color:rgba(246,243,237,.62);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .gm-skip:hover{color:var(--brass-hi)}
-.gm-row{display:flex;flex-wrap:wrap;gap:10px}
+.gm-nav{flex:none;display:flex;align-items:center;gap:12px;padding:6px clamp(12px,2.4vw,18px);border-top:1px solid var(--foam-line);min-height:54px}
+.gm-arrow{width:36px;height:36px;border-radius:50%;border:0;background:none;color:var(--foam);box-shadow:inset 0 0 0 1px rgba(224,210,174,.4);cursor:pointer;font-size:15px;transition:background .3s,color .3s}
+.gm-arrow:hover{background:var(--brass);color:var(--deep)}
+.gm-dots{display:flex;gap:4px}
+.gm-dots button{position:relative;width:34px;height:40px;border:0;background:none;cursor:pointer;padding:0}
+.gm-dots button::after{content:"";position:absolute;left:4px;right:4px;top:50%;height:3px;margin-top:-1.5px;border-radius:3px;background:rgba(246,243,237,.22);transition:background .3s}
+.gm-dots button[aria-selected="true"]::after{background:var(--brass-hi)}
+.gm-later{margin-left:auto}
+@media (max-width:420px){.gm-later{font-size:11px}.gm-arrow{width:36px;height:36px}}
+@media (prefers-reduced-motion:reduce){.gm-card{animation:none}.gm-track{scroll-behavior:auto}}
+
 </style>
 </head>
 <body>
@@ -420,7 +458,7 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
       <img class="ink" src="img/clarion-script-black.svg" alt="">
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">Process</a><a href="#story">About</a><a href="#about">Grips</a><a href="resources.html">Resources</a>
+      <a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">Process</a><a href="#story">About</a><a href="#about">Grips</a><a href="#gift">Gift Cards</a><a href="resources.html">Resources</a>
     </nav>
     <div class="hdr-cta">
       <a class="btn line sm hide-sm" href="films.html">Outdoor Films</a>
@@ -443,7 +481,8 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
       <a href="#story"><small>04</small>About</a>
       <a href="#about"><small>05</small>Grips</a>
       <a href="resources.html"><small>06</small>Resources</a>
-      <a href="films.html" style="color:var(--brass-hi)"><small>07</small>Outdoor Films</a>
+      <a href="#gift"><small>07</small>Gift Cards</a>
+      <a href="films.html" style="color:var(--brass-hi)"><small>08</small>Outdoor Films</a>
     </nav>
     <figure class="dr-photo"><img src="img/builder.jpg" alt="Building a Clarion rod at the bench" loading="lazy"><figcaption class="label">Made to order in Tampa Bay</figcaption></figure>
   </div>
@@ -651,6 +690,22 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
   </div>
 </section>
 
+<section id="gift" class="pad dark" aria-labelledby="giftTitle">
+  <div class="wrap gift">
+    <a class="gift-card" href="https://app.squareup.com/gift/ML6CMAVV5Z0F3/order" target="_blank" rel="noopener" aria-label="Give a Clarion gift card (opens our Square gift card page)">
+      <img id="giftImg" src="img/gift-card.png" alt="Clarion Tackle Co. gift card" loading="lazy" width="1280" height="800">
+    </a>
+    <div class="gift-copy">
+      <span class="label" style="color:var(--brass-hi)">New · Gift Cards</span>
+      <h2 class="display h1" id="giftTitle" style="font-size:clamp(56px,8vw,120px)">Give the gift <span style="color:var(--brass-hi)">of custom.</span></h2>
+      <p class="lede">A Clarion rod, built for how they fish. The gift card arrives by email and goes toward a custom build, quoted to their specs.</p>
+      <div class="gift-amts" aria-label="Gift card amounts"><span><b>$100</b></span><span><b>$250</b></span><span><b>$600</b>Full build</span></div>
+      <a class="btn brass" href="https://app.squareup.com/gift/ML6CMAVV5Z0F3/order" target="_blank" rel="noopener">Give a Gift Card <span class="dot">→</span></a>
+      <p class="gift-fine">Checkout is handled securely by Square and opens in a new tab.</p>
+    </div>
+  </div>
+</section>
+
 <section id="start" class="cta pad dark">
   <div class="wrap">
     <img class="mark" src="img/hook-cream.svg" alt="">
@@ -670,7 +725,7 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
         <img src="img/clarion-script-cream.svg" alt="Clarion Tackle Co." style="height:30px;width:auto;align-self:flex-start">
         <p style="color:var(--foam-2);max-width:34ch">Made-to-order fishing rods, documented at the bench. Built in Tampa Bay, Florida.</p>
       </div>
-      <div class="fcol"><span class="label">Explore</span><a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">The Process</a><a href="build.html">Start Your Build</a><a href="resources.html">Resources</a><a href="films.html" style="color:var(--brass-hi)">Outdoor Films</a></div>
+      <div class="fcol"><span class="label">Explore</span><a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">The Process</a><a href="build.html">Start Your Build</a><a href="#gift">Gift Cards</a><a href="resources.html">Resources</a><a href="films.html" style="color:var(--brass-hi)">Outdoor Films</a></div>
       <div class="fcol"><span class="label">Contact</span><a href="https://www.instagram.com/clarionrods/">Instagram</a><a href="mailto:hello@clarionrods.com">hello@clarionrods.com</a><span style="color:var(--foam-2)">Tampa Bay, FL</span></div>
     </div>
   </div>
@@ -696,6 +751,7 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
     var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.25});
     vids.forEach(function(v){io.observe(v)});
   }
+  var gi=document.getElementById('giftImg'); var mo=new Date().getMonth(); if(gi&&(mo===10||mo===11)) gi.src='img/gift-card-holiday.png';
   var sw=document.getElementById('swipe');
   function step(d){var w=sw.firstElementChild.getBoundingClientRect().width+14;sw.scrollBy({left:d*w,behavior:'smooth'})}
   document.getElementById('prev').addEventListener('click',function(){step(-1)});
@@ -704,34 +760,67 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
 </script>
 
 <div class="gm" id="gm" hidden>
-  <div class="gm-card" role="dialog" aria-modal="true" aria-labelledby="gmTitle">
-    <img class="gm-img" src="img/guide.jpg" alt="" loading="lazy">
-    <div class="gm-body">
-      <button type="button" class="gm-x" data-close aria-label="Close">✕</button>
-      <div id="gmAsk" style="display:flex;flex-direction:column;gap:16px">
-        <span class="label" style="color:var(--brass-hi)">Free Download</span>
-        <h2 class="display h2" id="gmTitle" style="font-size:clamp(40px,5vw,56px)">A guide on <span style="color:var(--brass-hi)">guides.</span></h2>
-        <p class="lede">Alconite, SiC, titanium frames, single-foot vs double — what each one actually does to your cast, and how to tell which setup is right for the way you fish.</p>
-        <div class="gm-tags"><span>11 pages</span><span>Manufacturer spec tables</span><span>No brand placement</span></div>
-        <form id="gmForm">
-          <input type="email" name="email" required placeholder="Email address" autocomplete="email" aria-label="Email address">
-          <input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel" aria-label="Phone (optional)">
-          <button type="submit" class="btn brass">Get the guide <span class="dot">→</span></button>
-        </form>
-        <p class="gm-fine">No spam, no drip campaign. The download, plus finished builds now and then. Unsubscribe any time.</p>
-        <a class="gm-skip" href="a-guide-on-guides.pdf" download target="_blank" rel="noopener" data-close>Or just read it — no email</a>
-        <button type="button" class="gm-skip" data-close>No thanks, I'm just looking</button>
-      </div>
-      <div id="gmDone" hidden style="display:flex;flex-direction:column;gap:16px">
-        <span class="label" style="color:var(--brass-hi)">Ready</span>
-        <h2 class="display h2" style="font-size:clamp(40px,5vw,56px)">Here it is.</h2>
-        <p class="lede">Eleven pages on rings, frames, and guide trains — with Fuji's own published numbers, not marketing copy. Yours to keep.</p>
-        <div class="gm-row">
-          <a class="btn brass" href="a-guide-on-guides.pdf" download target="_blank" rel="noopener">Download the guide <span class="dot">↓</span></a>
-          <a class="btn line" href="build.html" data-close>Start your build</a>
+  <div class="gm-card" role="dialog" aria-modal="true" aria-roledescription="carousel" aria-label="Clarion offers">
+    <button type="button" class="gm-x" data-close aria-label="Close">✕</button>
+    <div class="gm-track" id="gmTrack">
+
+      <section class="gm-slide" aria-roledescription="slide" aria-label="1 of 3: Gift cards">
+        <div class="gm-media gm-media-card"><img class="gm-giftimg" src="img/gift-card.png" alt="Clarion Tackle Co. gift card" loading="lazy"></div>
+        <div class="gm-body">
+          <span class="label" style="color:var(--brass-hi)">New · Gift Cards</span>
+          <h2 class="display h2">Give the gift <span style="color:var(--brass-hi)">of custom.</span></h2>
+          <p class="lede">A Clarion rod, built for how they fish. The gift card arrives by email and goes toward a custom build, quoted to their specs.</p>
+          <div class="gift-amts" aria-label="Gift card amounts"><span><b>$100</b></span><span><b>$250</b></span><span><b>$600</b>Full build</span></div>
+          <a class="btn brass" href="https://app.squareup.com/gift/ML6CMAVV5Z0F3/order" target="_blank" rel="noopener">Give a Gift Card <span class="dot">→</span></a>
         </div>
-        <p class="gm-fine">PDF, 1 MB. Downloads straight to your device — no confirmation email to wait on.</p>
+      </section>
+
+      <section class="gm-slide" aria-roledescription="slide" aria-label="2 of 3: A guide on guides">
+        <div class="gm-media"><img src="img/guide.jpg" alt="" loading="lazy"></div>
+        <div class="gm-body">
+          <div class="gm-ask" id="gmAsk">
+            <span class="label" style="color:var(--brass-hi)">Free Download</span>
+            <h2 class="display h2">A guide on <span style="color:var(--brass-hi)">guides.</span></h2>
+            <p class="lede">Alconite, SiC, titanium frames, single-foot vs double — what each one actually does to your cast, and how to tell which setup is right for the way you fish.</p>
+            <div class="gm-tags"><span>11 pages</span><span>Manufacturer spec tables</span><span>No brand placement</span></div>
+            <form id="gmForm">
+              <input type="email" name="email" required placeholder="Email address" autocomplete="email" aria-label="Email address">
+              <input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel" aria-label="Phone (optional)">
+              <button type="submit" class="btn brass">Get the guide <span class="dot">→</span></button>
+            </form>
+            <p class="gm-fine">No spam, no drip campaign. The download, plus finished builds now and then. Unsubscribe any time.</p>
+            <a class="gm-skip" href="a-guide-on-guides.pdf" download target="_blank" rel="noopener">Or just read it — no email</a>
+          </div>
+          <div class="gm-ask" id="gmDone" hidden>
+            <span class="label" style="color:var(--brass-hi)">Ready</span>
+            <h2 class="display h2">Here it is.</h2>
+            <p class="lede">Eleven pages on rings, frames, and guide trains — with Fuji's own published numbers, not marketing copy. Yours to keep.</p>
+            <a class="btn brass" href="a-guide-on-guides.pdf" download target="_blank" rel="noopener">Download the guide <span class="dot">↓</span></a>
+            <p class="gm-fine">PDF, 1 MB. Downloads straight to your device — no confirmation email to wait on.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="gm-slide" aria-roledescription="slide" aria-label="3 of 3: Clarion Outdoors magazine">
+        <div class="gm-media gm-media-mag"><img src="img/magazine.jpg" alt="Clarion Outdoors, Issue 01 cover" loading="lazy"></div>
+        <div class="gm-body">
+          <span class="label" style="color:var(--brass-hi)">New · The Magazine</span>
+          <h2 class="display h2">Clarion Outdoors, <span style="color:var(--brass-hi)">Issue 01</span></h2>
+          <p class="lede">36 pages of inshore fishing on Tampa Bay. Real days, real fish, no spots given away.</p>
+          <a class="btn brass" href="clarion-outdoors-issue-01.pdf" download target="_blank" rel="noopener">Download the magazine <span class="dot">↓</span></a>
+          <a class="btn line" href="resources.html">Read it online</a>
+          <p class="gm-fine">PDF, 9 MB.</p>
+        </div>
+      </section>
+
+    </div>
+    <div class="gm-nav">
+      <button type="button" class="gm-arrow" id="gmPrev" aria-label="Previous">←</button>
+      <div class="gm-dots" role="tablist" aria-label="Choose an offer">
+        <button type="button" role="tab" aria-label="Gift cards"></button><button type="button" role="tab" aria-label="A guide on guides"></button><button type="button" role="tab" aria-label="Magazine"></button>
       </div>
+      <button type="button" class="gm-arrow" id="gmNext" aria-label="Next">→</button>
+      <button type="button" class="gm-skip gm-later" data-close>No thanks, I'm just looking</button>
     </div>
   </div>
 </div>
@@ -747,38 +836,54 @@ footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90p
   if('IntersectionObserver' in window){ new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?on():off()})},{rootMargin:'200px 0px'}).observe(pv); } else on();
 })();
 
-/* lead-magnet popup: same rules and inbox as the live site.
-   Exit intent on desktop, 50% scroll on phones, never in the first 20s, once per visitor. */
+
+/* welcome popup: opens 5s after the homepage loads, once per visit; slides between
+   gift cards, the guide (same web3forms inbox as before) and the magazine */
 (function(){
   var ACCESS_KEY="623c8342-3bf9-41ef-aed3-26963c076915";
-  var ENDPOINT=ACCESS_KEY?"https://api.web3forms.com/submit":"";
-  var KEY="clarion_queue_modal";
-  var gm=document.getElementById('gm'); if(!gm||!ENDPOINT) return;
-  var lastFocus=null;
-  function seen(){try{return localStorage.getItem(KEY)==="1"}catch(e){return false}}
-  function mark(){try{localStorage.setItem(KEY,"1")}catch(e){}}
-  function exitIntent(e){ if(window.innerWidth<1120) return; if(e.relatedTarget||e.clientY>8) return; open(); }
-  function depth(){ if(window.innerWidth>=1120) return; var d=document.documentElement; if((window.scrollY+window.innerHeight)/d.scrollHeight>=0.5) open(); }
+  var ENDPOINT="https://api.web3forms.com/submit";
+  var DELAY=5000, EVERY=7000, SEEN="clarion_popup_seen";
+  var gm=document.getElementById('gm'); if(!gm) return;
+  var track=document.getElementById('gmTrack'), slides=[].slice.call(track.children), dots=[].slice.call(gm.querySelectorAll('.gm-dots button'));
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur=0, timer=null, held=false, lastFocus=null;
+  var gi=gm.querySelector('.gm-giftimg'), mo=new Date().getMonth(); if(gi&&(mo===10||mo===11)) gi.src='img/gift-card-holiday.png';
+  function go(i){ cur=(i+slides.length)%slides.length; track.scrollTo({left:cur*track.clientWidth,behavior:still?'auto':'smooth'}); mark(); }
+  function mark(){ dots.forEach(function(d,k){d.setAttribute('aria-selected',String(k===cur))}); }
+  function stop(){ clearInterval(timer); timer=null; }
+  function play(){ stop(); if(still||held) return; timer=setInterval(function(){ go(cur+1); },EVERY); }
+  track.addEventListener('scroll',function(){ var i=Math.round(track.scrollLeft/Math.max(1,track.clientWidth)); if(i!==cur){cur=i;mark();} },{passive:true});
+  dots.forEach(function(d,k){ d.addEventListener('click',function(){ held=true; stop(); go(k); }); });
+  document.getElementById('gmPrev').addEventListener('click',function(){ held=true; stop(); go(cur-1); });
+  document.getElementById('gmNext').addEventListener('click',function(){ held=true; stop(); go(cur+1); });
+  gm.addEventListener('mouseenter',stop); gm.addEventListener('mouseleave',play);
+  gm.addEventListener('touchstart',function(){ held=true; stop(); },{passive:true});
+  gm.addEventListener('focusin',function(e){ if(e.target.tagName==='INPUT'){ held=true; stop(); } });
   function open(){
-    document.removeEventListener('mouseout',exitIntent); window.removeEventListener('scroll',depth);
+    try{ if(sessionStorage.getItem(SEEN)==="1") return; }catch(e){}
     lastFocus=document.activeElement; gm.hidden=false; document.body.style.overflow='hidden';
-    var i=gm.querySelector('input'); if(i) setTimeout(function(){i.focus({preventScroll:true})},60);
+    cur=0; track.scrollLeft=0; mark(); play();
+    setTimeout(function(){ var b=gm.querySelector('.gm-x'); if(b) b.focus({preventScroll:true}); },60);
   }
-  function close(){ mark(); gm.hidden=true; document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+  function close(){ try{sessionStorage.setItem(SEEN,"1")}catch(e){} stop(); gm.hidden=true; document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true}); }
   gm.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',close)});
   gm.addEventListener('click',function(e){ if(e.target===gm) close(); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!gm.hidden) close(); });
+  document.addEventListener('keydown',function(e){
+    if(gm.hidden) return;
+    if(e.key==='Escape') close();
+    if(e.target.tagName!=='INPUT'){ if(e.key==='ArrowRight'){held=true;stop();go(cur+1)} if(e.key==='ArrowLeft'){held=true;stop();go(cur-1)} }
+  });
+  window.addEventListener('resize',function(){ if(!gm.hidden) track.scrollLeft=cur*track.clientWidth; });
   document.getElementById('gmForm').addEventListener('submit',function(e){
-    e.preventDefault(); mark();
-    var f=e.target;
+    e.preventDefault(); var f=e.target;
     fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
       body:JSON.stringify({access_key:ACCESS_KEY,subject:"Guide-on-guides download — new lead",from_name:"Clarion Tackle Co. website",
-        email:f.email.value,phone:f.phone.value,source:"Lead magnet — A guide on guides"})}).catch(function(){});
+        email:f.elements.email.value,phone:f.elements.phone.value,source:"Lead magnet — A guide on guides"})}).catch(function(){});
     document.getElementById('gmAsk').hidden=true; document.getElementById('gmDone').hidden=false;
   });
-  if(seen()) return;
-  setTimeout(function(){ document.addEventListener('mouseout',exitIntent); window.addEventListener('scroll',depth,{passive:true}); },20000);
+  setTimeout(open, DELAY);
 })();
+
 </script>
 </body>
 </html>
