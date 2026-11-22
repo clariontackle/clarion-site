@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-pal="shop" data-acc="champagne">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="icon" href="IMG_2214-00de7e7b.jpeg">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Clarion Tackle Co. — A Clear Difference</title>
 <meta name="description" content="Custom fishing rods, made to order in Tampa Bay. Built for the angler, by the angler. Nothing on a shelf.">
-<link rel="canonical" href="https://www.clariontackle.com/">
+<meta name="theme-color" content="#0E0D0C">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clarion Tackle Co.">
 <meta property="og:url" content="https://www.clariontackle.com/">
@@ -28,698 +19,722 @@
 <meta name="twitter:title" content="Clarion Tackle Co. — A Clear Difference">
 <meta name="twitter:description" content="Custom fishing rods, made to order in Tampa Bay. Built for the angler, by the angler.">
 <meta name="twitter:image" content="https://www.clariontackle.com/og-image.jpg">
-<meta name="ext-resource-dependency" content="fly.jpg" data-resource-id="waterFly">
-<meta name="ext-resource-dependency" content="AdobeStock_1019134892.jpeg" data-resource-id="waterSalt">
-<meta name="ext-resource-dependency" content="sailfish.webp" data-resource-id="waterFresh">
-<meta name="ext-resource-dependency" content="5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG" data-resource-id="proofStrip">
-<meta name="ext-resource-dependency" content="3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG" data-resource-id="offerAngler">
-<meta name="ext-resource-dependency" content="220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" data-resource-id="offerCustom">
-<meta name="ext-resource-dependency" content="5E915BE7-8131-4A74-AF34-6800EFBB39CC.PNG" data-resource-id="offerEngraving">
-<meta name="ext-resource-dependency" content="14E00E82-DFCB-4D08-8499-A6A866502F88.PNG" data-resource-id="gal1">
-<meta name="ext-resource-dependency" content="204875B1-944E-41F7-ADEF-BCE547954F56.PNG" data-resource-id="gal2">
-<meta name="ext-resource-dependency" content="EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG" data-resource-id="gal3">
-<meta name="ext-resource-dependency" content="image000002.jpeg" data-resource-id="gal4">
-<meta name="ext-resource-dependency" content="image000003.JPG" data-resource-id="gal5">
-<meta name="ext-resource-dependency" content="IMG_0001.jpg" data-resource-id="gal6">
-<meta name="ext-resource-dependency" content="image000004.JPG" data-resource-id="gal7">
-<meta name="ext-resource-dependency" content="B9B75050-73E3-4CEB-96FE-C5389D7DBD1E.PNG" data-resource-id="gal8">
-<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Barlow:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<style>
-  html, body { margin:0; padding:0; background:#141210; -webkit-text-size-adjust:100%; overflow-x:clip; }
-  * { box-sizing:border-box; }
-  img, video { max-width:100%; }
-  a { color:#C9A24A; text-decoration:none; }
-  a:hover { color:#E0C27C; }
-  :focus-visible { outline:2px solid #C9A24A; outline-offset:3px; }
-  @keyframes clarionRipple { from { opacity:0.85; transform:translate(-50%,-50%) scale(0.06); } to { opacity:0; transform:translate(-50%,-50%) scale(1); } }
-  @keyframes clarionDrop { 0% { opacity:0; transform:translate(-50%,-50%) scale(0.2); } 35% { opacity:1; } 100% { opacity:0; transform:translate(-50%,-50%) scale(1.9); } }
-  @keyframes clarionPop { from { opacity:0; transform:translateY(22px) scale(0.97); } to { opacity:1; transform:none; } }
-</style>
+<link rel="icon" href="IMG_2214-00de7e7b.jpeg">
+<link rel="apple-touch-icon" href="IMG_2214-00de7e7b.jpeg">
+<link rel="preload" href="fonts/bebas.woff2" as="font" type="font/woff2" crossorigin>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-<script defer="" src="/_vercel/insights/script.js"></script>
-</helmet>
-
-<div style="background:#141210; color:#EFE9DC; font-family:Barlow, sans-serif;">
-
-  <header style="position:sticky; top:0; z-index:50; height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 clamp(14px,4vw,56px); background:rgba(20,18,16,0.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(239,233,220,0.10);">
-    <a href="#top" style="display:flex; align-items:center; gap:10px; flex:0 1 auto; min-width:0;">
-      <img src="Clarion.png" alt="Clarion Tackle Co." style="height:{{ logoH }}; width:auto; min-width:0; flex-shrink:1; filter:invert(1) brightness(1.6); display:block;">
-      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.34em; text-transform:uppercase; color:rgba(239,233,220,0.55); padding-top:5px; white-space:nowrap;">Tackle Co.</span>
-      </sc-if>
-    </a>
-    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
-      <nav style="flex:1 1 auto; min-width:0; display:flex; align-items:center; gap:clamp(12px,2vw,30px); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; justify-content:center;">
-        <a href="#series" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">What We Build</a>
-        <a href="#custom" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Built For You</a>
-        <a href="#process" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Process</a>
-        <a href="#story" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">About</a>
-        <a href="#about" style="color:rgba(239,233,220,0.78); white-space:nowrap;" style-hover="color:#C9A24A">Grips</a>
-      </nav>
-    </sc-if>
-    <div style="display:flex; align-items:center; gap:{{ hdrGap }}; flex:none;">
-      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
-        <a href="resources.html" style="border:1px solid rgba(239,233,220,0.35); color:#EFE9DC; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ filmsPad }}; white-space:nowrap;" style-hover="border-color:#C9A24A; color:#C9A24A">Resources</a>
-      </sc-if>
-      <a href="films.html" style="border:1px solid #C9A24A; color:#C9A24A; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ filmsPad }}; white-space:nowrap;" style-hover="background:rgba(201,162,74,0.14); color:#E0C27C">{{ filmsLabel }}</a>
-      <a href="{{ form }}" style="background:#C9A24A; color:#0A0908; font-size:11px; font-weight:600; letter-spacing:{{ hdrTrack }}; text-transform:uppercase; padding:{{ buildPad }}; white-space:nowrap;" style-hover="background:#E0C27C">Start Your Build</a>
-      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
-        <button type="button" onClick="{{ toggleNav }}" aria-label="Menu" style="width:44px; height:44px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; background:none; border:1px solid rgba(239,233,220,0.24); cursor:pointer; padding:0;">
-          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
-          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
-          <span style="display:block; width:18px; height:1.5px; background:#EFE9DC;"></span>
-        </button>
-      </sc-if>
-    </div>
-  </header>
-
-  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
-    <nav style="position:fixed; top:64px; left:0; right:0; z-index:49; max-height:calc(100vh - 64px); overflow:auto; background:rgba(10,9,8,0.98); border-bottom:1px solid rgba(239,233,220,0.14); display:flex; flex-direction:column; padding:8px 0;">
-      <a href="#series" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">What We Build</a>
-      <a href="#custom" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Built For You</a>
-      <a href="#process" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Process</a>
-      <a href="#story" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">About</a>
-      <a href="#about" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Grips</a>
-      <a href="resources.html" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.8);">Resources</a>
-      <a href="films.html" onClick="{{ closeNav }}" style="padding:15px clamp(20px,5vw,56px); font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:#C9A24A;">Outdoor Films</a>
-    </nav>
-  </sc-if>
-
-  <section id="top" style="position:relative; scroll-margin-top:64px; min-height:min(90vh,900px); display:flex; align-items:flex-end; padding:clamp(56px,9vw,120px) clamp(20px,5vw,64px); background:#0A0908; overflow:hidden;">
-    <video ref="{{ heroVideo }}" src="stock.mp4" poster="11D78C60-2538-4D6B-8EC9-031C8BAE0C0E.PNG" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" disableRemotePlayback="{{ true }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:60% center;"></video>
-    <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,9,8,0.92) 0%, rgba(10,9,8,0.7) 44%, rgba(10,9,8,0.22) 80%, rgba(10,9,8,0.45) 100%);"></div>
-    <div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,9,8,0.85) 0%, rgba(10,9,8,0.25) 45%, rgba(10,9,8,0.35) 100%);"></div>
-    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
-      <img src="IMG_2214-00de7e7b.jpeg" alt="" style="position:absolute; right:clamp(20px,4vw,64px); bottom:clamp(28px,5vw,60px); height:clamp(100px,12vw,170px); width:auto; filter:invert(1); mix-blend-mode:screen; opacity:0.16; pointer-events:none;">
-    </sc-if>
-    <div style="position:relative; width:100%; max-width:1280px; margin:0 auto;">
-      <div style="max-width:900px;">
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:clamp(10px,1.1vw,11px); letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:clamp(18px,2.4vw,26px);">Tampa Bay, Florida</div>
-        <h1 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(46px,9vw,112px); line-height:0.94; margin:0 0 clamp(20px,2.6vw,28px); letter-spacing:-0.005em;">A Clear<br><span style="color:#C9A24A;">Difference.</span></h1>
-        <p style="max-width:44ch; font-size:clamp(16px,1.5vw,20px); line-height:1.62; color:rgba(239,233,220,0.76); margin:0 0 clamp(28px,4vw,40px); font-weight:300; text-wrap:pretty;">Built for The Angler. Custom rods, made to order in Tampa Bay. Every build documented. Nothing on a shelf.</p>
-        <div style="display:flex; align-items:center; gap:clamp(16px,3vw,28px); flex-wrap:wrap;">
-          <a href="{{ form }}" style="background:#C9A24A; color:#0A0908; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:18px clamp(24px,4vw,34px); min-height:52px; display:flex; align-items:center;" style-hover="background:#E0C27C">Start Your Build</a>
-          <a href="#series" style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(239,233,220,0.82); border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;" style-hover="color:#C9A24A">See how we build →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="series" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#EFE9DC; color:#141210;">
-    <div style="max-width:1280px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63; margin-bottom:clamp(24px,3vw,36px);">What We Build</div>
-      <div id="water" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:clamp(12px,1.6vw,20px);">
-        <sc-for list="{{ waters }}" as="w" hint-placeholder-count="3">
-          <div style="position:relative; aspect-ratio:4/5; overflow:hidden; background:#141210;">
-            <div role="img" aria-label="{{ w.name }}" style="position:absolute; inset:0; background-size:cover; background-position:{{ w.pos }}; background-image:url({{ w.img }});"></div>
-            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,9,8,0.05) 35%, rgba(10,9,8,0.88) 100%);"></div>
-            <div style="position:absolute; left:0; right:0; bottom:0; padding:clamp(18px,2vw,26px); display:flex; flex-direction:column; gap:6px;">
-              <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(24px,3vw,36px); line-height:1; color:#EFE9DC;">{{ w.name }}</span>
-              <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#C9A24A;">{{ w.note }}</span>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-
-      <div style="margin:clamp(56px,7vw,96px) 0 0;">
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:clamp(20px,2.6vw,30px);">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63;">Gallery</span>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(20,18,16,0.4);">{{ slideCounter }}</span>
-        </div>
-        <div style="position:relative; width:100%; max-width:560px; margin:0 auto; aspect-ratio:3/4; overflow:hidden; background:#141210;">
-          <sc-for list="{{ slides }}" as="s" hint-placeholder-count="3">
-            <div role="img" style="position:absolute; inset:0; background-size:cover; background-position:center; background-image:{{ s.bg }}; opacity:{{ s.op }}; z-index:{{ s.z }}; transition:opacity 900ms ease;"></div>
-          </sc-for>
-          <div style="position:absolute; inset:0; z-index:4; pointer-events:none; background:linear-gradient(0deg, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 26%);"></div>
-          <button type="button" onClick="{{ prevSlide }}" aria-label="Previous photo" style="position:absolute; z-index:6; left:0; top:0; bottom:0; width:clamp(48px,12%,72px); display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; color:rgba(239,233,220,0.7); font-size:22px; line-height:1; padding:0;" style-hover="color:#C9A24A; background:linear-gradient(90deg, rgba(10,9,8,0.5), rgba(10,9,8,0))">‹</button>
-          <button type="button" onClick="{{ nextSlide }}" aria-label="Next photo" style="position:absolute; z-index:6; right:0; top:0; bottom:0; width:clamp(48px,12%,72px); display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; color:rgba(239,233,220,0.7); font-size:22px; line-height:1; padding:0;" style-hover="color:#C9A24A; background:linear-gradient(270deg, rgba(10,9,8,0.5), rgba(10,9,8,0))">›</button>
-          <div style="position:absolute; left:0; right:0; bottom:18px; z-index:5; display:flex; justify-content:center; gap:10px;">
-            <sc-for list="{{ dots }}" as="d" hint-placeholder-count="3">
-              <button type="button" onClick="{{ d.onClick }}" aria-label="{{ d.label }}" style="width:26px; height:26px; display:flex; align-items:center; justify-content:center; background:none; border:none; padding:0; cursor:pointer;">
-                <span style="display:block; width:9px; height:9px; border-radius:50%; border:1px solid rgba(239,233,220,0.65); background:{{ d.bg }}; transition:background 300ms ease;"></span>
-              </button>
-            </sc-for>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" style="scroll-margin-top:64px; padding:clamp(64px,9vw,140px) clamp(20px,5vw,64px); background:#141210;">
-    <div style="max-width:1280px; margin:0 auto;">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(32px,5vw,80px); align-items:center;">
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:clamp(18px,2.4vw,26px);">Handmade Grips</div>
-          <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(32px,4.6vw,58px); line-height:1.03; margin:0 0 clamp(22px,3vw,30px); text-wrap:balance;">Shaped to <span style="color:#C9A24A;">your hand</span>, not a mold.</h2>
-          <p style="font-size:17px; line-height:1.72; color:rgba(239,233,220,0.72); font-weight:300; max-width:52ch; margin:0 0 20px; text-wrap:pretty;">Factory grips come off a lathe by the thousand — one diameter, one length, one shape for every angler who buys that rod. We turn every Clarion grip by hand.</p>
-          <p style="font-size:17px; line-height:1.72; color:rgba(239,233,220,0.72); font-weight:300; max-width:52ch; margin:0 0 clamp(26px,3.5vw,34px); text-wrap:pretty;">Tell us how you hold a rod and how long you hold it, and the cork gets shaped to that — length, taper, and diameter cut to fit the hand that's actually going to fish it.</p>
-          <a href="{{ form }}" style="display:inline-block; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;">Request a fitted grip →</a>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:stretch;">
-          <img src="435F997C-74E9-451B-BB37-CBBE8E9E525C.PNG" alt="A hand-turned teak grip" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; background:#0A0908; display:block;">
-          <video ref="{{ gripLatheVideo }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" style="width:100%; aspect-ratio:3/4; object-fit:cover; background:#0A0908; display:block;"></video>
-        </div>
-      </div>
-      <dl style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:clamp(22px,3vw,44px); margin:clamp(48px,6vw,80px) 0 0;">
-        <sc-for list="{{ grips }}" as="g" hint-placeholder-count="4">
-          <div style="border-top:1px solid rgba(239,233,220,0.22); padding:20px 0 0; display:flex; flex-direction:column; gap:10px;">
-            <dt style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#C9A24A;">{{ g.k }}</dt>
-            <dd style="margin:0; font-size:16px; line-height:1.6; color:rgba(239,233,220,0.74); font-weight:300; text-wrap:pretty;">{{ g.v }}</dd>
-          </div>
-        </sc-for>
-      </dl>
-    </div>
-  </section>
-
-  <section id="custom" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#EFE9DC; color:#141210;">
-    <div style="max-width:1280px; margin:0 auto;">
-      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63; margin-bottom:clamp(24px,3vw,36px);">Built for the Angler</div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(28px,4.5vw,68px); align-items:start;">
-        <video ref="{{ gripVideo }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="none" style="width:100%; aspect-ratio:4/5; object-fit:cover; background:#141210; display:block;"></video>
-        <div style="display:flex; flex-direction:column; gap:clamp(20px,2.6vw,26px);">
-          <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(30px,4.2vw,54px); margin:0; line-height:1.03; text-wrap:balance;">A factory measures the rod. <span style="color:#C9A24A;">We measure you.</span></h2>
-          <p style="font-size:17px; line-height:1.68; color:rgba(20,18,16,0.74); font-weight:300; margin:0; max-width:50ch; text-wrap:pretty;">Before a single component gets ordered, we build a profile of the angler — how you're built, how you fish, and what you're chasing. Those numbers drive every decision on the bench.</p>
-          <dl style="display:grid; grid-template-columns:minmax(0,auto) minmax(0,1fr); gap:0; margin:0; font-family:'IBM Plex Mono',monospace; font-size:clamp(10px,1.1vw,12px); border-top:1px solid rgba(20,18,16,0.16);">
-            <sc-for list="{{ anglerSpecs }}" as="s" hint-placeholder-count="8">
-              <dt style="padding:13px 20px 13px 0; border-bottom:1px solid rgba(20,18,16,0.1); color:#8A7C63; text-transform:uppercase; letter-spacing:0.1em;">{{ s.k }}</dt>
-              <dd style="padding:13px 0; border-bottom:1px solid rgba(20,18,16,0.1); margin:0; text-align:right; color:#141210;">{{ s.v }}</dd>
-            </sc-for>
-          </dl>
-          <p style="font-size:17px; line-height:1.68; color:#141210; margin:0; max-width:50ch; text-wrap:pretty;">Two anglers chasing the same fish in the same water still get two different rods. That's the point.</p>
-          <div style="display:flex; align-items:center; gap:clamp(16px,2.5vw,24px); flex-wrap:wrap;">
-            <a href="{{ form }}" style="background:#141210; color:#EFE9DC; font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 28px; min-height:50px; display:flex; align-items:center;" style-hover="background:#26364E">Start your profile</a>
-            <a href="#process" style="font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#141210; border-bottom:1px solid #C9A24A; padding-bottom:5px;">See the build process →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="story" style="scroll-margin-top:64px; padding:clamp(64px,9vw,140px) clamp(20px,5vw,64px); background:#0A0908;">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(32px,5.5vw,88px); align-items:center;">
-      <img src="IMG_0398.jpg" alt="The builder behind Clarion, on the water in the mangroves" loading="lazy" style="width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; display:block;">
-      <div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A; margin-bottom:clamp(18px,2.4vw,26px);">About Clarion</div>
-        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(30px,4.2vw,54px); line-height:1.03; margin:0 0 clamp(22px,3vw,30px); text-wrap:balance;">Built for the angler, <span style="color:#C9A24A;">by the angler.</span></h2>
-        <p style="font-size:17px; line-height:1.74; color:rgba(239,233,220,0.72); font-weight:300; max-width:54ch; margin:0 0 20px; text-wrap:pretty;">I grew up fishing native trout streams in the Appalachian mountains with whatever rod I could afford. One day I fished a buddy's rod, built specifically for the bait I was throwing, and started outfishing myself — same water, same bait, same hands.</p>
-        <p style="font-size:17px; line-height:1.74; color:rgba(239,233,220,0.72); font-weight:300; max-width:54ch; margin:0 0 20px; text-wrap:pretty;">That's when I learned a rod isn't just a stick with guides on it. Every inch of it is a decision, and most of those decisions get made in a hurry, on an assembly line, by someone who's never fished it.</p>
-        <p style="font-size:17px; line-height:1.74; color:rgba(239,233,220,0.72); font-weight:300; max-width:54ch; margin:0 0 20px; text-wrap:pretty;">I started building my own rods in 2018 — dialed to my exact cast, my exact presentation, my exact hands. Not because I wanted a hobby, but because I couldn't ignore how much precision was being skipped just to hit a price point. When a rod is built right, down to the smallest detail, you feel it before you even cast. It becomes an extension of your arm instead of something you're fighting.</p>
-        <p style="font-size:17px; line-height:1.74; color:#EFE9DC; max-width:54ch; margin:0 0 clamp(28px,3.6vw,36px); text-wrap:pretty;">That's the standard every Clarion rod is held to. Built one at a time, by hand, with the same obsessive attention to detail I'd want if I were the one holding it on the water. Because I am.</p>
-        <p style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(21px,2.4vw,30px); line-height:1.15; color:#C9A24A; margin:0 0 clamp(28px,3.6vw,36px); border-left:2px solid #C9A24A; padding-left:20px;">If I won't fish it, I won't build it.</p>
-        <div style="display:flex; flex-direction:column; gap:6px; margin:0 0 clamp(28px,3.6vw,36px);">
-          <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:21px; line-height:1; color:#EFE9DC;">Benjamin D.</span>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(239,233,220,0.5);">Founder &amp; builder, Clarion Tackle Co.</span>
-        </div>
-        <a href="{{ form }}" style="display:inline-block; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;">Start your build →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="process" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#26364E;">
-    <div style="max-width:1280px; margin:0 auto;">
-      <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(32px,4.6vw,60px); line-height:1.04; margin:0 0 22px; max-width:16ch; text-wrap:balance;">Three steps. No shortcuts. No surprises.</h2>
-      <p style="font-size:17px; line-height:1.7; color:rgba(239,233,220,0.7); font-weight:300; max-width:56ch; margin:0 0 clamp(36px,5vw,52px); text-wrap:pretty;">Every Clarion order runs the same track, and you know exactly where yours is the whole way through.</p>
-      <ol style="list-style:none; margin:0 0 clamp(32px,4.5vw,44px); padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr)); gap:clamp(28px,3.5vw,52px);">
-        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
-          <li style="border-top:1px solid rgba(239,233,220,0.3); padding:22px 0 0; display:flex; flex-direction:column; gap:14px;">
-            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C9A24A;">{{ st.n }}</span>
-            <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(21px,2.2vw,27px); line-height:1.06;">{{ st.name }}</span>
-            <p style="margin:0; font-size:16px; line-height:1.66; font-weight:300; color:rgba(239,233,220,0.72); text-wrap:pretty;">{{ st.body }}</p>
-            <dl style="margin:auto 0 0; padding-top:8px; display:grid; grid-template-columns:minmax(0,auto) minmax(0,1fr); gap:8px 16px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;">
-              <dt style="color:rgba(239,233,220,0.45);">Cost</dt>
-              <dd style="margin:0; text-align:right; color:#EFE9DC;">{{ st.cost }}</dd>
-              <dt style="color:rgba(239,233,220,0.45);">Takes</dt>
-              <dd style="margin:0; text-align:right; color:#EFE9DC;">{{ st.time }}</dd>
-            </dl>
-          </li>
-        </sc-for>
-      </ol>
-      <a href="{{ form }}" style="display:inline-block; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(201,162,74,0.5); padding-bottom:6px;">Start step one →</a>
-    </div>
-  </section>
-
-  <section id="numbers" style="scroll-margin-top:64px; padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px); background:#141210;">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:clamp(28px,3.5vw,52px);">
-      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
-        <div style="border-top:1px solid rgba(239,233,220,0.24); padding:22px 0 0; display:flex; flex-direction:column; gap:12px;">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:#C9A24A;">{{ f.k }}</span>
-          <span style="font-family:Anton,sans-serif; text-transform:uppercase; font-size:clamp(26px,3.2vw,40px); line-height:1.02; color:#EFE9DC;">{{ f.v }}</span>
-          <p style="margin:0; font-size:15px; line-height:1.66; font-weight:300; color:rgba(239,233,220,0.66); text-wrap:pretty;">{{ f.body }}</p>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <sc-if value="{{ showProof }}" hint-placeholder-val="{{ true }}">
-    <section style="position:relative; scroll-margin-top:64px; padding:clamp(64px,10vw,140px) clamp(20px,5vw,64px); background:#0A0908; background-image:repeating-linear-gradient(115deg, rgba(201,162,74,0.10) 0 2px, rgba(201,162,74,0) 2px 14px);">
-      <div style="max-width:1280px; margin:0 auto;">
-        <blockquote style="margin:0 auto; max-width:1000px; text-align:center;">
-          <div style="display:flex; justify-content:center; gap:8px; margin:0 0 28px; color:#C9A24A; font-size:22px; letter-spacing:0.1em;">★★★★★</div>
-          <p style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(26px,3.2vw,42px); line-height:1.16; margin:0 0 20px; text-wrap:balance;">“By far the <span style="color:#C9A24A;">most responsive</span> rod I have ever owned.”</p>
-          <p style="font-size:clamp(17px,1.6vw,21px); line-height:1.55; font-weight:300; color:rgba(239,233,220,0.78); max-width:44ch; margin:0 auto 30px; text-wrap:pretty;">Stands up to more than any factory rod. The balance is perfect.</p>
-          <footer style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#C9A24A;">Christopher D. — Great Lakes walleye &amp; Florida snook</footer>
-        </blockquote>
-        <div role="img" aria-label="Christopher's Clarion build — walleye, blue and copper wraps, sunset on the pier" style="position:relative; margin:clamp(40px,5vw,64px) auto 0; aspect-ratio:1512/520; min-height:200px; background-color:#0A0908; background-size:cover; background-position:center bottom; background-image:url(5931AAB4-B302-43F4-A2A5-33C7177BE254.PNG);"></div>
-      </div>
-    </section>
-  </sc-if>
-
-  <section id="start" style="position:relative; scroll-margin-top:64px; overflow:hidden; padding:clamp(64px,10vw,140px) clamp(20px,5vw,64px); background:#C9A24A; color:#0A0908; text-align:center;">
-    <div style="max-width:900px; margin:0 auto;">
-      <img src="IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:44px; width:auto; mix-blend-mode:multiply; opacity:0.55; display:block; margin:0 auto 22px;">
-      <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(36px,6vw,80px); line-height:1; margin:0 0 24px; text-wrap:balance;">Tell us what you fish.</h2>
-      <p style="font-size:clamp(16px,1.6vw,18px); line-height:1.66; font-weight:300; max-width:56ch; margin:0 auto clamp(30px,4vw,40px); color:rgba(10,9,8,0.78); text-wrap:pretty;">Every Clarion build starts the same way — a conversation about where you fish, what you're after, and what your last rod got wrong. Fill out the intake and we'll go from there.</p>
-      <a href="{{ form }}" style="background:#0A0908; color:#EFE9DC; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:20px clamp(28px,5vw,44px); min-height:56px; display:inline-flex; align-items:center;" style-hover="background:#141210">Start Your Build</a>
-    </div>
-  </section>
-
-  <template id="__bundler_thumbnail" data-bg-color="#0A0908">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0A0908"></rect><text x="200" y="232" font-family="Anton, Impact, sans-serif" font-size="150" fill="#C9A24A" text-anchor="middle">C</text></svg>
-  </template>
-
-  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
-    <div style="position:fixed; inset:0; z-index:200; background:rgba(10,9,8,0.82); display:flex; align-items:center; justify-content:center; padding:clamp(12px,4vw,48px);">
-      <div style="position:relative; width:min(720px,100%); max-height:92vh; overflow:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); background:#141210; box-shadow:0 40px 120px rgba(0,0,0,0.6); animation:clarionPop 420ms cubic-bezier(0.16,1,0.3,1) both; transition:transform 320ms cubic-bezier(0.16,1,0.3,1), box-shadow 320ms ease;" style-hover="transform:translateY(-6px) scale(1.012); box-shadow:0 52px 140px rgba(0,0,0,0.72)">
-        <sc-if value="{{ showModalImage }}" hint-placeholder-val="{{ true }}">
-          <img src="220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG" alt="" loading="lazy" style="width:100%; height:100%; min-height:200px; object-fit:cover; display:block;">
-        </sc-if>
-        <div style="position:relative; padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; justify-content:center; gap:16px; overflow:hidden;">
-          <div aria-hidden="true" style="position:absolute; inset:0; background-image:url('c-pattern.png'); background-size:190px; background-repeat:repeat; opacity:0.10; pointer-events:none;"></div>
-          <button type="button" onClick="{{ closeModal }}" aria-label="Close" style="position:absolute; z-index:2; top:12px; right:12px; width:40px; height:40px; border:1px solid rgba(239,233,220,0.35); background:rgba(20,18,16,0.7); color:#EFE9DC; font-size:18px; line-height:1; cursor:pointer;" style-hover="background:#C9A24A; color:#141210; border-color:#C9A24A">✕</button>
-          <sc-if value="{{ modalNotSent }}" hint-placeholder-val="{{ true }}">
-            <div style="position:relative; display:flex; flex-direction:column; gap:18px;">
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Free Download</div>
-              <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(25px,2.8vw,34px); line-height:1.04; margin:0; color:#EFE9DC;">A guide on <span style="color:#C9A24A;">guides.</span></h2>
-              <p style="font-size:16px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:40ch; text-wrap:pretty;">Alconite, SiC, titanium frames, single-foot vs double — what each one actually does to your cast, and how to tell which setup is right for the way you fish.</p>
-              <div style="display:flex; flex-wrap:wrap; gap:6px 18px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(239,233,220,0.5);">
-                <span>11 pages</span>
-                <span>Manufacturer spec tables</span>
-                <span>No brand placement</span>
-              </div>
-              <form onSubmit="{{ submitModal }}" style="display:flex; flex-direction:column; gap:12px;">
-                <input type="email" required="{{ true }}" value="{{ email }}" onChange="{{ onEmail }}" placeholder="Email address" style="background:#0A0908; border:1px solid rgba(239,233,220,0.24); color:#EFE9DC; font-family:Barlow,sans-serif; font-size:16px; padding:16px 18px; width:100%;">
-                <input type="tel" value="{{ phone }}" onChange="{{ onPhone }}" placeholder="Phone (optional)" style="background:#0A0908; border:1px solid rgba(239,233,220,0.24); color:#EFE9DC; font-family:Barlow,sans-serif; font-size:16px; padding:16px 18px; width:100%;">
-                <div style="position:relative;">
-                  <sc-if value="{{ splashing }}" hint-placeholder-val="{{ false }}">
-                    <div aria-hidden="true" style="position:absolute; inset:-60px; overflow:hidden; pointer-events:none; z-index:3;">
-                      <div style="position:absolute; left:50%; top:50%; width:340px; height:340px; border-radius:50%; border:2px solid #C9A24A; animation:clarionRipple 720ms ease-out both;"></div>
-                      <div style="position:absolute; left:50%; top:50%; width:340px; height:340px; border-radius:50%; border:2px solid rgba(201,162,74,0.6); animation:clarionRipple 720ms ease-out 120ms both;"></div>
-                      <div style="position:absolute; left:50%; top:50%; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle, rgba(201,162,74,0.32), rgba(201,162,74,0) 62%); animation:clarionDrop 700ms ease-out both;"></div>
-                    </div>
-                  </sc-if>
-                  <button type="submit" style="background:#C9A24A; color:#141210; border:none; font-family:Barlow,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; padding:18px 24px; min-height:54px; cursor:pointer; width:100%;" style-hover="background:#DDB863">Get the guide</button>
-                </div>
-              </form>
-              <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.7; letter-spacing:0.04em; color:rgba(239,233,220,0.42); margin:0;">No spam, no drip campaign. The download, plus finished builds now and then. Unsubscribe any time.</p>
-              <a href="a-guide-on-guides.pdf" download="" target="_blank" rel="noopener" onClick="{{ skipToDownload }}" style="font-family:Barlow,sans-serif; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(239,233,220,0.5); text-decoration:underline;" style-hover="color:#C9A24A">Or just read it — no email</a>
-              <button type="button" onClick="{{ closeModal }}" style="background:none; border:none; color:rgba(239,233,220,0.6); font-family:Barlow,sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; align-self:flex-start; padding:0; text-decoration:underline;" style-hover="color:#C9A24A">No thanks, I'm just looking</button>
-            </div>
-          </sc-if>
-          <sc-if value="{{ modalSent }}" hint-placeholder-val="{{ false }}">
-            <div style="position:relative; display:flex; flex-direction:column; gap:18px;">
-              <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Ready</div>
-              <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(27px,3.4vw,42px); line-height:1.02; margin:0; color:#EFE9DC;">Here it is.</h2>
-              <p style="font-size:16px; line-height:1.6; font-weight:300; color:rgba(239,233,220,0.72); margin:0; max-width:40ch; text-wrap:pretty;">Eleven pages on rings, frames, and guide trains — with Fuji's own published numbers, not marketing copy. Yours to keep.</p>
-              <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center;">
-                <a href="a-guide-on-guides.pdf" download="" target="_blank" rel="noopener" style="background:#C9A24A; color:#141210; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 28px; min-height:50px; display:inline-flex; align-items:center; gap:10px;" style-hover="background:#DDB863">Download the guide <span aria-hidden="true">↓</span></a>
-                <a href="{{ form }}" onClick="{{ closeModal }}" style="border:1px solid rgba(239,233,220,0.3); color:#EFE9DC; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:16px 26px; min-height:50px; display:inline-flex; align-items:center;" style-hover="border-color:#C9A24A; color:#C9A24A">Start your build</a>
-              </div>
-              <p style="font-family:'IBM Plex Mono',monospace; font-size:10px; line-height:1.7; letter-spacing:0.04em; color:rgba(239,233,220,0.42); margin:0;">PDF, 1 MB. Downloads straight to your device — no confirmation email to wait on.</p>
-            </div>
-          </sc-if>
-        </div>
-      </div>
-    </div>
-  </sc-if>
-
-  <section id="magazine" data-screen-label="Magazine teaser" style="scroll-margin-top:64px; padding:clamp(64px,9vw,132px) clamp(20px,5vw,64px); background:#141210; border-top:1px solid rgba(239,233,220,0.1);">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:clamp(36px,6vw,96px); align-items:center;">
-      <a href="resources.html" aria-label="Read Clarion Outdoors, Issue 01" style="display:block; justify-self:center; width:min(100%,440px); box-shadow:0 40px 80px -30px rgba(0,0,0,0.9), 0 0 0 1px rgba(239,233,220,0.08);" style-hover="transform:translateY(-4px)">
-        <img src="magazine-cover.jpg" alt="Clarion Outdoors, Issue 01 cover" loading="lazy" style="width:100%; height:auto; display:block;">
-      </a>
-      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:clamp(16px,2vw,22px);">
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:#8A7C63;">New · The Magazine</div>
-        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(40px,5.8vw,80px); line-height:0.92; margin:0;">Clarion Outdoors,<br><span style="color:#C9A24A;">Issue 01</span></h2>
-        <p style="font-size:clamp(16px,1.5vw,19px); line-height:1.6; font-weight:300; color:rgba(239,233,220,0.8); margin:0; max-width:40ch; text-wrap:pretty;">36 pages of inshore fishing on Tampa Bay. Real days, real fish, no spots given away.</p>
-        <a href="resources.html" style="display:inline-flex; align-items:center; background:#C9A24A; color:#0A0908; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(24px,3vw,34px); min-height:56px; white-space:nowrap; margin-top:6px;" style-hover="background:#E0C27C; color:#0A0908">Read the magazine →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="films" ref="{{ filmsBand }}" onMouseEnter="{{ filmsEnter }}" onMouseLeave="{{ filmsLeave }}" data-screen-label="Outdoor Films" style="position:relative; background:#0A0908; border-top:1px solid rgba(239,233,220,0.1);">
-    <div aria-hidden="true" style="position:absolute; inset:0; overflow:hidden; pointer-events:none;">
-      <div style="position:absolute; inset:0; background-image:url(https://i.ytimg.com/vi/06mDUNvE9yQ/hq2.jpg); background-size:cover; background-position:center; transform:scale(1.4); filter:blur(7px) brightness(0.85);"></div>
-      <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,9,8,0.94) 0%, rgba(10,9,8,0.78) 50%, rgba(10,9,8,0.45) 100%);"></div>
-    </div>
-    <div style="position:relative; max-width:1280px; margin:0 auto; padding:clamp(56px,8vw,112px) clamp(20px,5vw,64px); display:flex; align-items:flex-end; justify-content:space-between; gap:clamp(24px,4vw,56px); flex-wrap:wrap;">
-      <div style="flex:1 1 320px; max-width:640px; min-width:0; display:flex; flex-direction:column; gap:clamp(14px,2vw,20px);">
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:#C9A24A;">Clarion Outdoor Films × Wilson's Reel Adventures</div>
-        <h2 style="font-family:Anton,sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(38px,6.4vw,84px); line-height:0.9; letter-spacing:-0.005em; margin:0;">Your charter.<br><span style="color:#C9A24A;">Shot like a film.</span></h2>
-        <p style="font-size:clamp(15px,1.4vw,18px); line-height:1.6; font-weight:300; color:rgba(239,233,220,0.82); margin:0; max-width:46ch; text-wrap:pretty;">Photo and film packages for your Wilson's Reel Adventures trip. From $250.</p>
-      </div>
-      <div style="position:relative; display:flex; flex-direction:column; align-items:{{ pvAlign }}; gap:16px; width:{{ pvColW }};">
-        <a href="films.html" aria-label="Preview of A day with Wilson's — open Outdoor Films" style="display:block; position:relative; width:{{ pvW }}; aspect-ratio:16/9; background:#000; border:1px solid #C9A24A; box-shadow:0 28px 70px -20px rgba(0,0,0,0.85); overflow:hidden; z-index:5; opacity:{{ pvOpacity }}; transform:{{ pvTransform }}; transform-origin:bottom right; transition:opacity 320ms ease, transform 420ms cubic-bezier(.2,.8,.2,1); pointer-events:{{ pvPointer }};">
-          <div aria-hidden="true" style="position:absolute; inset:0; background-image:url(https://i.ytimg.com/vi/06mDUNvE9yQ/maxresdefault.jpg); background-size:cover; background-position:center; transform:scale(1.34);"></div>
-          <sc-if value="{{ pvMounted }}" hint-placeholder-val="{{ false }}">
-            <iframe src="https://www.youtube.com/embed/06mDUNvE9yQ?autoplay=1&amp;mute=1&amp;start=6&amp;loop=1&amp;playlist=06mDUNvE9yQ&amp;controls=0&amp;origin=https://www.clariontackle.com&amp;playsinline=1&amp;rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;disablekb=1&amp;fs=0" title="A day with Wilson's — preview" tabIndex="-1" frameBorder="0" allow="autoplay; encrypted-media" referrerPolicy="strict-origin-when-cross-origin" style="position:absolute; top:50%; left:50%; width:122%; height:122%; transform:translate(-50%,-50%); border:0; pointer-events:none;"></iframe>
-          </sc-if>
-          <span style="position:absolute; left:0; right:0; bottom:0; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 14px; background:linear-gradient(0deg, rgba(10,9,8,0.85), rgba(10,9,8,0)); font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.24em; text-transform:uppercase; color:#EFE9DC;">
-            <span>A day with Wilson's</span>
-            <span style="color:#C9A24A;">▶ Watch</span>
-          </span>
-        </a>
-        <a href="films.html" style="display:flex; align-items:center; background:#C9A24A; color:#0A0908; font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; padding:0 clamp(24px,3vw,34px); min-height:56px; white-space:nowrap;" style-hover="background:#E0C27C; color:#0A0908">See Outdoor Films →</a>
-      </div>
-    </div>
-  </section>
-
-  <footer style="padding:clamp(48px,6vw,88px) clamp(20px,5vw,64px) 40px; background:#0A0908; border-top:1px solid rgba(239,233,220,0.1);">
-    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:clamp(32px,4vw,48px);">
-      <div style="display:flex; flex-direction:column; gap:18px;">
-        <div style="display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap;">
-          <img src="IMG_2214-00de7e7b.jpeg" alt="" loading="lazy" style="height:32px; width:auto; filter:invert(1); mix-blend-mode:screen;">
-          <img src="Clarion.png" alt="Clarion Tackle Co." loading="lazy" style="height:28px; width:auto; filter:invert(1) brightness(1.6); padding-bottom:2px;">
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(239,233,220,0.5); padding-bottom:4px;">Tackle Co.</span>
-        </div>
-        <p style="font-size:15px; line-height:1.62; color:rgba(239,233,220,0.55); font-weight:300; max-width:34ch; margin:0; text-wrap:pretty;">Made-to-order fishing rods, documented at the bench. Built in Tampa Bay, Florida.</p>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; color:rgba(239,233,220,0.4);">Explore</span>
-        <a href="#series" style="color:rgba(239,233,220,0.75);">What We Build</a>
-        <a href="#custom" style="color:rgba(239,233,220,0.75);">Built For You</a>
-        <a href="#process" style="color:rgba(239,233,220,0.75);">The Process</a>
-        <a href="{{ form }}" style="color:rgba(239,233,220,0.75);">Start Your Build</a>
-        <a href="resources.html" style="color:rgba(239,233,220,0.75);">Resources</a>
-        <a href="films.html" style="color:#C9A24A;">Outdoor Films</a>
-      </div>
-      <div style="display:flex; flex-direction:column; gap:12px; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;">
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.3em; color:rgba(239,233,220,0.4);">Contact</span>
-        <a href="https://www.instagram.com/clarionrods/" style="color:rgba(239,233,220,0.75);">Instagram</a>
-        <a href="mailto:hello@clarionrods.com" style="color:rgba(239,233,220,0.75); text-transform:none; letter-spacing:0.04em;">hello@clarionrods.com</a>
-        <span style="color:rgba(239,233,220,0.45);">Tampa Bay, FL</span>
-      </div>
-    </div>
-  </footer>
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showProof&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
-const FORM = "build.html";
-// Paste the same web3forms.com access key you put in the build form. The
-// lead-magnet popup stays switched off entirely until this is set, so no
-// email is ever collected into nothing.
-const ACCESS_KEY = "623c8342-3bf9-41ef-aed3-26963c076915";
-const MODAL_ENDPOINT = ACCESS_KEY ? "https://api.web3forms.com/submit" : "";
-
-class Component extends DCLogic {
-  gripVideo = React.createRef();
-  heroVideo = React.createRef();
-  gripLatheVideo = React.createRef();
-  state = { modalOpen: false, email: "", phone: "", sent: false, slide: 0 };
-
-  componentDidMount() {
-    this.startHero();
-    this.lazyVideos();
-    this.watchFilmsBand();
-    this.onResize();
-    window.addEventListener("resize", this.onResize);
-    this.armModal();
-    this.startSlides();
-  }
-
-  // iOS/Android only honour autoplay when the element is muted+inline at parse time,
-  // and refuse outright in Low Power Mode — so we also retry on the first touch.
-  startHero() {
-    const v = this.heroVideo.current;
-    if (!v) return;
-    v.muted = true; v.defaultMuted = true; v.volume = 0;
-    v.setAttribute("muted", "");
-    v.setAttribute("playsinline", "");
-    const attempt = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
-    attempt();
-    v.addEventListener("loadeddata", attempt, { once: true });
-    this._kick = () => { attempt(); };
-    ["touchstart", "pointerdown", "scroll"].forEach((e) =>
-      window.addEventListener(e, this._kick, { once: true, passive: true })
-    );
-  }
-
-  // The two below-fold clips are ~21MB together. Nothing is fetched until they're
-  // near the viewport, and they pause once they scroll away.
-  lazyVideos() {
-    const items = [
-      [this.gripVideo.current, "Jul-23-2026-1784845032_7618861-1.mp4"],
-      [this.gripLatheVideo.current, "Aug-13-2026-1786849389_5219331.mp4"]
-    ].filter((x) => x[0]);
-    const start = (v) => {
-      v.muted = true; v.defaultMuted = true; v.volume = 0;
-      if (!v.getAttribute("src")) { v.setAttribute("src", v.dataset.clarionSrc); v.load(); }
-      const p = v.play(); if (p && p.catch) p.catch(() => {});
-    };
-    if (typeof IntersectionObserver === "undefined") { items.forEach(([v, s]) => { v.dataset.clarionSrc = s; start(v); }); return; }
-    this._io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        const v = e.target;
-        if (e.isIntersecting) start(v);
-        else if (!v.paused) v.pause();
-      });
-    }, { rootMargin: "400px 0px" });
-    items.forEach(([v, s]) => { v.dataset.clarionSrc = s; this._io.observe(v); });
-  }
-
-  componentWillUnmount() {
-    if (this._io) this._io.disconnect();
-    if (this._pvIO) this._pvIO.disconnect();
-    clearTimeout(this._pvT);
-    if (this._kick) ["touchstart", "pointerdown", "scroll"].forEach((e) => window.removeEventListener(e, this._kick));
-    clearTimeout(this._t); clearTimeout(this._s); clearTimeout(this._arm); clearInterval(this._slide);
-    window.removeEventListener("resize", this.onResize);
-    document.removeEventListener("mouseout", this.onExitIntent);
-    window.removeEventListener("scroll", this.onScrollDepth);
-  }
-
-  onResize = () => {
-    const w = window.innerWidth;
-    this.setState({ isMobile: w < 1120, isNarrow: w < 700, isWide: w >= 480 });
-  };
-
-  // Exit-intent on desktop, 50% scroll depth on mobile, never inside the first 20s,
-  // once per visitor. Stays disarmed entirely while MODAL_ENDPOINT is empty so no
-  // email is ever collected into nothing.
-  armModal() {
-    if (!MODAL_ENDPOINT) return;
-    let seen = false;
-    try { seen = localStorage.getItem("clarion_queue_modal") === "1"; } catch (e) {}
-    if (seen) return;
-    this._arm = setTimeout(() => {
-      document.addEventListener("mouseout", this.onExitIntent);
-      window.addEventListener("scroll", this.onScrollDepth, { passive: true });
-    }, 20000);
-  }
-  onExitIntent = (e) => {
-    if (window.innerWidth < 1120) return;
-    if (e.relatedTarget || e.clientY > 8) return;
-    this.openModal();
-  };
-  onScrollDepth = () => {
-    if (window.innerWidth >= 1120) return;
-    const d = document.documentElement;
-    if ((window.scrollY + window.innerHeight) / d.scrollHeight >= 0.5) this.openModal();
-  };
-  openModal() {
-    document.removeEventListener("mouseout", this.onExitIntent);
-    window.removeEventListener("scroll", this.onScrollDepth);
-    this.setState({ modalOpen: true });
-  }
-  // Gate is soft on purpose: someone who won't trade an email still reads the
-  // guide, and the modal is marked seen so it never nags them again.
-  skipToDownload = () => {
-    try { localStorage.setItem("clarion_modal_seen", "1"); } catch (e) {}
-    this.setState({ modalOpen: false });
-  };
-
-  closeModal = () => {
-    try { localStorage.setItem("clarion_queue_modal", "1"); } catch (e) {}
-    this.setState({ modalOpen: false });
-  };
-  submitModal = (e) => {
-    e.preventDefault();
-    if (!MODAL_ENDPOINT) return;
-    try { localStorage.setItem("clarion_queue_modal", "1"); } catch (e2) {}
-    fetch(MODAL_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        access_key: ACCESS_KEY,
-        subject: "Guide-on-guides download — new lead",
-        from_name: "Clarion Tackle Co. website",
-        email: this.state.email,
-        phone: this.state.phone,
-        source: "Lead magnet — A guide on guides"
-      })
-    }).catch(() => {});
-    this.setState({ splashing: true });
-    this._s = setTimeout(() => this.setState({ splashing: false, sent: true }), 760);
-  };
-
-  startSlides() {
-    clearInterval(this._slide);
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    this._slide = setInterval(() => {
-      this.setState((s) => ({ slide: ((s.slide || 0) + 1) % this.galleryShots().length }));
-    }, 4800);
-  }
-  galleryShots() {
-    return [
-      this.res("offerAngler", "3B1DC45A-2CB6-4A1B-B5B3-CFFB3885D2A9.PNG"),
-      this.res("gal1", "14E00E82-DFCB-4D08-8499-A6A866502F88.PNG"),
-      this.res("gal2", "204875B1-944E-41F7-ADEF-BCE547954F56.PNG"),
-      this.res("gal3", "EB6D9D38-4FC4-4864-8E61-2222CB98DA9F.PNG"),
-      this.res("gal4", "image000002.jpeg"),
-      this.res("gal5", "image000003.JPG"),
-      this.res("gal6", "IMG_0001.jpg"),
-      this.res("offerCustom", "220A1EF1-364B-4BE4-8AC5-6723ACFCFE84.PNG")
-    ];
-  }
-  goSlide = (i) => { this.setState({ slide: i }); this.startSlides(); };
-  stepSlide = (d) => {
-    const n = this.galleryShots().length;
-    this.setState((s) => ({ slide: (((s.slide || 0) + d) % n + n) % n }));
-    this.startSlides();
-  };
-
-  res(id, fallback) {
-    const r = typeof window !== "undefined" && window.__resources;
-    return (r && r[id]) || fallback;
-  }
-
-  pad(n) { return n < 10 ? "0" + n : String(n); }
-
-  filmsBand = React.createRef();
-  // Films band preview: hover opens it on desktop; on touch screens it opens
-  // when the band is mostly on screen. The player only exists while open.
-  setPreview(on) {
-    clearTimeout(this._pvT);
-    if (on) { this.setState({ pvMounted: true, pvOpen: true }); return; }
-    this.setState({ pvOpen: false });
-    this._pvT = setTimeout(() => this.setState({ pvMounted: false }), 450);
-  }
-  filmsEnter = () => { if (!this._touch) this.setPreview(true); };
-  filmsLeave = () => { if (!this._touch) this.setPreview(false); };
-  watchFilmsBand() {
-    this._touch = window.matchMedia && window.matchMedia("(hover: none)").matches;
-    const el = this.filmsBand.current;
-    if (!this._touch || !el || typeof IntersectionObserver === "undefined") return;
-    this._pvIO = new IntersectionObserver((es) => es.forEach((e) => this.setPreview(e.intersectionRatio >= 0.55)), { threshold: [0, 0.55, 1] });
-    this._pvIO.observe(el);
-  }
-
-  renderVals() {
-    // Short label on phones so the header fits: [Films] [Start Your Build] [☰]
-    const vw = typeof window !== "undefined" ? window.innerWidth : 1200;
-    const tight = vw < 520;
-    const filmsLabel = tight ? "Films" : "Outdoor Films";
-    const shots = this.galleryShots();
-    const cur = this.state.slide || 0;
-    return {
-      filmsLabel: filmsLabel,
-      filmsBand: this.filmsBand,
-      filmsEnter: this.filmsEnter,
-      filmsLeave: this.filmsLeave,
-      pvMounted: !!this.state.pvMounted,
-      pvOpacity: (this.state.pvOpen || vw < 760) ? 1 : 0,
-      pvTransform: (this.state.pvOpen || vw < 760) ? "none" : "translateY(14px) scale(0.92)",
-      pvPointer: (this.state.pvOpen || vw < 760) ? "auto" : "none",
-      pvW: vw < 760 ? "100%" : "min(420px, 36vw)",
-      pvColW: vw < 760 ? "100%" : "auto",
-      pvAlign: vw < 760 ? "stretch" : "flex-end",
-      logoH: vw < 400 ? "19px" : "24px",
-      hdrGap: tight ? "6px" : "8px",
-      hdrTrack: tight ? "0.08em" : "0.16em",
-      filmsPad: tight ? "11px 10px" : "11px clamp(10px,1.6vw,18px)",
-      buildPad: tight ? "12px 11px" : "12px clamp(12px,2vw,20px)",
-      showProof: this.props.showProof ?? true,
-      form: FORM,
-      isMobile: !!this.state.isMobile,
-      isDesktop: !this.state.isMobile,
-      isWide: this.state.isWide !== false,
-      showModalImage: !this.state.isNarrow,
-      navOpen: !!this.state.navOpen,
-      toggleNav: () => this.setState((s) => ({ navOpen: !s.navOpen })),
-      closeNav: () => this.setState({ navOpen: false }),
-      slideCounter: this.pad(cur + 1) + " / " + this.pad(shots.length),
-      prevSlide: () => this.stepSlide(-1),
-      nextSlide: () => this.stepSlide(1),
-      // Only the visible frame and its neighbours are fetched; the rest stay empty
-      // until the carousel reaches them.
-      slides: shots.map((img, i) => {
-        const d = Math.min(Math.abs(i - cur), shots.length - Math.abs(i - cur));
-        const near = d <= 1 || this._seen && this._seen[i];
-        if (near) { this._seen = this._seen || {}; this._seen[i] = true; }
-        return { bg: near ? "url(" + img + ")" : "none", op: cur === i ? 1 : 0, z: cur === i ? 2 : 1 };
-      }),
-      dots: shots.map((img, i) => ({
-        bg: cur === i ? "#C9A24A" : "rgba(239,233,220,0.2)",
-        label: "Show photo " + (i + 1),
-        onClick: () => this.goSlide(i)
-      })),
-      facts: [
-        { k: "Builds start at", v: "$600", body: "That's a real number, not a teaser. Most builds land above it, and I'll tell you where yours sits before you commit to anything." },
-        { k: "Current lead time", v: "12 weeks", body: "I build one rod at a time. Some go quicker — I'd rather tell you twelve and hand it to you in nine." },
-        { k: "Shipping", v: "$50 flat", body: "Hard tube, insured, tracked. Rods 8 feet and over add [OVERSIZE SURCHARGE] for oversize." },
-        { k: "Warranty", v: "Blank backed by its maker", body: "Every blank I build on carries its manufacturer's warranty, registered in your name before it ships. If a blank ever fails, you claim the replacement and I rebuild your rod with your existing components — you cover labor only." }
-      ],
-      reviews: [
-        { stars: "★★★★★", score: "5.0", quote: "By far the most responsive rod I have ever owned.", body: "Stands up to more than any factory rod. The balance is perfect.", who: "Christopher D.", fishes: "Great Lakes walleye & Florida snook", verified: "Verified Clarion build" },
-        { stars: "★★★★☆", score: "4.0", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" },
-        { stars: "★★★★★", score: "4.7", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" },
-        { stars: "★★★★☆", score: "4.5", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" },
-        { stars: "★★★★☆", score: "4.3", quote: "[PLACEHOLDER — REVIEW]", body: "[What the rod does better than what they fished before — one or two sentences, in their words.]", who: "[Name]", fishes: "[What and where they fish]", verified: "Verified Clarion build" }
-      ],
-      waters: [
-        { name: "Fresh Water", note: "Streams, rivers, lakes", img: this.res("waterFly", "fly.jpg"), pos: "center" },
-        { name: "Inshore", note: "Backwater, flats, surf", img: this.res("waterSalt", "AdobeStock_1019134892.jpeg"), pos: "42% center" },
-        { name: "Offshore", note: "Reef, pelagic", img: this.res("waterFresh", "sailfish.webp"), pos: "58% center" }
-      ],
-      modalOpen: this.state.modalOpen,
-      modalSent: this.state.sent,
-      modalNotSent: !this.state.sent,
-      splashing: this.state.splashing,
-      email: this.state.email,
-      phone: this.state.phone,
-      onEmail: (e) => this.setState({ email: e.target.value }),
-      onPhone: (e) => this.setState({ phone: e.target.value }),
-      closeModal: this.closeModal,
-      skipToDownload: this.skipToDownload,
-      submitModal: this.submitModal,
-      anglerSpecs: [
-        { k: "Height & Reach", v: "Sets blank length and butt section" },
-        { k: "Hand Size", v: "Grip diameter and taper" },
-        { k: "Casting Hand", v: "Reel seat and guide orientation" },
-        { k: "Cast Style", v: "Overhead, roll, or one-handed pitch" },
-        { k: "Where You Fish", v: "Flats, surf, mangroves, or offshore" },
-        { k: "Target Species", v: "Power, action, and tip recovery" },
-        { k: "Reel & Line", v: "Balance point and guide train" },
-        { k: "Deck or Wade", v: "Overall length and grip config" }
-      ],
-      gripVideo: this.gripVideo,
-      heroVideo: this.heroVideo,
-      gripLatheVideo: this.gripLatheVideo,
-      grips: [
-        { k: "Material", v: "Flor-grade cork for the all-day rods, teak when you want the boat to notice." },
-        { k: "Shape", v: "Full, split, or reverse-taper, turned to the diameter you actually palm." },
-        { k: "Length", v: "Cut to your forearm and your cast, not to a catalog spec." },
-        { k: "Finish", v: "Hand-sanded and sealed, so it stays tacky after a season in the salt." }
-      ],
-      steps: [
-        { n: "01", name: "Consultation & Spec", body: "You send the intake, I come back within the day. We talk through species, water, your cast, and what your last rod got wrong, and I write the spec sheet — blank, guides, seat, grip, thread.", cost: "No charge", time: "1–3 days" },
-        { n: "02", name: "Quote & Payment", body: "A line-item quote against that spec: components at cost, labor stated plainly, shipping flat. Nothing starts until you've read it and said go.", cost: "Paid in full at approval", time: "Yours to sit on" },
-        { n: "03", name: "Build & Delivery", body: "Your rod goes on the bench alone. Photos at every stage, guides static-tested with your reel, finish cured slow. It ships insured in a hard tube with the build file.", cost: "$50 flat shipping", time: "12 weeks from payment" }
-      ]
-    };
-  }
+<script defer src="/_vercel/insights/script.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..700&display=swap">
+<style>
+/* Layout: daylight on the water. Salt-white pages, deep-water navy bands, brass accents. Tall condensed headlines, wide small caps labels, pill buttons. */
+@font-face{font-family:'Bebas';src:url(fonts/bebas.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Lemon';src:url(fonts/lemon-regular.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Lemon';src:url(fonts/lemon-medium.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Lemon';src:url(fonts/lemon-bold.woff2) format('woff2');font-weight:700;font-display:swap}
+:root{
+  --salt:#F4F0E7; --salt-2:#EAE4D6; --card:#FBF9F4;
+  --navy:#0E2232; --navy-2:#16324A; --deep:#081520;
+  --ink:#14202A; --ink-2:rgba(20,32,42,.72); --ink-3:rgba(20,32,42,.5); --line:rgba(20,32,42,.14);
+  --foam:#F4F0E7; --foam-2:rgba(244,240,231,.76); --foam-line:rgba(244,240,231,.18);
+  --brass:#B98A35; --brass-hi:#D3A752; --glass:#7FA7A3;
+  --d:'Bebas', 'Arial Narrow', Impact, sans-serif;
+  --l:'Lemon', 'Arial', sans-serif;
+  --f:'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
 }
 
+/* three dark luxury palettes, switched on <html data-pal> */
+html[data-pal]{color-scheme:dark}
+html[data-pal="field"]{
+  --salt:#191819; --salt-2:#232223; --card:#1F1E1F;
+  --navy:#4B4E49; --navy-2:#575A54; --deep:#111011;
+  --ink:#F8F7F2; --ink-2:rgba(248,247,242,.76); --ink-3:rgba(248,247,242,.52); --line:rgba(248,247,242,.13);
+  --foam:#F8F7F2; --foam-2:rgba(248,247,242,.78); --foam-line:rgba(248,247,242,.16);
+  --brass:#A8976F; --brass-hi:#91805B; --teak:#9A6640; --teak-deep:#3B2516;
+}
+html[data-pal="field"] .btn.brass{color:#F8F7F2}
+html[data-pal="field"] .btn.brass:hover{background:#A3926B;color:#191819}
+html[data-pal="field"] .btn.brass .dot{background:#191819;color:#B9A882}
+html[data-pal="field"] .btn .dot{background:#91805B;color:#F8F7F2}
+html[data-pal="field"] #about,html[data-pal="field"] #process,html[data-pal="field"] .mag{
+  --ink:#191819; --ink-2:rgba(25,24,25,.72); --ink-3:rgba(25,24,25,.5); --line:rgba(25,24,25,.13);
+  --card:#FFFFFF; --salt-2:#ECEAE2; --brass:#6E6142; --navy:#191819; --foam:#F8F7F2;
+  color:var(--ink)}
+html[data-pal="field"] #about{background:#F8F7F2 !important}
+html[data-pal="field"] #process{background:#EFEDE6 !important}
+html[data-pal="field"] .mag{background:#EFEDE6}
+html[data-pal="field"] #about .chip{background:#FFFFFF}
+html[data-pal="field"] #custom{background:linear-gradient(180deg,var(--teak-deep),#2A1A10)}
+html[data-pal="field"] .standard{background:var(--teak);color:#F8F7F2}
+html[data-pal="field"] .standard .label{color:#EADFC6 !important}
+html[data-pal="field"] #numbers{background:#4B4E49}
+html[data-pal="field"] #numbers .num{background:#42453F;border-color:rgba(248,247,242,.14)}
+html[data-pal="field"] #numbers .label{color:#D4C7A6 !important}
+html[data-pal="field"] .cta.dark{background:#232223}
+html[data-pal="field"] .acc{display:none}
+html[data-pal="shop"]{
+  --salt:#0E0D0C; --salt-2:#1A1816; --card:#151311;
+  --navy:#161412; --navy-2:#211E1B; --deep:#080707;
+  --ink:#F6F3ED; --ink-2:rgba(246,243,237,.76); --ink-3:rgba(246,243,237,.5); --line:rgba(246,243,237,.13);
+  --foam:#F6F3ED; --foam-2:rgba(246,243,237,.76); --foam-line:rgba(246,243,237,.15);
+  --brass:#C9A24A; --brass-hi:#DDBA68; --teak:#9A6640; --teak-deep:#3B2516;
+}
+/* white shop sections: grips, process, magazine */
+html[data-pal="shop"] #about,html[data-pal="shop"] #process,html[data-pal="shop"] .mag{
+  --ink:#141210; --ink-2:rgba(20,18,16,.72); --ink-3:rgba(20,18,16,.5); --line:rgba(20,18,16,.13);
+  --card:#FFFFFF; --salt-2:#EFEAE2; --brass:#8A6A22; --navy:#141210; --foam:#F6F3ED;
+  color:var(--ink)}
+html[data-pal="shop"] #about{background:#FFFFFF !important}
+html[data-pal="shop"] #process{background:#F6F3ED !important}
+html[data-pal="shop"] .mag{background:#F6F3ED}
+/* teak */
+html[data-pal="shop"] #custom{background:linear-gradient(180deg,var(--teak-deep),#2A1A10)}
+html[data-pal="shop"] .standard{background:var(--teak);color:#FBF6EE}
+html[data-pal="shop"] .standard .label{color:#F3DFAF !important}
+html[data-pal="shop"] #numbers .num{background:#1C1713;border-color:rgba(201,162,74,.22)}
+html[data-pal="black"]{
+  --salt:#0D0D0E; --salt-2:#1A1A1C; --card:#141416;
+  --navy:#1C1C1F; --navy-2:#242427; --deep:#070708;
+  --ink:#EDE8DE; --ink-2:rgba(237,232,222,.74); --ink-3:rgba(237,232,222,.5); --line:rgba(237,232,222,.13);
+  --foam:#EDE8DE; --foam-2:rgba(237,232,222,.74); --foam-line:rgba(237,232,222,.15);
+  --brass:#C9A24A; --brass-hi:#E0BE6E;
+}
+html[data-pal="midnight"]{
+  --salt:#070D13; --salt-2:#111C26; --card:#0C151D;
+  --navy:#0F1B26; --navy-2:#162532; --deep:#04080C;
+  --ink:#ECE5D8; --ink-2:rgba(236,229,216,.74); --ink-3:rgba(236,229,216,.5); --line:rgba(236,229,216,.13);
+  --foam:#ECE5D8; --foam-2:rgba(236,229,216,.74); --foam-line:rgba(236,229,216,.15);
+  --brass:#C9824F; --brass-hi:#E09B68;
+}
+html[data-pal="hunter"]{
+  --salt:#0B120E; --salt-2:#16211A; --card:#111A14;
+  --navy:#132019; --navy-2:#1B2B21; --deep:#060A08;
+  --ink:#ECE6D7; --ink-2:rgba(236,230,215,.74); --ink-3:rgba(236,230,215,.5); --line:rgba(236,230,215,.13);
+  --foam:#ECE6D7; --foam-2:rgba(236,230,215,.74); --foam-line:rgba(236,230,215,.15);
+  --brass:#BF9A4E; --brass-hi:#D8B56A;
+}
+html[data-pal] .hdr.solid{background:color-mix(in srgb, var(--salt) 90%, transparent);color:var(--ink)}
+html[data-pal] .hdr.solid .brand .cream{display:block} html[data-pal] .hdr.solid .brand .ink{display:none}
+html[data-pal] .btn.line:hover{background:rgba(255,255,255,.07)}
+html[data-pal] .btn{box-shadow:0 12px 28px -16px rgba(0,0,0,.9)}
+html[data-pal] .btn.brass .dot{background:var(--deep)}
+html[data-pal] .shot,html[data-pal] .chip:hover,html[data-pal] .step{box-shadow:0 20px 40px -26px rgba(0,0,0,.9)}
+html[data-pal] .cta.dark,html[data-pal] #numbers{background:var(--salt-2)}
+html[data-pal] #custom{background:var(--navy)}
+
+/* brass options, switched on <html data-acc> */
+html[data-pal][data-acc="aged"]{--brass:#B09A5E;--brass-hi:#C8B47D}
+html[data-pal][data-acc="champagne"]{--brass:#CBB88C;--brass-hi:#E0D2AE}
+html[data-pal][data-acc="polished"]{--brass:#BFA160;--brass-hi:#D8C08A}
+html[data-acc="aged"] #about,html[data-acc="aged"] #process,html[data-acc="aged"] .mag{--brass:#6B5C2F}
+html[data-acc="champagne"] #about,html[data-acc="champagne"] #process,html[data-acc="champagne"] .mag{--brass:#7A6A43}
+html[data-acc="polished"] #about,html[data-acc="polished"] #process,html[data-acc="polished"] .mag{--brass:#7A6430}
+html[data-acc="polished"] .btn.brass{background:linear-gradient(120deg,#8E7440 0%,#D9C38C 38%,#B69756 62%,#E6D3A0 100%);background-size:200% 100%;background-position:0 0;transition:background-position .8s var(--ease),transform .2s var(--ease),box-shadow .35s var(--ease)}
+html[data-acc="polished"] .btn.brass:hover{background-position:100% 0}
+html[data-acc="polished"] .btn .dot{background:linear-gradient(135deg,#8E7440,#E2CF9B 55%,#A88B4C)}
+html[data-acc="polished"] .btn.brass .dot{background:var(--deep)}
+html[data-pal="shop"][data-acc] .standard .label{color:#F4EAD2 !important}
+
+/* Tampa Bay chart: carved into the teak band, faint behind the closing call */
+.standard,#start{position:relative;overflow:hidden;isolation:isolate}
+.standard::before,#start::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url(img/chart-gray.jpg) center/cover no-repeat}
+.standard::before{mix-blend-mode:multiply;opacity:.26;filter:contrast(1.15)}
+#start::before{mix-blend-mode:screen;opacity:.07;background-position:70% 40%;
+  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 60% 50%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 80% at 60% 50%,#000 30%,transparent 80%)}
+@media (min-width:900px){#start::before{background-size:70% auto;background-position:110% 30%}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--salt);color:var(--ink);font-family:var(--f);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+p{margin:0;text-wrap:pretty}
+.wrap{width:100%;max-width:1320px;margin-inline:auto;padding-left:max(18px, env(safe-area-inset-left,0px));padding-right:max(18px, env(safe-area-inset-right,0px))}
+@media (min-width:760px){.wrap{padding-left:max(44px, env(safe-area-inset-left,0px));padding-right:max(44px, env(safe-area-inset-right,0px))}}
+
+/* type */
+.label{font-family:var(--l);font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);line-height:1.4}
+.label.mute{color:var(--ink-3)}
+.dark .label.mute{color:var(--foam-2)}
+.display{font-family:var(--d);font-weight:400;text-transform:uppercase;line-height:.9;letter-spacing:.01em;margin:0;text-wrap:balance}
+.h1{font-size:clamp(64px,13.5vw,196px)}
+.h2{font-size:clamp(48px,7.4vw,108px)}
+.h3{font-size:clamp(32px,3.2vw,44px)}
+.brass{color:var(--brass)}
+.lede{font-size:clamp(17px,1.45vw,20px);color:var(--ink-2);max-width:46ch}
+.body{color:var(--ink-2);max-width:56ch}
+.dark{background:var(--navy);color:var(--foam)}
+.dark .lede,.dark .body{color:var(--foam-2)}
+
+/* pill buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 10px 0 26px;border-radius:999px;border:0;background:var(--navy);color:var(--foam);
+  font-family:var(--l);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
+  transition:background .35s var(--ease), color .35s var(--ease), transform .2s var(--ease), box-shadow .35s var(--ease);box-shadow:0 10px 24px -14px rgba(14,34,50,.7)}
+.btn .dot{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--brass);color:var(--navy);font-family:var(--f);font-size:16px;font-weight:700;transition:transform .45s var(--ease), background .35s}
+.btn:hover{background:var(--navy-2);box-shadow:0 16px 34px -14px rgba(14,34,50,.8)}
+.btn:hover .dot{transform:translateX(4px) rotate(-45deg);background:var(--brass-hi)}
+.btn:active{transform:scale(.97)}
+.btn.brass{background:var(--brass);color:var(--deep)}
+.btn.brass .dot{background:var(--deep);color:var(--brass-hi)}
+.btn.brass:hover{background:var(--brass-hi)}
+.btn.light{background:var(--foam);color:var(--navy)}
+.btn.light:hover{background:#fff}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor;padding:0 24px}
+.btn.line:hover{background:rgba(20,32,42,.06)}
+.dark .btn.line:hover,.hero .btn.line:hover{background:rgba(244,240,231,.12)}
+.btn.sm{min-height:42px;padding:0 14px;font-size:9.5px;letter-spacing:.1em}
+.link{display:inline-flex;align-items:center;gap:10px;font-family:var(--l);font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:6px 0;border-bottom:1.5px solid var(--brass);transition:gap .35s var(--ease), color .3s}
+.link:hover{gap:16px;color:var(--brass)}
+
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;color:var(--foam);transition:background .4s, color .4s, box-shadow .4s}
+.hdr.solid{background:rgba(244,240,231,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--navy);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:26px;width:auto}
+.brand .ink{display:none}
+.hdr.solid .brand .cream{display:none}.hdr.solid .brand .ink{display:block}
+.nav{display:none;gap:26px;font-family:var(--l);font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase}
+.nav a{opacity:.85;transition:opacity .2s,color .2s}.nav a:hover{opacity:1;color:var(--brass)}
+.hdr-cta{display:flex;gap:8px;align-items:center}
+.hide-sm{display:none}
+@media (min-width:560px){.hide-sm{display:inline-flex}}
+.menu-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:none;color:inherit;display:grid;place-content:center;gap:4px;cursor:pointer}
+.menu-btn span{display:block;width:16px;height:1.5px;background:currentColor}
+@media (min-width:1100px){.nav{display:flex}.menu-btn{display:none}}
+.drawer{position:fixed;inset:0;z-index:70;background:var(--navy);color:var(--foam);display:flex;flex-direction:column;justify-content:center;gap:2px;
+  padding:calc(env(safe-area-inset-top,0px) + 80px) max(28px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 40px) max(28px, env(safe-area-inset-left,0px))}
+.drawer a{font-family:var(--d);font-size:clamp(46px,13vw,72px);line-height:1}
+.drawer a:hover{color:var(--brass-hi)}
+.drawer .close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(16px, env(safe-area-inset-right,0px));width:48px;height:48px;border-radius:50%;background:none;border:1.5px solid var(--foam-line);color:var(--foam);font-size:18px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;margin-top:-70px;min-height:min(100svh,1000px);display:flex;align-items:flex-end;color:var(--foam);overflow:hidden;background:var(--deep)}
+.hero .bg{position:absolute;inset:0;background:url(img/hero.jpg) 62% center/cover no-repeat;animation:settle 18s var(--ease) both}
+.hero video.bg{width:100%;height:100%;object-fit:cover;object-position:60% center;background:none}
+@keyframes settle{from{transform:scale(1.1)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.hero .bg{animation:none}.hero video.bg{display:none}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,21,32,.9) 0%,rgba(8,21,32,.25) 55%,rgba(8,21,32,.45) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-block:120px clamp(40px,6vw,72px)}
+.hero-grid{display:grid;gap:28px;align-items:end}
+@media (min-width:980px){.hero-grid{grid-template-columns:1.4fr 1fr}}
+.hero .lede{color:var(--foam-2)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .meta{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--foam-line);margin-top:clamp(32px,5vw,56px);padding-top:18px}
+.hero .meta .label{color:var(--foam-2)}
+
+/* sections */
+.pad{padding-block:clamp(80px,11vw,150px)}
+.head{display:flex;flex-direction:column;gap:18px;margin-bottom:clamp(36px,5vw,60px)}
+.head.row{flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px}
+
+/* water tiles */
+.tiles{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:760px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--navy);color:var(--foam);isolation:isolate}
+@media (max-width:759px){.tile{aspect-ratio:16/11}}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);z-index:-1}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,21,32,.82),transparent 58%);z-index:-1}
+.tile .cap{position:absolute;left:22px;right:22px;bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.tile .go{flex:none;width:44px;height:44px;border-radius:50%;background:var(--foam);color:var(--navy);display:grid;place-items:center;font-weight:700;transition:transform .45s var(--ease), background .3s}
+.tile:hover img{transform:scale(1.06)}
+.tile:hover .go{transform:rotate(-45deg);background:var(--brass-hi)}
+.tile .label{color:var(--foam-2)}
+
+/* gallery swipe */
+.swipe{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px max(18px, env(safe-area-inset-left,0px)) 18px;scrollbar-width:none}
+.swipe::-webkit-scrollbar{display:none}
+@media (min-width:760px){.swipe{padding-inline:max(44px, env(safe-area-inset-left,0px))}}
+.shot{flex:0 0 auto;width:min(72vw,320px);aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#fff;scroll-snap-align:start;box-shadow:0 18px 40px -26px rgba(14,34,50,.6)}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.shot:hover img{transform:scale(1.05)}
+.circ{display:flex;gap:8px}
+.circ button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:17px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.circ button:hover{background:var(--navy);color:var(--foam);border-color:var(--navy)}
+
+/* split */
+.split{display:grid;gap:clamp(36px,5vw,84px);align-items:center}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr}.split.rev > :first-child{order:2}}
+.split > *{min-width:0}
+.copy{display:flex;flex-direction:column;gap:20px}
+.photo{border-radius:24px;overflow:hidden;background:var(--salt-2)}
+.photo img{width:100%;height:100%;object-fit:cover}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference){
+    .float img{animation:float linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    @keyframes float{from{transform:scale(1.12) translateY(-2.5%)}to{transform:scale(1.02) translateY(2.5%)}}
+  }
+}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:clamp(44px,6vw,72px)}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .4s var(--ease), box-shadow .4s}
+.chip:hover{transform:translateY(-3px);box-shadow:0 18px 34px -24px rgba(14,34,50,.55)}
+.chip p{color:var(--ink-2);font-size:15.5px}
+.dark .chip{background:var(--navy-2);border-color:var(--foam-line)}
+.dark .chip p{color:var(--foam-2)}
+
+/* angler profile */
+.profile{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:10px;margin:0}
+.profile div{border-radius:14px;background:rgba(244,240,231,.06);border:1px solid var(--foam-line);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
+.profile dt{font-family:var(--l);font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-hi)}
+.profile dd{margin:0;color:var(--foam-2);font-size:15.5px}
+
+/* quote band */
+.standard{background:var(--brass);color:var(--deep);text-align:center}
+.standard .q{font-family:var(--d);font-size:clamp(56px,10vw,150px);line-height:.88;margin:0 auto;max-width:12ch;text-transform:uppercase}
+
+/* process */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.step{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:14px}
+.step .n{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--foam);font-family:var(--d);font-size:26px;line-height:1}
+.step .meta{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-family:var(--l);font-weight:500;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--salt-2);border-radius:999px;padding:8px 12px}
+
+/* numbers */
+.nums{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.num{border-radius:22px;background:var(--navy-2);border:1px solid var(--foam-line);padding:26px;display:flex;flex-direction:column;gap:10px}
+.num .v{font-family:var(--d);font-size:clamp(46px,5vw,64px);line-height:.9;color:var(--foam)}
+.num .v.sm{font-size:clamp(34px,3.4vw,44px)}
+.num p{color:var(--foam-2);font-size:15px}
+
+/* review */
+.review{display:grid;gap:clamp(32px,5vw,72px);align-items:center}
+@media (min-width:900px){.review{grid-template-columns:.9fr 1.1fr}}
+.stars{color:var(--brass);letter-spacing:.24em;font-size:20px}
+
+/* magazine */
+.mag{border-radius:28px;background:var(--salt-2);padding:clamp(24px,4vw,56px);display:grid;gap:clamp(28px,4vw,60px);align-items:center}
+@media (min-width:820px){.mag{grid-template-columns:minmax(0,360px) 1fr}}
+.mag .cover{border-radius:10px;overflow:hidden;box-shadow:0 36px 60px -30px rgba(14,34,50,.7);transform:rotate(-2deg);transition:transform .6s var(--ease)}
+.mag .cover:hover{transform:rotate(0) translateY(-6px)}
+
+/* films */
+.films{position:relative;border-radius:30px;overflow:hidden;color:var(--foam);min-height:min(78svh,700px);display:flex;align-items:flex-end;isolation:isolate}
+.films img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.films::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,21,32,.9),rgba(8,21,32,.2) 70%);z-index:-1}
+.films .in{padding:clamp(26px,5vw,64px);display:flex;flex-direction:column;gap:18px}
+.films .lede{color:var(--foam-2)}
+
+/* cta */
+.cta{text-align:center}
+.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:24px}
+.cta .mark{width:64px;height:auto}
+
+/* the bench: full-bleed lathe footage */
+.bench{position:relative;height:min(78svh,720px);min-height:420px;overflow:hidden;background:var(--deep);color:var(--foam);isolation:isolate}
+.bench video,.bench .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.bench::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(8,21,32,.85) 0%,rgba(8,21,32,.1) 55%),linear-gradient(90deg,rgba(8,21,32,.55),transparent 60%)}
+.bench .wrap{height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding-bottom:clamp(32px,5vw,60px)}
+.reel-video{position:relative;border-radius:24px;overflow:hidden;background:var(--navy-2);aspect-ratio:3/4}
+.reel-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rec{position:absolute;left:16px;top:16px;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(8,21,32,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--foam);font-family:var(--l);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+.rec::before{content:"";width:6px;height:6px;border-radius:50%;background:#D9553F}
+/* sticky build bar on phones */
+.dock{position:fixed;z-index:45;left:max(12px, env(safe-area-inset-left,0px));right:max(12px, env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 12px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(14,34,50,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--foam);box-shadow:0 18px 40px -16px rgba(8,21,32,.8);transform:translateY(160%);transition:transform .5s var(--ease)}
+.dock.on{transform:none}
+.dock .t{font-family:var(--l);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--foam-2);line-height:1.3}
+@media (min-width:760px){.dock{display:none}}
+@media (prefers-reduced-motion:reduce){.dock{transition:none}}
+footer{background:var(--deep);color:var(--foam);padding-block:clamp(56px,7vw,90px) calc(env(safe-area-inset-bottom,0px) + 96px)}
+@media (min-width:760px){footer{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 36px)}}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px}
+.fcol{display:flex;flex-direction:column;gap:12px;font-size:15px}
+.fcol a{color:var(--foam-2)} .fcol a:hover{color:var(--brass-hi)}
+.note{font-size:12px;color:rgba(244,240,231,.45);margin-top:56px}
+
+/* films band: live preview of "A day with Wilson's" */
+.films{flex-direction:column;align-items:stretch;justify-content:flex-end}
+.films .pv{position:relative;display:block;margin:0 clamp(26px,5vw,64px) clamp(26px,5vw,64px);aspect-ratio:16/9;border-radius:16px;overflow:hidden;isolation:isolate;
+  background:#000 url(https://i.ytimg.com/vi/06mDUNvE9yQ/maxresdefault.jpg) center/cover no-repeat;box-shadow:0 30px 70px -24px rgba(0,0,0,.9), inset 0 0 0 1px rgba(224,210,174,.45);transition:transform .6s var(--ease)}
+.films .pv:hover{transform:translateY(-4px)}
+.films .pv iframe{position:absolute;top:50%;left:50%;width:122%;height:122%;transform:translate(-50%,-50%);border:0;pointer-events:none;z-index:-1}
+.films .pv-cap{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:10px;padding:12px 16px;background:linear-gradient(0deg,rgba(8,7,7,.88),rgba(8,7,7,0));
+  font-family:var(--l);font-weight:500;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--foam)}
+.films .pv-go{color:var(--brass-hi)}
+@media (min-width:900px){
+  .films{flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .films .in{flex:1 1 auto;min-width:0}
+  .films .pv{flex:none;width:min(420px,34vw);margin:0 clamp(26px,5vw,64px) clamp(26px,5vw,64px) 0}
+}
+
+/* lead-magnet popup: A guide on guides */
+.gm{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:clamp(12px,4vw,48px);background:rgba(8,7,7,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.gm[hidden],.gm [hidden]{display:none !important}
+.gm-card{position:relative;width:min(760px,100%);max-height:92svh;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));
+  background:var(--salt-2);color:var(--foam);border-radius:24px;box-shadow:0 40px 120px rgba(0,0,0,.6), inset 0 0 0 1px rgba(224,210,174,.18);animation:gmPop .45s var(--ease) both}
+@keyframes gmPop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.gm-card{animation:none}}
+.gm-img{width:100%;height:100%;min-height:220px;max-height:560px;object-fit:cover;display:block}
+@media (max-width:600px){.gm-img{max-height:200px}}
+.gm-body{padding:clamp(26px,4vw,40px);display:flex;flex-direction:column;gap:16px}
+.gm-body .lede{font-size:15px;color:var(--foam-2)}
+.gm-x{position:absolute;z-index:2;top:12px;right:12px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(8,7,7,.6);color:var(--foam);font-size:17px;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(246,243,237,.3);transition:background .3s,color .3s}
+.gm-x:hover{background:var(--brass);color:var(--deep)}
+.gm-tags{display:flex;flex-wrap:wrap;gap:8px}
+.gm-tags span{font-family:var(--l);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--foam-2);padding:7px 11px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--foam-line)}
+.gm form{display:flex;flex-direction:column;gap:10px}
+.gm input{font:inherit;font-size:16px;color:var(--foam);background:rgba(255,255,255,.05);border:0;border-radius:14px;box-shadow:inset 0 0 0 1px var(--foam-line);padding:0 18px;min-height:52px;transition:box-shadow .3s}
+.gm input::placeholder{color:rgba(246,243,237,.45)}
+.gm input:focus{outline:none;box-shadow:inset 0 0 0 1.5px var(--brass)}
+.gm .btn{justify-content:space-between}
+.gm-fine{font-size:12px;color:rgba(246,243,237,.55)}
+.gm-skip{background:none;border:0;padding:0;font:inherit;font-size:12px;letter-spacing:.06em;color:rgba(246,243,237,.62);text-decoration:underline;text-underline-offset:3px;cursor:pointer;align-self:flex-start}
+.gm-skip:hover{color:var(--brass-hi)}
+.gm-row{display:flex;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Clarion Tackle Co., back to top">
+      <img class="cream" src="img/clarion-script-cream.svg" alt="Clarion">
+      <img class="ink" src="img/clarion-script-black.svg" alt="">
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">Process</a><a href="#story">About</a><a href="#about">Grips</a><a href="resources.html">Resources</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="btn line sm hide-sm" href="films.html">Outdoor Films</a>
+      <a class="btn brass sm" href="build.html">Start Your Build</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" hidden>
+  <button class="close" id="closeBtn" type="button" aria-label="Close menu">✕</button>
+  <a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">Process</a><a href="#story">About</a><a href="#about">Grips</a><a href="resources.html">Resources</a><a href="films.html" style="color:var(--brass-hi)">Outdoor Films</a>
+</div>
+
+<main>
+<section class="hero" id="top">
+  <div class="bg" aria-hidden="true"></div>
+  <video class="bg vid" src="video/hero.mp4" poster="video/hero.jpg" muted autoplay loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span class="label" style="color:var(--brass-hi)">Tampa Bay, Florida</span>
+        <h1 class="display h1">A Clear<br>Difference.</h1>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <p class="lede">Built for The Angler. Custom rods, made to order in Tampa Bay. Every build documented. Nothing on a shelf.</p>
+        <div class="ctas">
+          <a class="btn brass" href="build.html">Start Your Build <span class="dot">→</span></a>
+          <a class="btn line" href="#series">See how we build</a>
+        </div>
+      </div>
+    </div>
+    <div class="meta"><span class="label">Made to order</span><span class="label">Est. 2018</span></div>
+  </div>
+</section>
+
+<section id="series" class="pad">
+  <div class="wrap">
+    <div class="head"><span class="label">What We Build</span></div>
+    <div class="tiles">
+      <a class="tile" href="build.html"><img src="img/water-fresh.jpg" alt="" loading="lazy"><div class="cap"><div><div class="display h3">Fresh Water</div><span class="label">Streams, rivers, lakes</span></div><span class="go">→</span></div></a>
+      <a class="tile" href="build.html"><img src="img/water-inshore.jpg" alt="" loading="lazy" style="object-position:42% center"><div class="cap"><div><div class="display h3">Inshore</div><span class="label">Backwater, flats, surf</span></div><span class="go">→</span></div></a>
+      <a class="tile" href="build.html"><img src="img/water-offshore.jpg" alt="" loading="lazy" style="object-position:58% center"><div class="cap"><div><div class="display h3">Offshore</div><span class="label">Reef, pelagic</span></div><span class="go">→</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Gallery" style="padding-bottom:clamp(80px,11vw,150px)">
+  <div class="wrap head row" style="margin-bottom:24px"><span class="label">Gallery</span><div class="circ"><button type="button" id="prev" aria-label="Previous photos">←</button><button type="button" id="next" aria-label="Next photos">→</button></div></div>
+  <div class="swipe" id="swipe">
+    <div class="shot"><img src="img/build-1.jpg" alt="Red wraps and a single-foot guide" loading="lazy"></div>
+    <div class="shot"><img src="img/build-2.jpg" alt="Green blank with a gold-trimmed guide" loading="lazy"></div>
+    <div class="shot"><img src="img/build-3.jpg" alt="Blue wraps above a cork grip" loading="lazy"></div>
+    <div class="shot"><img src="img/build-4.jpg" alt="Copper wraps on a black blank" loading="lazy"></div>
+    <div class="shot"><img src="img/build-5.jpg" alt="Guide train with copper and blue trim" loading="lazy"></div>
+    <div class="shot"><img src="img/build-6.jpg" alt="A finished build held over the dock" loading="lazy"></div>
+    <div class="shot"><img src="img/build-7.jpg" alt="A heavy build standing in the shop" loading="lazy"></div>
+    <div class="shot"><img src="img/build-8.jpg" alt="Copper wrap at a stripping guide" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="bench" aria-label="Grips turned on the lathe">
+  <img class="poster" src="video/lathe.jpg" alt="">
+  <video class="auto" src="video/lathe.mp4" poster="video/lathe.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <div class="wrap">
+    <span class="label" style="color:var(--brass-hi)">On the bench</span>
+    <p class="display h2" style="max-width:13ch">We turn every Clarion grip by hand.</p>
+  </div>
+</section>
+
+<section id="about" class="pad" style="background:var(--card)">
+  <div class="wrap">
+    <div class="split">
+      <div class="copy">
+        <span class="label">Handmade Grips</span>
+        <h2 class="display h2">Shaped to your hand, <span class="brass">not a mold.</span></h2>
+        <p class="body">Factory grips come off a lathe by the thousand. One diameter, one length, one shape for every angler who buys that rod. We turn every Clarion grip by hand.</p>
+        <p class="body">Tell us how you hold a rod and how long you hold it, and the cork gets shaped to that. Length, taper, and diameter cut to fit the hand that's actually going to fish it.</p>
+        <div><a class="link" href="build.html">Request a fitted grip →</a></div>
+      </div>
+      <div class="photo float" style="aspect-ratio:4/5"><img src="img/grip.jpg" alt="A hand-turned teak grip" loading="lazy"></div>
+    </div>
+    <div class="chips">
+      <div class="chip"><span class="label">Material</span><p>Flor-grade cork for the all-day rods, teak when you want the boat to notice.</p></div>
+      <div class="chip"><span class="label">Shape</span><p>Full, split, or reverse-taper, turned to the diameter you actually palm.</p></div>
+      <div class="chip"><span class="label">Length</span><p>Cut to your forearm and your cast, not to a catalog spec.</p></div>
+      <div class="chip"><span class="label">Finish</span><p>Hand-sanded and sealed, so it stays tacky after a season in the salt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="custom" class="pad dark">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="copy">
+        <span class="label" style="color:var(--brass-hi)">Built for the Angler</span>
+        <h2 class="display h2">A factory measures the rod. <span style="color:var(--brass-hi)">We measure you.</span></h2>
+        <p class="body">Before a single component gets ordered, we build a profile of the angler: how you're built, how you fish, and what you're chasing. Those numbers drive every decision on the bench.</p>
+      </div>
+      <div class="reel-video" style="max-width:460px;justify-self:center;width:100%"><video class="auto" src="video/rail.mp4" poster="video/rail.jpg" muted loop playsinline preload="metadata" aria-label="Two Clarion builds resting on a dock rail"></video><span class="rec">Two anglers, two rods</span></div>
+    </div>
+    <dl class="profile" style="margin-top:clamp(40px,5vw,64px)">
+      <div><dt>Height &amp; Reach</dt><dd>Sets blank length and butt section</dd></div>
+      <div><dt>Hand Size</dt><dd>Grip diameter and taper</dd></div>
+      <div><dt>Casting Hand</dt><dd>Reel seat and guide orientation</dd></div>
+      <div><dt>Cast Style</dt><dd>Overhead, roll, or one-handed pitch</dd></div>
+      <div><dt>Where You Fish</dt><dd>Flats, surf, mangroves, or offshore</dd></div>
+      <div><dt>Target Species</dt><dd>Power, action, and tip recovery</dd></div>
+      <div><dt>Reel &amp; Line</dt><dd>Balance point and guide train</dd></div>
+      <div><dt>Deck or Wade</dt><dd>Overall length and grip config</dd></div>
+    </dl>
+    <div style="display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;justify-content:space-between;margin-top:36px">
+      <p style="font-size:19px;max-width:44ch">Two anglers chasing the same fish in the same water still get two different rods. That's the point.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn brass" href="build.html">Start your profile <span class="dot">→</span></a><a class="btn line" href="#process">See the build process</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="standard pad" aria-label="The Clarion standard">
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;gap:22px">
+    <p class="q">If I won't fish it, I won't build it.</p>
+    <span class="label" style="color:var(--deep)">Benjamin D. · Founder &amp; builder</span>
+  </div>
+</section>
+
+<section id="story" class="pad">
+  <div class="wrap">
+    <div class="split">
+      <div class="photo float" style="aspect-ratio:4/5"><img src="img/builder.jpg" alt="The builder behind Clarion, on the water in the mangroves" loading="lazy"></div>
+      <div class="copy">
+        <span class="label">About Clarion</span>
+        <h2 class="display h2">Built for the angler, <span class="brass">by the angler.</span></h2>
+        <p class="body">I grew up fishing native trout streams in the Appalachian mountains with whatever rod I could afford. One day I fished a buddy's rod, built specifically for the bait I was throwing, and started outfishing myself. Same water, same bait, same hands.</p>
+        <p class="body">That's when I learned a rod isn't just a stick with guides on it. Every inch of it is a decision, and most of those decisions get made in a hurry, on an assembly line, by someone who's never fished it.</p>
+        <p class="body">I started building my own rods in 2018, dialed to my exact cast, my exact presentation, my exact hands. Not because I wanted a hobby, but because I couldn't ignore how much precision was being skipped just to hit a price point. When a rod is built right, down to the smallest detail, you feel it before you even cast. It becomes an extension of your arm instead of something you're fighting.</p>
+        <p style="max-width:56ch;font-weight:600">That's the standard every Clarion rod is held to. Built one at a time, by hand, with the same obsessive attention to detail I'd want if I were the one holding it on the water. Because I am.</p>
+        <div><a class="link" href="build.html">Start your build →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="pad" style="background:var(--salt-2)">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">The Process</span>
+      <h2 class="display h2" style="max-width:14ch">Three steps. No shortcuts. <span class="brass">No surprises.</span></h2>
+      <p class="body">Every Clarion order runs the same track, and you know exactly where yours is the whole way through.</p>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="n">01</span><span class="display h3">Consultation &amp; Spec</span><p class="body" style="font-size:16px">You send the intake, I come back within the day. We talk through species, water, your cast, and what your last rod got wrong, and I write the spec sheet: blank, guides, seat, grip, thread.</p><div class="meta"><span class="pill">Cost: No charge</span><span class="pill">Takes: 1–3 days</span></div></li>
+      <li class="step"><span class="n">02</span><span class="display h3">Quote &amp; Payment</span><p class="body" style="font-size:16px">A line-item quote against that spec: components at cost, labor stated plainly, shipping flat. Nothing starts until you've read it and said go.</p><div class="meta"><span class="pill">Cost: Paid in full at approval</span><span class="pill">Takes: Yours to sit on</span></div></li>
+      <li class="step"><span class="n">03</span><span class="display h3">Build &amp; Delivery</span><p class="body" style="font-size:16px">Your rod goes on the bench alone. Photos at every stage, guides static-tested with your reel, finish cured slow. It ships insured in a hard tube with the build file.</p><div class="meta"><span class="pill">Cost: $50 flat shipping</span><span class="pill">Takes: 12 weeks from payment</span></div></li>
+    </ol>
+    <div style="margin-top:36px"><a class="btn" href="build.html">Start step one <span class="dot">→</span></a></div>
+  </div>
+</section>
+
+<section id="numbers" class="pad dark">
+  <div class="wrap">
+    <div class="nums">
+      <div class="num"><span class="label" style="color:var(--brass-hi)">Builds start at</span><span class="v">$600</span><p>That's a real number, not a teaser. Most builds land above it, and I'll tell you where yours sits before you commit to anything.</p></div>
+      <div class="num"><span class="label" style="color:var(--brass-hi)">Current lead time</span><span class="v">12 weeks</span><p>I build one rod at a time. Some go quicker. I'd rather tell you twelve and hand it to you in nine.</p></div>
+      <div class="num"><span class="label" style="color:var(--brass-hi)">Shipping</span><span class="v">$50 flat</span><p>Hard tube, insured, tracked. Rods 8 feet and over carry an oversize surcharge.</p></div>
+      <div class="num"><span class="label" style="color:var(--brass-hi)">Warranty</span><span class="v sm">Blank backed by its maker</span><p>Every blank I build on carries its manufacturer's warranty, registered in your name before it ships. If a blank ever fails, you claim the replacement and I rebuild your rod with your existing components. You cover labor only.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" aria-label="What anglers say">
+  <div class="wrap review">
+    <div class="photo float" style="aspect-ratio:3/2"><img src="img/pier.jpg" alt="A Clarion rod resting on the pier" loading="lazy"></div>
+    <blockquote style="margin:0;display:flex;flex-direction:column;gap:20px">
+      <span class="stars" aria-label="Five stars">★★★★★</span>
+      <p class="display" style="font-size:clamp(46px,6vw,86px);line-height:.92">“By far the <span class="brass">most responsive</span> rod I have ever owned.”</p>
+      <p class="lede">Stands up to more than any factory rod. The balance is perfect.</p>
+      <footer class="label mute">Christopher D. · Great Lakes walleye &amp; Florida snook</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section id="magazine" style="padding-bottom:clamp(80px,11vw,150px)">
+  <div class="wrap">
+    <div class="mag">
+      <a class="cover" href="resources.html" aria-label="Read Clarion Outdoors, Issue 01"><img src="img/magazine.jpg" alt="Clarion Outdoors, Issue 01 cover" loading="lazy"></a>
+      <div class="copy">
+        <span class="label">New · The Magazine</span>
+        <h2 class="display h2">Clarion Outdoors, <span class="brass">Issue 01</span></h2>
+        <p class="lede">36 pages of inshore fishing on Tampa Bay. Real days, real fish, no spots given away.</p>
+        <div><a class="btn" href="resources.html">Read the magazine <span class="dot">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="films" style="padding-bottom:clamp(80px,11vw,150px)">
+  <div class="wrap">
+    <div class="films">
+      <img src="img/dock.jpg" alt="" loading="lazy">
+      <div class="in">
+        <span class="label" style="color:var(--brass-hi)">Clarion Outdoor Films × Wilson's Reel Adventures</span>
+        <h2 class="display h1" style="font-size:clamp(56px,10vw,140px)">Your charter. <span style="color:var(--brass-hi)">Shot like a film.</span></h2>
+        <p class="lede">Photo and film packages for your Wilson's Reel Adventures trip. From $250.</p>
+        <div><a class="btn light" href="films.html">See Outdoor Films <span class="dot">→</span></a></div>
+      </div>
+      <a class="pv" id="pv" href="films.html" aria-label="Preview of A day with Wilson's, open Outdoor Films">
+        <span class="pv-cap"><span>A day with Wilson's</span><span class="pv-go">▶ Watch</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="start" class="cta pad dark">
+  <div class="wrap">
+    <img class="mark" src="img/hook-cream.svg" alt="">
+    <h2 class="display h1" style="font-size:clamp(60px,10vw,150px)">Tell us what you fish.</h2>
+    <p class="lede" style="margin-inline:auto">Every Clarion build starts the same way: a conversation about where you fish, what you're after, and what your last rod got wrong. Fill out the intake and we'll go from there.</p>
+    <a class="btn brass" href="build.html">Start Your Build <span class="dot">→</span></a>
+  </div>
+</section>
+</main>
+
+<div class="dock" id="dock"><span class="t">Made to order<br>in Tampa Bay</span><a class="btn brass sm" href="build.html">Start Your Build <span class="dot" style="width:28px;height:28px">→</span></a></div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <img src="img/clarion-script-cream.svg" alt="Clarion Tackle Co." style="height:30px;width:auto;align-self:flex-start">
+        <p style="color:var(--foam-2);max-width:34ch">Made-to-order fishing rods, documented at the bench. Built in Tampa Bay, Florida.</p>
+      </div>
+      <div class="fcol"><span class="label">Explore</span><a href="#series">What We Build</a><a href="#custom">Built For You</a><a href="#process">The Process</a><a href="build.html">Start Your Build</a><a href="resources.html">Resources</a><a href="films.html" style="color:var(--brass-hi)">Outdoor Films</a></div>
+      <div class="fcol"><span class="label">Contact</span><a href="https://www.instagram.com/clarionrods/">Instagram</a><a href="mailto:hello@clarionrods.com">hello@clarionrods.com</a><span style="color:var(--foam-2)">Tampa Bay, FL</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  function onScroll(){hdr.classList.toggle('solid', window.scrollY>window.innerHeight*0.6)}
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  var drawer=document.getElementById('drawer'), mb=document.getElementById('menuBtn');
+  function setMenu(open){drawer.hidden=!open; mb.setAttribute('aria-expanded',String(open)); document.body.style.overflow=open?'hidden':'';}
+  mb.addEventListener('click',function(){setMenu(true)});
+  document.getElementById('closeBtn').addEventListener('click',function(){setMenu(false)});
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  var dock=document.getElementById('dock'), hero=document.getElementById('top'), start=document.getElementById('start');
+  function onDock(){var past=window.scrollY>hero.offsetHeight*0.8, atCta=start.getBoundingClientRect().top<window.innerHeight;dock.classList.toggle('on',past&&!atCta)}
+  window.addEventListener('scroll',onDock,{passive:true}); onDock();
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids=[].slice.call(document.querySelectorAll('video.auto'));
+  if(!still&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.25});
+    vids.forEach(function(v){io.observe(v)});
+  }
+  var sw=document.getElementById('swipe');
+  function step(d){var w=sw.firstElementChild.getBoundingClientRect().width+14;sw.scrollBy({left:d*w,behavior:'smooth'})}
+  document.getElementById('prev').addEventListener('click',function(){step(-1)});
+  document.getElementById('next').addEventListener('click',function(){step(1)});
+})();
+</script>
+
+<div class="gm" id="gm" hidden>
+  <div class="gm-card" role="dialog" aria-modal="true" aria-labelledby="gmTitle">
+    <img class="gm-img" src="img/guide.jpg" alt="" loading="lazy">
+    <div class="gm-body">
+      <button type="button" class="gm-x" data-close aria-label="Close">✕</button>
+      <div id="gmAsk" style="display:flex;flex-direction:column;gap:16px">
+        <span class="label" style="color:var(--brass-hi)">Free Download</span>
+        <h2 class="display h2" id="gmTitle" style="font-size:clamp(40px,5vw,56px)">A guide on <span style="color:var(--brass-hi)">guides.</span></h2>
+        <p class="lede">Alconite, SiC, titanium frames, single-foot vs double — what each one actually does to your cast, and how to tell which setup is right for the way you fish.</p>
+        <div class="gm-tags"><span>11 pages</span><span>Manufacturer spec tables</span><span>No brand placement</span></div>
+        <form id="gmForm">
+          <input type="email" name="email" required placeholder="Email address" autocomplete="email" aria-label="Email address">
+          <input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel" aria-label="Phone (optional)">
+          <button type="submit" class="btn brass">Get the guide <span class="dot">→</span></button>
+        </form>
+        <p class="gm-fine">No spam, no drip campaign. The download, plus finished builds now and then. Unsubscribe any time.</p>
+        <a class="gm-skip" href="a-guide-on-guides.pdf" download target="_blank" rel="noopener" data-close>Or just read it — no email</a>
+        <button type="button" class="gm-skip" data-close>No thanks, I'm just looking</button>
+      </div>
+      <div id="gmDone" hidden style="display:flex;flex-direction:column;gap:16px">
+        <span class="label" style="color:var(--brass-hi)">Ready</span>
+        <h2 class="display h2" style="font-size:clamp(40px,5vw,56px)">Here it is.</h2>
+        <p class="lede">Eleven pages on rings, frames, and guide trains — with Fuji's own published numbers, not marketing copy. Yours to keep.</p>
+        <div class="gm-row">
+          <a class="btn brass" href="a-guide-on-guides.pdf" download target="_blank" rel="noopener">Download the guide <span class="dot">↓</span></a>
+          <a class="btn line" href="build.html" data-close>Start your build</a>
+        </div>
+        <p class="gm-fine">PDF, 1 MB. Downloads straight to your device — no confirmation email to wait on.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* films band: mount the YouTube preview only while it's on screen (same as the live site) */
+(function(){
+  var pv=document.getElementById('pv'); if(!pv) return;
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches; if(still) return;
+  var SRC="https://www.youtube.com/embed/06mDUNvE9yQ?autoplay=1&mute=1&start=6&loop=1&playlist=06mDUNvE9yQ&controls=0&origin=https://www.clariontackle.com&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0";
+  function on(){ if(pv.querySelector('iframe')) return; var f=document.createElement('iframe'); f.src=SRC; f.title="A day with Wilson's, preview"; f.tabIndex=-1; f.setAttribute('allow','autoplay; encrypted-media'); f.setAttribute('referrerpolicy','strict-origin-when-cross-origin'); f.setAttribute('aria-hidden','true'); pv.insertBefore(f,pv.firstChild); }
+  function off(){ var f=pv.querySelector('iframe'); if(f) f.remove(); }
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?on():off()})},{rootMargin:'200px 0px'}).observe(pv); } else on();
+})();
+
+/* lead-magnet popup: same rules and inbox as the live site.
+   Exit intent on desktop, 50% scroll on phones, never in the first 20s, once per visitor. */
+(function(){
+  var ACCESS_KEY="623c8342-3bf9-41ef-aed3-26963c076915";
+  var ENDPOINT=ACCESS_KEY?"https://api.web3forms.com/submit":"";
+  var KEY="clarion_queue_modal";
+  var gm=document.getElementById('gm'); if(!gm||!ENDPOINT) return;
+  var lastFocus=null;
+  function seen(){try{return localStorage.getItem(KEY)==="1"}catch(e){return false}}
+  function mark(){try{localStorage.setItem(KEY,"1")}catch(e){}}
+  function exitIntent(e){ if(window.innerWidth<1120) return; if(e.relatedTarget||e.clientY>8) return; open(); }
+  function depth(){ if(window.innerWidth>=1120) return; var d=document.documentElement; if((window.scrollY+window.innerHeight)/d.scrollHeight>=0.5) open(); }
+  function open(){
+    document.removeEventListener('mouseout',exitIntent); window.removeEventListener('scroll',depth);
+    lastFocus=document.activeElement; gm.hidden=false; document.body.style.overflow='hidden';
+    var i=gm.querySelector('input'); if(i) setTimeout(function(){i.focus({preventScroll:true})},60);
+  }
+  function close(){ mark(); gm.hidden=true; document.body.style.overflow=''; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+  gm.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',close)});
+  gm.addEventListener('click',function(e){ if(e.target===gm) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!gm.hidden) close(); });
+  document.getElementById('gmForm').addEventListener('submit',function(e){
+    e.preventDefault(); mark();
+    var f=e.target;
+    fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+      body:JSON.stringify({access_key:ACCESS_KEY,subject:"Guide-on-guides download — new lead",from_name:"Clarion Tackle Co. website",
+        email:f.email.value,phone:f.phone.value,source:"Lead magnet — A guide on guides"})}).catch(function(){});
+    document.getElementById('gmAsk').hidden=true; document.getElementById('gmDone').hidden=false;
+  });
+  if(seen()) return;
+  setTimeout(function(){ document.addEventListener('mouseout',exitIntent); window.addEventListener('scroll',depth,{passive:true}); },20000);
+})();
 </script>
 </body>
 </html>
